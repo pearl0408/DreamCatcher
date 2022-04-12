@@ -7,8 +7,8 @@ public class CreateCloud : MonoBehaviour
     // 구름을 생성하는 오브젝트에 추가하는 컴포넌트
 
     public GameObject CloudPos;   //구름 생성 위치 기준 오브젝트
-    private float createTime = 4f;     //구름 생성 시간
-    private float range_low = -250f;    //구름 최저 생성 높이
+    private float createTime = 30f;     //구름 생성 시간
+    private float range_low = -225f;    //구름 최저 생성 높이
     private float range_high = 175f;    //구름 최고 생성 높이
 
     void Start()
@@ -32,7 +32,7 @@ public class CreateCloud : MonoBehaviour
             }
             else    //비활성화된 오브젝트가 없다면
             {
-                yield return new WaitForSeconds(time);    //조금 더 기다림
+                yield return new WaitForSeconds(1f);    //바로 생성
             }
         }
     }
