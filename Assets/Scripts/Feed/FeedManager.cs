@@ -7,13 +7,16 @@ public class FeedManager : MonoBehaviour
     // 먹이를 관리하는 클래스
 
     [Header("Feed Setting")]
-    [SerializeField] private int numberOfFeed = 4;     //먹이 개수 
-    [SerializeField] private bool isSelected = false;     //먹이 선택 여부 변수
+    [SerializeField] private int numberOfFeed = 4;      //총 먹이 개수 
+    [SerializeField] private bool isSelected;   //먹이 선택 여부 변수
+    [SerializeField] private int selectedFeedNum;       //선택된 먹이 번호
 
     public void Start()
     {
         //저장 데이터 읽어옴
         //먹이 선택 여부 변수 읽어옴
+
+        isSelected = false;
     }
 
 
@@ -24,7 +27,7 @@ public class FeedManager : MonoBehaviour
         return numberOfFeed;
     }
 
-    public bool IsFeedSelected()
+    public bool GetIsFeedSelected()
     {
         //먹이 선택 여부를 반환하는 함수
 
@@ -36,8 +39,20 @@ public class FeedManager : MonoBehaviour
         //먹이 선택 여부를 갱신하는 함수
 
         this.isSelected = TorF;
-        GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedTimer>().UpdateIsFeedSelected();    //타이머에 갱신 신호 보냄
+        this.gameObject.GetComponent<FeedTimer>().SetIsFeedSelected(TorF);      //타이머 클래스의 먹이 선택 여부도 갱신
     }
 
-    //먹이 선택 여부, 어떤 먹이를 선택했는지 번호, 먹이 놓은 시간 데이터 저장, 로드?
+    public int GetSelectedFeedNum()
+    {
+        //선택된 먹이 번호를 반환하는 함수
+
+        return selectedFeedNum;
+    }
+
+    public void SetSelectedFeedNum(int num)
+    {
+        //선택된 먹이 번호를 설정하는 함수
+
+        selectedFeedNum = num;
+    }
 }

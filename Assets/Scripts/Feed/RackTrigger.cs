@@ -10,7 +10,7 @@ public class RackTrigger : MonoBehaviour
     {
         //먹이 오브젝트에 닿았을 때 
 
-        if (collision.gameObject.tag == "Feed")
+        if (collision.gameObject.tag == "Feed") 
         {
             collision.gameObject.GetComponent<FeedDrag>().SetIsTriggering(true);    //먹이 닿음 여부 true로 설정
         }
@@ -20,7 +20,7 @@ public class RackTrigger : MonoBehaviour
     {
         //먹이 오브젝트에서 떨어졌을 때 
 
-        if (collision.gameObject.tag == "Feed")
+        if (collision.gameObject.tag == "Feed") 
         {
             collision.gameObject.GetComponent<FeedDrag>().SetIsTriggering(false);   //먹이 닿음 여부 false로 설정
         }
