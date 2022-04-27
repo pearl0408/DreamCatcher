@@ -549,6 +549,359 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1001 &73675308
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1486598507}
+    m_Modifications:
+    - target: {fileID: 8981317053930696504, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317053930696504, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317053930696504, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317053930696504, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317053951137069, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317053951137069, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317053951137069, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317053951137069, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317053990011495, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317053990011495, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317053990011495, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317053990011495, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054390195075, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054390195075, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054390195075, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054390195075, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054409531491, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054409531491, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054409531491, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054409531491, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054535090310, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054535090310, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054535090310, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054535090310, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054564494986, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054564494986, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054564494986, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054564494986, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054751583986, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054751583986, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054751583986, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054751583986, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054836838908, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054968616585, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054968616585, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054968616585, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317054968616585, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055007342225, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055007342225, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055007342225, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1503214031}
+    - target: {fileID: 8981317055007342225, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055007342225, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BirdInfoBack
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055007342225, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CSVBirdInfoLoad, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055007342225, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055013112598, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055013112598, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055013112598, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055013112598, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055224964054, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055224964054, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055224964054, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055224964054, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055354098251, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055354098251, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055354098251, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055354098251, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055449688132, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055449688132, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055449688132, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055449688132, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055614935599, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055614935599, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055614935599, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055614935599, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055841636200, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_Name
+      value: BirdInfo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055841636203, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055841636203, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055841636203, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055841636203, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055841636203, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055841636203, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055841636203, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055841636203, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1440
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055841636203, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 2387
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055841636203, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055841636203, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055841636203, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055841636203, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055841636203, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055841636203, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055841636203, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055841636203, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055841636203, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -86.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055841636203, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055841636203, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981317055841636203, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
 --- !u!1 &78636225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,6 +1473,17 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &131451247 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8981317053930696507, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+  m_PrefabInstance: {fileID: 73675308}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &187157692
 GameObject:
   m_ObjectHideFlags: 0
@@ -1714,7 +2078,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 240, y: -240}
-  m_SizeDelta: {x: 480, y: 480}
+  m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &350939856
 MonoBehaviour:
@@ -1759,7 +2123,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 350939857}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1503214031}
+        m_TargetAssemblyTypeName: CSVBirdInfoLoad, Assembly-CSharp
+        m_MethodName: BirdInfo
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &350939857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1782,7 +2158,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 9f2d0224cd777d34abe4810767a66b6a, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1798,6 +2174,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 350939854}
   m_CullTransparentMesh: 1
+--- !u!114 &365629555 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8981317054390195074, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+  m_PrefabInstance: {fileID: 73675308}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &432454995
 GameObject:
   m_ObjectHideFlags: 0
@@ -2115,7 +2502,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 240, y: -240}
-  m_SizeDelta: {x: 480, y: 480}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &518286487
 MonoBehaviour:
@@ -2160,7 +2547,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 518286488}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1503214031}
+        m_TargetAssemblyTypeName: CSVBirdInfoLoad, Assembly-CSharp
+        m_MethodName: BirdInfo
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &518286488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2183,7 +2582,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 31fbcec4aca386046b42d7f3a3ca3ec0, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2235,7 +2634,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 240, y: -240}
-  m_SizeDelta: {x: 480, y: 480}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &539852564
 MonoBehaviour:
@@ -2280,7 +2679,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 539852565}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1503214031}
+        m_TargetAssemblyTypeName: CSVBirdInfoLoad, Assembly-CSharp
+        m_MethodName: BirdInfo
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 12
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &539852565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2303,7 +2714,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 92465cd185bdecf41acfbf34a7880b77, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2434,7 +2845,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 240, y: -240}
-  m_SizeDelta: {x: 480, y: 480}
+  m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &602912417
 MonoBehaviour:
@@ -2479,7 +2890,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 602912418}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1503214031}
+        m_TargetAssemblyTypeName: CSVBirdInfoLoad, Assembly-CSharp
+        m_MethodName: BirdInfo
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &602912418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2502,7 +2925,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 20510adc2e034734eac7d006233e39ed, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2554,7 +2977,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 240, y: -240}
-  m_SizeDelta: {x: 480, y: 480}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &634348006
 MonoBehaviour:
@@ -2599,7 +3022,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 634348007}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1503214031}
+        m_TargetAssemblyTypeName: CSVBirdInfoLoad, Assembly-CSharp
+        m_MethodName: BirdInfo
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &634348007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2622,7 +3057,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: a975f15ba5416874794731980c117568, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -3788,7 +4223,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 240, y: -240}
-  m_SizeDelta: {x: 480, y: 480}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &965822294
 MonoBehaviour:
@@ -3833,7 +4268,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 965822295}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1503214031}
+        m_TargetAssemblyTypeName: CSVBirdInfoLoad, Assembly-CSharp
+        m_MethodName: BirdInfo
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &965822295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3856,7 +4303,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: d3546881f013a144d9a90df1a1df01b7, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -3872,6 +4319,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965822292}
   m_CullTransparentMesh: 1
+--- !u!1 &982654580 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8981317055841636200, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+  m_PrefabInstance: {fileID: 73675308}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &982654581 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8981317055841636203, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+  m_PrefabInstance: {fileID: 73675308}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1000028696
 GameObject:
   m_ObjectHideFlags: 0
@@ -4158,7 +4615,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 240, y: -240}
-  m_SizeDelta: {x: 480, y: 480}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1017180910
 MonoBehaviour:
@@ -4203,7 +4660,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1017180911}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1503214031}
+        m_TargetAssemblyTypeName: CSVBirdInfoLoad, Assembly-CSharp
+        m_MethodName: BirdInfo
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1017180911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4226,7 +4695,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 11baa6255eef93a489467076e9e68b97, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -4278,7 +4747,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 240, y: -240}
-  m_SizeDelta: {x: 480, y: 480}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1032683173
 MonoBehaviour:
@@ -4323,7 +4792,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1032683174}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1503214031}
+        m_TargetAssemblyTypeName: CSVBirdInfoLoad, Assembly-CSharp
+        m_MethodName: BirdInfo
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 14
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1032683174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4346,7 +4827,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 5d65df22223c1df4f847ba9b85321c98, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -4553,6 +5034,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210363822}
   m_CullTransparentMesh: 1
+--- !u!114 &1210907827 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8981317054564494981, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+  m_PrefabInstance: {fileID: 73675308}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1215182399 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8981317055449688135, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+  m_PrefabInstance: {fileID: 73675308}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1229194005
 GameObject:
   m_ObjectHideFlags: 0
@@ -4948,7 +5451,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 240, y: -240}
-  m_SizeDelta: {x: 480, y: 480}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1276304048
 MonoBehaviour:
@@ -4993,7 +5496,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1276304049}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1503214031}
+        m_TargetAssemblyTypeName: CSVBirdInfoLoad, Assembly-CSharp
+        m_MethodName: BirdInfo
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1276304049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5226,7 +5741,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 240, y: -240}
-  m_SizeDelta: {x: 480, y: 480}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1351688523
 MonoBehaviour:
@@ -5271,7 +5786,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1351688524}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1503214031}
+        m_TargetAssemblyTypeName: CSVBirdInfoLoad, Assembly-CSharp
+        m_MethodName: BirdInfo
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1351688524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5680,7 +6207,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 240, y: -240}
-  m_SizeDelta: {x: 480, y: 480}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1449951942
 MonoBehaviour:
@@ -5725,7 +6252,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1449951943}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1503214031}
+        m_TargetAssemblyTypeName: CSVBirdInfoLoad, Assembly-CSharp
+        m_MethodName: BirdInfo
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 15
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1449951943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5748,7 +6287,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: b8459d6293da5354baa0f8933f65a75b, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -5856,6 +6395,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1252116886}
+  - {fileID: 982654581}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5864,6 +6404,131 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1503214029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1503214030}
+  - component: {fileID: 1503214031}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1503214030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503214029}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 855.4739, y: 1303.5859, z: -227.31104}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1503214031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503214029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 299ad7eca9742a249b605eae53f06a16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BirdInfoPanel: {fileID: 982654580}
+  birdColImg:
+  - {fileID: 965822292}
+  - {fileID: 1351688521}
+  - {fileID: 602912415}
+  - {fileID: 1276304046}
+  - {fileID: 1619981471}
+  - {fileID: 350939854}
+  - {fileID: 2065969860}
+  - {fileID: 1953517118}
+  - {fileID: 518286485}
+  - {fileID: 634348004}
+  - {fileID: 1017180908}
+  - {fileID: 1605402173}
+  - {fileID: 539852562}
+  - {fileID: 2043767432}
+  - {fileID: 1032683171}
+  - {fileID: 1449951940}
+  birdColName:
+  - {fileID: 97373182}
+  - {fileID: 1276565661}
+  - {fileID: 1420299709}
+  - {fileID: 1714239515}
+  - {fileID: 1250274315}
+  - {fileID: 1712125704}
+  - {fileID: 751951680}
+  - {fileID: 1506862612}
+  - {fileID: 432454997}
+  - {fileID: 748004507}
+  - {fileID: 1409766565}
+  - {fileID: 212700321}
+  - {fileID: 78636227}
+  - {fileID: 582869937}
+  - {fileID: 669007155}
+  - {fileID: 1900671316}
+  numberTxt: {fileID: 131451247}
+  nameTxt: {fileID: 1765286369}
+  expTxt: {fileID: 1716841287}
+  timeTxt: {fileID: 1215182399}
+  foodImg: {fileID: 1210907827}
+  birdImg: {fileID: 1815597405}
+  featherImg: {fileID: 1748560609}
+  numberSlide: {fileID: 365629555}
+  birdImgs:
+  - {fileID: 21300000, guid: d3546881f013a144d9a90df1a1df01b7, type: 3}
+  - {fileID: 21300000, guid: 18ed28d9a7092b444b4273e005af8940, type: 3}
+  - {fileID: 21300000, guid: 20510adc2e034734eac7d006233e39ed, type: 3}
+  - {fileID: 21300000, guid: ae91ce9ea1ede7c498f2bdc67601352c, type: 3}
+  - {fileID: 21300000, guid: 67d1ace5355f0f24292633e8963c9243, type: 3}
+  - {fileID: 21300000, guid: 9f2d0224cd777d34abe4810767a66b6a, type: 3}
+  - {fileID: 21300000, guid: 0ad8769bc5c830d4ab8879d808d7485c, type: 3}
+  - {fileID: 21300000, guid: 7329266b81a16c3439345011803dc008, type: 3}
+  - {fileID: 21300000, guid: 31fbcec4aca386046b42d7f3a3ca3ec0, type: 3}
+  - {fileID: 21300000, guid: a975f15ba5416874794731980c117568, type: 3}
+  - {fileID: 21300000, guid: 11baa6255eef93a489467076e9e68b97, type: 3}
+  - {fileID: 21300000, guid: be3b5e00e3ea28044a8edfc62def427b, type: 3}
+  - {fileID: 21300000, guid: 92465cd185bdecf41acfbf34a7880b77, type: 3}
+  - {fileID: 21300000, guid: fcaed9e6c401f8b4aa9e11368498e550, type: 3}
+  - {fileID: 21300000, guid: 5d65df22223c1df4f847ba9b85321c98, type: 3}
+  - {fileID: 21300000, guid: b8459d6293da5354baa0f8933f65a75b, type: 3}
+  foodImgs:
+  - {fileID: 21300000, guid: 2e13f312e42009340bc12284dd8d5f72, type: 3}
+  - {fileID: 21300000, guid: 1a8e601f740915c458d22b559987020d, type: 3}
+  - {fileID: 21300000, guid: a627754edb8f21842a7d0f423c76e455, type: 3}
+  - {fileID: 21300000, guid: db9856ad9a73f414ba55a01e19af262c, type: 3}
+  featherImgs:
+  - {fileID: 21300000, guid: 9ab58fa02a1f4684eac044d43df035ae, type: 3}
+  - {fileID: 21300000, guid: 2f3fed400ada1b04aaf615063ac4b4fb, type: 3}
+  - {fileID: 21300000, guid: 42bd08d27b002a74cadb112f3f5371c6, type: 3}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 4143d2b757af5804aa99246c605ec0a2, type: 3}
+  - {fileID: 21300000, guid: a8dd63eba900bdf46a2d3a84bb2df294, type: 3}
+  - {fileID: 21300000, guid: 164db98f5c4eda047a4d145b7d780c83, type: 3}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 5425627ea63540e45bd605f4590cd615, type: 3}
+  - {fileID: 21300000, guid: 73db659e9957a184bb05ff5448097905, type: 3}
+  - {fileID: 21300000, guid: 113b3853a5c6cb24ca6f4c63ecce45a4, type: 3}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 0de3b6cf6e70ff74e8e718db913ab928, type: 3}
+  - {fileID: 21300000, guid: 387f94e8f16e7f747aa5dce5fda61af5, type: 3}
+  - {fileID: 21300000, guid: d189bc45aa75d9544827cdc34e803587, type: 3}
+  - {fileID: 0}
 --- !u!1 &1506862610
 GameObject:
   m_ObjectHideFlags: 0
@@ -6604,7 +7269,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 240, y: -240}
-  m_SizeDelta: {x: 480, y: 480}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1605402175
 MonoBehaviour:
@@ -6649,7 +7314,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1605402176}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1503214031}
+        m_TargetAssemblyTypeName: CSVBirdInfoLoad, Assembly-CSharp
+        m_MethodName: BirdInfo
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 11
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1605402176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6672,7 +7349,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: be3b5e00e3ea28044a8edfc62def427b, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -6724,7 +7401,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 240, y: -240}
-  m_SizeDelta: {x: 480, y: 480}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1619981473
 MonoBehaviour:
@@ -6769,7 +7446,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1619981474}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1503214031}
+        m_TargetAssemblyTypeName: CSVBirdInfoLoad, Assembly-CSharp
+        m_MethodName: BirdInfo
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1619981474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6792,7 +7481,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 67d1ace5355f0f24292633e8963c9243, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -7329,6 +8018,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1714239513}
   m_CullTransparentMesh: 1
+--- !u!114 &1716841287 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8981317053965454216, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+  m_PrefabInstance: {fileID: 73675308}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1748560609 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8981317053990011494, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+  m_PrefabInstance: {fileID: 73675308}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1765286369 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8981317055224964049, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+  m_PrefabInstance: {fileID: 73675308}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1783121276
 GameObject:
   m_ObjectHideFlags: 0
@@ -7568,6 +8290,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794897951}
   m_CullTransparentMesh: 1
+--- !u!114 &1815597405 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8981317054409531490, guid: 59c21e0b3aab57c419fdd66305c95ff7, type: 3}
+  m_PrefabInstance: {fileID: 73675308}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1864268938
 GameObject:
   m_ObjectHideFlags: 0
@@ -7997,7 +8730,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 240, y: -240}
-  m_SizeDelta: {x: 480, y: 480}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1953517120
 MonoBehaviour:
@@ -8042,7 +8775,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1953517121}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1503214031}
+        m_TargetAssemblyTypeName: CSVBirdInfoLoad, Assembly-CSharp
+        m_MethodName: BirdInfo
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1953517121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8065,7 +8810,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 7329266b81a16c3439345011803dc008, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -8537,7 +9282,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 240, y: -240}
-  m_SizeDelta: {x: 480, y: 480}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2043767434
 MonoBehaviour:
@@ -8582,7 +9327,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2043767435}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1503214031}
+        m_TargetAssemblyTypeName: CSVBirdInfoLoad, Assembly-CSharp
+        m_MethodName: BirdInfo
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 13
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2043767435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8605,7 +9362,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: fcaed9e6c401f8b4aa9e11368498e550, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -8657,7 +9414,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 240, y: -240}
-  m_SizeDelta: {x: 480, y: 480}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2065969862
 MonoBehaviour:
@@ -8702,7 +9459,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2065969863}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1503214031}
+        m_TargetAssemblyTypeName: CSVBirdInfoLoad, Assembly-CSharp
+        m_MethodName: BirdInfo
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2065969863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8725,7 +9494,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 0ad8769bc5c830d4ab8879d808d7485c, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1

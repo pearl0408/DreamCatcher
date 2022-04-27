@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Chaeyoung/Scene_c/CollectionBird.unity
+- path: Assets/Chaeyoung/Scene_c/CollectionBook.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

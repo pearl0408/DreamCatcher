@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
@@ -74,5 +76,74 @@ public class CSVParser : MonoBehaviour
             list.Add(entry); // 리스트에 엔트리 추가
         }
         return list; // 리스트 리턴
+    }
+
+    // 데이터 CSV로 저장하기
+    public static void Write(string[] headerString, List<Dictionary<string, object>> data)
+    {
+        // 저장할 데이터 만드는 변수
+        List<string[]> rowData = new List<string[]>();
+
+        // 헤더 넣기->header로 받아왔던거 그대로 넣기
+        string[] rowDataTemp = new string[headerString.Length];
+
+        for (int k = 0; k < headerString.Length; k++)
+        {
+            rowDataTemp[k] = headerString[k];
+        }
+        rowData.Add(rowDataTemp);
+
+        // 헤더를 제외한 넣을 본 내용들 넣기
+        for (int u = 0; u < data.Count; u++)
+        {
+            rowDataTemp = new string[headerString.Length];
+            for (int i = 0; i < data[u].Count; i++)
+            {
+                rowDataTemp[i] = (data[u][headerString[i]]).ToString();
+            }
+            rowData.Add(rowDataTemp);
+        }
+
+        // 스트링 배열로 이사?
+        string[][] output = new string[data.Count + 1][];
+
+        for (int i = 0; i < output.Length; i++)
+        {
+            output[i] = rowData[i];
+        }
+
+        int length = output.GetLength(0); // 행 수
+        string delimiter = ","; // 구분자
+
+        StringBuilder sb = new StringBuilder();
+
+        // 구분자 넣기
+        for (int index = 0; index < length; index++)
+        {
+            sb.AppendLine(string.Join(delimiter, output[index]));
+        }
+
+        // 파일 경로 지정
+        string filePath = getPath();
+
+        // 파일 쓰기
+        StreamWriter outStream = System.IO.File.CreateText(filePath);
+        outStream.WriteLine(sb);
+        outStream.Close();
+
+        Debug.Log(filePath);
+    }
+
+    private static string getPath()
+    {
+#if UNITY_EDITOR
+        return Application.dataPath + "/Resources/BirdInfo.csv";
+#elif UNITY_ANDROID
+        return Application.persistentDataPath+"TalkData.csv";
+#elif UNITY_IPHONE
+        return Application.persistentDataPath+"/"+"TalkData.csv";
+#else
+        return Application.dataPath +"/"+"TalkData.csv";
+#endif
     }
 }
