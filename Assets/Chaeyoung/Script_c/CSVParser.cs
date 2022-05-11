@@ -28,9 +28,22 @@ public class CSVParser : MonoBehaviour
         return Read(data.text);
     }
 
+    public static void WriteFromFile(string fileName, List<Dictionary<string, object>> Mydata)
+    {
+        TextAsset data = Resources.Load(fileName) as TextAsset;
+        Write(fileName, data, Mydata);
+    }
+
+    public static void Write(string fileName, TextAsset data, List<Dictionary<string, object>> Mydata)
+    {
+        // 헤더 불러오기
+        var lines = Regex.Split(data.text, LINE_SPLIT_RE); // 라인 자르기
+        string[] header = Regex.Split(lines[0], SPLIT_RE); // 헤더 자르기
+        Write(fileName, header, Mydata);
+    }
+
     public static List<Dictionary<string, object>> Read(string data)
     {
-        Debug.Log("파싱 시작");
         var list = new List<Dictionary<string, object>>(); // 마지막으로 리턴할 리스트임
 
         // 정규식 패턴에 의해 정의된 위치에서 부분 문자열로 이루어진 배열로 입력 문자열을 분할합니다.
@@ -79,27 +92,30 @@ public class CSVParser : MonoBehaviour
     }
 
     // 데이터 CSV로 저장하기
-    public static void Write(string[] headerString, List<Dictionary<string, object>> data)
+    public static void Write(string fileName, string[] header, List<Dictionary<string, object>> data)
     {
+        
+        Debug.Log(header[3]);
+
         // 저장할 데이터 만드는 변수
         List<string[]> rowData = new List<string[]>();
 
         // 헤더 넣기->header로 받아왔던거 그대로 넣기
-        string[] rowDataTemp = new string[headerString.Length];
+        string[] rowDataTemp = new string[header.Length];
 
-        for (int k = 0; k < headerString.Length; k++)
+        for (int k = 0; k < header.Length; k++)
         {
-            rowDataTemp[k] = headerString[k];
+            rowDataTemp[k] = header[k];
         }
         rowData.Add(rowDataTemp);
 
         // 헤더를 제외한 넣을 본 내용들 넣기
         for (int u = 0; u < data.Count; u++)
         {
-            rowDataTemp = new string[headerString.Length];
+            rowDataTemp = new string[header.Length];
             for (int i = 0; i < data[u].Count; i++)
             {
-                rowDataTemp[i] = (data[u][headerString[i]]).ToString();
+                rowDataTemp[i] = (data[u][header[i]]).ToString();
             }
             rowData.Add(rowDataTemp);
         }
@@ -124,7 +140,7 @@ public class CSVParser : MonoBehaviour
         }
 
         // 파일 경로 지정
-        string filePath = getPath();
+        string filePath = getPath(fileName);
 
         // 파일 쓰기
         StreamWriter outStream = System.IO.File.CreateText(filePath);
@@ -134,10 +150,10 @@ public class CSVParser : MonoBehaviour
         Debug.Log(filePath);
     }
 
-    private static string getPath()
+    private static string getPath(string fileName)
     {
 #if UNITY_EDITOR
-        return Application.dataPath + "/Resources/BirdInfo.csv";
+        return Application.dataPath + "/Resources/"+fileName+".csv";
 #elif UNITY_ANDROID
         return Application.persistentDataPath+"TalkData.csv";
 #elif UNITY_IPHONE

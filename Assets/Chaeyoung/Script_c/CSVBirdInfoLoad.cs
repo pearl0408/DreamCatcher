@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CSVBirdInfoLoad : MonoBehaviour
@@ -31,8 +32,6 @@ public class CSVBirdInfoLoad : MonoBehaviour
         data[0]["appear"] = "1";
         data[1]["number"] = "7";
         LoadBirdCollection();
-        // [테스트용]게임을 끄기 전에 Write를 이용하여 데이터파일 저장
-        //CSVParser.Write(headerString, data);
     }
 
     // 새 전체 appear 정보 표시
@@ -64,7 +63,34 @@ public class CSVBirdInfoLoad : MonoBehaviour
         numberTxt.text = "획득 수 "+data[index]["number"]+"마리";
         nameTxt.text = (string)data[index]["name"];
         expTxt.text = (string)data[index]["exp"];
-        timeTxt.text = (string)data[index]["time"];
+        int startTime = int.Parse(data[index]["starttime"].ToString());
+        int endTime = int.Parse(data[index]["endtime"].ToString());
+        // 텍스트 설정(등장시간)
+        if (startTime < 3600)
+        {
+            if (startTime == endTime)
+            {
+
+                timeTxt.text = startTime / 60 + "분";
+            }
+            else
+            {
+                timeTxt.text = startTime / 60 + "분~" + endTime / 60 + "분";
+            }
+        }
+        else
+        {
+            if (startTime == endTime)
+            {
+
+                timeTxt.text = startTime / 3600 + "시간";
+            }
+            else
+            {
+                timeTxt.text = startTime / 3600 + "시간~" + endTime / 3600 + "시간";
+            }
+        }
+        
 
         // 슬라이더 설정
         numberSlide.maxValue = (int)data[index]["maxnum"];
@@ -74,6 +100,11 @@ public class CSVBirdInfoLoad : MonoBehaviour
         foodImg.sprite = foodImgs[index/4];
         birdImg.sprite = birdImgs[index];
         featherImg.sprite = featherImgs[index];
+    }
+
+    public void SaveBirdInfo()
+    {
+        CSVParser.WriteFromFile("BirdInfo", data);
     }
 
     // 새 개별 정보 패널 열기
@@ -87,5 +118,11 @@ public class CSVBirdInfoLoad : MonoBehaviour
     public void BirdInfoBack()
     {
         BirdInfoPanel.SetActive(false);
+    }
+
+    // 꿈 도감으로 가기
+    public void GoDreamCollection()
+    {
+        //SceneManager.LoadScene("");
     }
 }
