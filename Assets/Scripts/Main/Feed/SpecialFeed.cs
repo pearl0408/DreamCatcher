@@ -18,7 +18,7 @@ public class SpecialFeed : MonoBehaviour
 
     void Start()
     {
-        feedCount = GameManager.instance.SpecialFeedCount;  //특제 먹이 개수를 가져옴
+        feedCount = GameManager.instance.specialFeedCount;  //특제 먹이 개수를 가져옴
         selectCount = 0;
         decreaseTime = 5;   //*특제먹이 감소 시간은 추후 수정할 예정
 
@@ -55,7 +55,7 @@ public class SpecialFeed : MonoBehaviour
             this.gameObject.GetComponent<FeedTimer>().UseSpecialFeed(decrease);     //특제 먹이 사용(남은 시간 감소)
 
             feedCount = feedCount - selectCount;    //특제 먹이 개수 갱신
-            GameManager.instance.SpecialFeedCount = feedCount;
+            GameManager.instance.specialFeedCount = feedCount;
 
             selectCount = 0;        //선택한 먹이 개수 갱신
             countText.text = selectCount + "개";    

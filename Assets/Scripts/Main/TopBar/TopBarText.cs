@@ -9,10 +9,19 @@ public class TopBarText : MonoBehaviour
 
     [Header("Topbar Text")]
     [SerializeField] private Text SpecialFeedText;      //먹이 개수 텍스트
+    [SerializeField] private Text MoneyText;      //골드 텍스트
 
     private void Start()
     {
-        SpecialFeedText.text = GameManager.instance.SpecialFeedCount.ToString();    //특제 먹이 개수를 가져옴
+        UpdateText();
+    }
+
+    public void UpdateText()
+    {
+        //텍스트들을 업데이트 하는 함수
+
+        SpecialFeedText.text = GameManager.instance.specialFeedCount.ToString();    //특제 먹이 개수를 가져옴
+        MoneyText.text = GameManager.instance.playerGold.ToString();    //특제 먹이 개수를 가져옴
     }
 
     public void SetSpecialFeedText(int feedNum)
@@ -20,5 +29,12 @@ public class TopBarText : MonoBehaviour
         //특제 먹이 개수 텍스트를 수정하는 함수
 
         SpecialFeedText.text = feedNum.ToString();
+    }
+
+    public void SetMoneyText(int GoldNum)
+    {
+        //골드 텍스트를 수정하는 함수
+
+        MoneyText.text = GoldNum.ToString();
     }
 }

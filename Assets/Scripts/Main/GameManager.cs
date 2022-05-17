@@ -10,7 +10,13 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [Header("Game Data")]
-    public int SpecialFeedCount;    //특제 먹이 개수
+
+    //공용으로 사용할 게임 데이터
+    public int dreamMable;  //꿈 구슬 수
+    public int playerGold;     //플레이어 골드
+    public int specialFeedCount;    //특제 먹이 개수
+
+    public GoodsContainer loadGoodsData;  //상품(보조도구) 레벨 데이터
 
     void Awake()
     {
@@ -24,9 +30,8 @@ public class GameManager : MonoBehaviour
 
         instance = this;    //유일한 인스턴스
         DontDestroyOnLoad(gameObject);  //씬이 바뀌어도 계속 유지시킴
-
-        ResetGameManager();
     }
+
     public static GameManager GetGameManager()
     {
         return instance;
@@ -36,6 +41,11 @@ public class GameManager : MonoBehaviour
     {
         //초기화 함수
 
-        SpecialFeedCount = PlayerPrefs.GetInt("SpecialFeed", 3);   //특제 먹이 개수 가져옴(임시로 기본 3개로 설정)
+        loadGoodsData = this.gameObject.GetComponent<GoodsJSON>().GetGoodsData();   //상품 데이터 가져오기
+
+        //스페셜먹이, 돈, 꿈구슬 개수도 json으로 수정
+        dreamMable = 3;
+        playerGold = 10000;
+        specialFeedCount = 3;
     }
 }

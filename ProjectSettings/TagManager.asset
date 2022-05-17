@@ -7,6 +7,7 @@ TagManager:
   - FeedManager
   - Feed
   - GameManager
+  - SceneManager
   layers:
   - Default
   - TransparentFX
