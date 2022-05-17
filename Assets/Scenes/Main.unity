@@ -1150,7 +1150,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1265782656}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SpecialFeed, Assembly-CSharp
         m_MethodName: LeftButton
         m_Mode: 1
@@ -3761,7 +3761,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1265782656}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SpecialFeed, Assembly-CSharp
         m_MethodName: selectSpecialFeed
         m_Mode: 1
@@ -4214,7 +4214,7 @@ GameObject:
   - component: {fileID: 1265782652}
   - component: {fileID: 1265782653}
   - component: {fileID: 1265782655}
-  - component: {fileID: 1265782656}
+  - component: {fileID: 1265782657}
   m_Layer: 0
   m_Name: FeedManager
   m_TagString: FeedManager
@@ -4303,7 +4303,7 @@ MonoBehaviour:
   - {fileID: 195431356}
   - {fileID: 1804488207}
   - {fileID: 949815263}
---- !u!114 &1265782656
+--- !u!114 &1265782657
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5085,7 +5085,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1265782656}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SpecialFeed, Assembly-CSharp
         m_MethodName: RightButton
         m_Mode: 1

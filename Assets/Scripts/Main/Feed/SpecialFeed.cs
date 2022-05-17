@@ -58,7 +58,7 @@ public class SpecialFeed : MonoBehaviour
             GameManager.instance.specialFeedCount = feedCount;
 
             selectCount = 0;        //선택한 먹이 개수 갱신
-            countText.text = selectCount + "개";    
+            countText.text = selectCount + "개";
 
             GameObject.FindGameObjectWithTag("GameManager").GetComponent<TopBarText>().SetSpecialFeedText(feedCount);   //상단바 특제 먹이 개수 갱신
         }
