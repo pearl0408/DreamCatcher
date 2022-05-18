@@ -1,0 +1,2 @@
+C:\Users\roskf\Desktop\UnityGames\DreamCatcher\obj\Debug\Assembly-CSharp.csproj.AssemblyReference.cache
+C:\Users\roskf\Desktop\UnityGames\DreamCatcher\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
