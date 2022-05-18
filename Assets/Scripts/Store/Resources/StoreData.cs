@@ -33,7 +33,7 @@ public class StoreData : MonoBehaviour
         int productCnt = 1; //상품 카테고리 시작 번호
         for (int i = 0; i < curGoodsData.goodsCount; i++, productCnt += 5)
         {
-            int goodsLevel = curGoodsData.goodsList[i].goodsLevel;  //상품 레벨
+            int goodsLevel = curGoodsData.goodsList[i].goodsLevel + 1;  //상품 레벨
             goodsContents[i].transform.GetChild(4).GetChild(1).gameObject.GetComponent<Text>().text = data[productCnt + goodsLevel]["Effect"].ToString();   //상품 이름 불러옴
             goodsContents[i].transform.GetChild(6).GetChild(2).gameObject.GetComponent<Text>().text = data[productCnt + goodsLevel]["Gold"].ToString();     //상품 가격 불러옴
             currentCost[i] = int.Parse(data[productCnt + goodsLevel]["Gold"].ToString());   //구매를 위해 상품별 가격만 따로 저장
