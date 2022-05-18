@@ -33,11 +33,11 @@ public class StoreData : MonoBehaviour
         int productCnt = 1; //상품 카테고리 시작 번호
         for (int i = 0; i < curGoodsData.goodsCount; i++, productCnt += 5)
         {
-            int goodsLevel = curGoodsData.goodsList[i].goodsLevel + 1;  //상품 레벨
-            goodsContents[i].transform.GetChild(4).GetChild(1).gameObject.GetComponent<Text>().text = data[productCnt + goodsLevel]["Effect"].ToString();   //상품 이름 불러옴
+            int goodsLevel = curGoodsData.goodsList[i].goodsLevel;  //상품 레벨
+            goodsContents[i].transform.GetChild(4).GetChild(1).gameObject.GetComponent<Text>().text = data[productCnt + goodsLevel]["Effect"].ToString();   //상품 효과 불러옴
             goodsContents[i].transform.GetChild(6).GetChild(2).gameObject.GetComponent<Text>().text = data[productCnt + goodsLevel]["Gold"].ToString();     //상품 가격 불러옴
             currentCost[i] = int.Parse(data[productCnt + goodsLevel]["Gold"].ToString());   //구매를 위해 상품별 가격만 따로 저장
-            goodsContents[i].transform.GetChild(1).gameObject.GetComponent<Image>().sprite = goodsImages[i].imageList[goodsLevel]; //상품 이미지 불러옴
+            goodsContents[i].transform.GetChild(1).gameObject.GetComponent<Image>().sprite = goodsImages[i].imageList[goodsLevel + 1]; //상품 이미지 불러옴
         }
     }
     
@@ -63,7 +63,7 @@ public class StoreData : MonoBehaviour
             //상품 구매
             SpendGold(currentCost[0]);  //보유 골드 감소
             AddGoodsLevel(0);   //상품 레벨 증가
-            GameObject.FindGameObjectWithTag("SceneManager").GetComponent<TopBarText>().UpdateText();   //상단바 업데이트
+            GameObject.FindGameObjectWithTag("TopBar").GetComponent<TopBarText>().UpdateText();   //상단바 업데이트
             UpdateStoreData(data_Store);    //상점 업데이트
         }
     }
@@ -77,7 +77,7 @@ public class StoreData : MonoBehaviour
             //상품 구매
             SpendGold(currentCost[1]);  //보유 골드 감소
             AddGoodsLevel(1);   //상품 레벨 증가
-            GameObject.FindGameObjectWithTag("SceneManager").GetComponent<TopBarText>().UpdateText();   //상단바 업데이트
+            GameObject.FindGameObjectWithTag("TopBar").GetComponent<TopBarText>().UpdateText();   //상단바 업데이트
             UpdateStoreData(data_Store);    //상점 업데이트
         }
     }
@@ -91,7 +91,7 @@ public class StoreData : MonoBehaviour
             //상품 구매
             SpendGold(currentCost[2]);  //보유 골드 감소
             AddGoodsLevel(2);   //상품 레벨 증가
-            GameObject.FindGameObjectWithTag("SceneManager").GetComponent<TopBarText>().UpdateText();   //상단바 업데이트
+            GameObject.FindGameObjectWithTag("TopBar").GetComponent<TopBarText>().UpdateText();   //상단바 업데이트
             UpdateStoreData(data_Store);    //상점 업데이트
         }
     }

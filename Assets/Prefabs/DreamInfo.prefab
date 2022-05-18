@@ -550,7 +550,7 @@ RectTransform:
   - {fileID: 1246991068789178993}
   - {fileID: 1246991068902857788}
   m_Father: {fileID: 7920212730380630222}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1031,7 +1031,7 @@ RectTransform:
   - {fileID: 1246991069134472914}
   - {fileID: 1246991070012747120}
   m_Father: {fileID: 7920212730380630222}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1258,11 +1258,11 @@ RectTransform:
   m_Children:
   - {fileID: 7920212730275596595}
   m_Father: {fileID: 7920212730380630222}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -226.33594}
+  m_AnchoredPosition: {x: 0, y: -382}
   m_SizeDelta: {x: 1440, y: 149.631}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7920212729005035302
@@ -1392,7 +1392,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 61b149b91a6e0154399bb78e6a0f6b68, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d378dc5117e997c4fa0cf59e1e405006, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1447,8 +1447,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CSVBirdInfoLoad, Assembly-CSharp
-        m_MethodName: BirdInfoBack
+        m_TargetAssemblyTypeName: CSVDreamLoad, Assembly-CSharp
+        m_MethodName: DreamInfoBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1468,7 +1468,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7920212730380630222}
   - component: {fileID: 7920212730380630208}
-  - component: {fileID: 7920212730380630223}
   m_Layer: 5
   m_Name: DreamInfo
   m_TagString: Untagged
@@ -1487,6 +1486,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4322611316361001671}
   - {fileID: 7920212729005035299}
   - {fileID: 1246991068813548162}
   - {fileID: 1246991069994626955}
@@ -1506,13 +1506,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7920212730380630221}
   m_CullTransparentMesh: 1
---- !u!114 &7920212730380630223
+--- !u!1 &8947473150824674389
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4322611316361001671}
+  - component: {fileID: 3401630301609250899}
+  - component: {fileID: 5454288986817322140}
+  m_Layer: 5
+  m_Name: BackGround
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4322611316361001671
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8947473150824674389}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7920212730380630222}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -75}
+  m_SizeDelta: {x: 1440, y: 2235}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3401630301609250899
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8947473150824674389}
+  m_CullTransparentMesh: 1
+--- !u!114 &5454288986817322140
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7920212730380630221}
+  m_GameObject: {fileID: 8947473150824674389}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}

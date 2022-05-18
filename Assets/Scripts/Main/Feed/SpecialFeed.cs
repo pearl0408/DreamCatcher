@@ -60,6 +60,7 @@ public class SpecialFeed : MonoBehaviour
             feedCount = feedCount - selectCount;    //특제 먹이 개수 갱신
             curPlayerData.dataList[2].dataNumber = feedCount;
             GameObject.FindGameObjectWithTag("GameManager").GetComponent<TopBarJSON>().DataSaveText(curPlayerData);   //변경사항 json으로 저장
+            GameObject.FindGameObjectWithTag("TopBar").GetComponent<TopBarText>().UpdateText();   //상단바 업데이트
 
             selectCount = 0;        //선택한 먹이 개수 갱신
             countText.text = selectCount + "개";

@@ -13,12 +13,12 @@ public class SceneChange : MonoBehaviour
 
     public void ChangeMakingScene()
     {
-        //SceneManager.LoadScene("Store");
+        SceneManager.LoadScene("CollectionDream");
     }
    
     public void ChangeGuideScene()
     {
-        //SceneManager.LoadScene("Store");
+        SceneManager.LoadScene("CollectionBook");
     }
 
     public void ChangeStoreScene()
