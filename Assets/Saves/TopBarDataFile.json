@@ -7,11 +7,11 @@
         },
         {
             "dataName": "Gold",
-            "dataNumber": 3000
+            "dataNumber": 5000
         },
         {
             "dataName": "SpecialFeed",
-            "dataNumber": 3
+            "dataNumber": 0
         }
     ]
 }

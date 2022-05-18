@@ -792,8 +792,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 548, y: -719}
-  m_SizeDelta: {x: 600, y: 500}
+  m_AnchoredPosition: {x: 689, y: -671}
+  m_SizeDelta: {x: 600, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &236901354
 MonoBehaviour:
@@ -815,7 +815,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 091a7d4c4a721ed49bd7aceabfe14cfd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 71087dd3a2e4f674bb8c72019a6e7eb4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -996,7 +996,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1265782657}
         m_TargetAssemblyTypeName: SpecialFeed, Assembly-CSharp
         m_MethodName: LeftButton
         m_Mode: 1
@@ -1406,7 +1406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3174290554763663881, guid: 611c3c0f494f90948881d47a9e19324f, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3174290554763663881, guid: 611c3c0f494f90948881d47a9e19324f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2230,7 +2230,7 @@ GameObject:
   - component: {fileID: 794227498}
   - component: {fileID: 794227500}
   m_Layer: 0
-  m_Name: SceneManager
+  m_Name: GoodsManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2269,11 +2269,11 @@ MonoBehaviour:
   - {fileID: 1801678846}
   goodsImages:
   - imageList:
-    - {fileID: 21300000, guid: 8861b5b4cd671564086cbd2eabfd78d2, type: 3}
-    - {fileID: 21300000, guid: 632a783cf2688664daa8f6fe4d1cdca0, type: 3}
-    - {fileID: 21300000, guid: 632a783cf2688664daa8f6fe4d1cdca0, type: 3}
-    - {fileID: 21300000, guid: 632a783cf2688664daa8f6fe4d1cdca0, type: 3}
-    - {fileID: 21300000, guid: 632a783cf2688664daa8f6fe4d1cdca0, type: 3}
+    - {fileID: 21300000, guid: 7d32afeb20957aa40ae79bac2e74bf04, type: 3}
+    - {fileID: 21300000, guid: f83723316ca89824ab85780136ab541d, type: 3}
+    - {fileID: 21300000, guid: 4892968c2a911724a9c7dc014faa197d, type: 3}
+    - {fileID: 21300000, guid: 4892968c2a911724a9c7dc014faa197d, type: 3}
+    - {fileID: 21300000, guid: 4892968c2a911724a9c7dc014faa197d, type: 3}
   - imageList:
     - {fileID: 21300000, guid: c09c38027e4484d47a806eb59380b80b, type: 3}
     - {fileID: 21300000, guid: bf5caeee21d113344bf986dd149b381a, type: 3}
@@ -2281,7 +2281,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: bde3bf39c07bc0c4faf551d6ba72a499, type: 3}
     - {fileID: 21300000, guid: bde3bf39c07bc0c4faf551d6ba72a499, type: 3}
   - imageList:
-    - {fileID: 21300000, guid: 091a7d4c4a721ed49bd7aceabfe14cfd, type: 3}
+    - {fileID: 21300000, guid: 71087dd3a2e4f674bb8c72019a6e7eb4, type: 3}
     - {fileID: 21300000, guid: 4e4b3f724be566444bc4a578c32a1e83, type: 3}
     - {fileID: 21300000, guid: 5c641bd688c56564ea5890ba6eed2536, type: 3}
     - {fileID: 21300000, guid: c0745767bf026ad41a583ed11f782c74, type: 3}
@@ -2853,8 +2853,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 165}
-  m_SizeDelta: {x: 350, y: 600}
+  m_AnchoredPosition: {x: 0, y: 120}
+  m_SizeDelta: {x: 1000, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1074330279
 MonoBehaviour:
@@ -2876,7 +2876,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8861b5b4cd671564086cbd2eabfd78d2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7d32afeb20957aa40ae79bac2e74bf04, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3014,7 +3014,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1265782657}
         m_TargetAssemblyTypeName: SpecialFeed, Assembly-CSharp
         m_MethodName: selectSpecialFeed
         m_Mode: 1
@@ -3908,8 +3908,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 165}
-  m_SizeDelta: {x: 350, y: 600}
+  m_AnchoredPosition: {x: 0, y: 120}
+  m_SizeDelta: {x: 1000, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1782853902
 MonoBehaviour:
@@ -3931,7 +3931,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 382b310df8abf6147b26a97fb926f78b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 028df7c5036cb8348b43d463487188cd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4032,7 +4032,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1265782657}
         m_TargetAssemblyTypeName: SpecialFeed, Assembly-CSharp
         m_MethodName: RightButton
         m_Mode: 1
@@ -4398,8 +4398,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 180, y: -520}
-  m_SizeDelta: {x: 1000, y: 550}
+  m_AnchoredPosition: {x: 302.1161, y: -557}
+  m_SizeDelta: {x: 1244.2322, y: 682.465}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1837354300
 MonoBehaviour:
@@ -5731,7 +5731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8279302668064500052, guid: 8de1fc82676438843aef9038fc952f7a, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8279302668064500052, guid: 8de1fc82676438843aef9038fc952f7a, type: 3}
       propertyPath: m_AnchorMax.x

@@ -4956,11 +4956,11 @@ MonoBehaviour:
   - {fileID: 2127749945}
   goodsImages:
   - imageList:
-    - {fileID: 21300000, guid: 632a783cf2688664daa8f6fe4d1cdca0, type: 3}
-    - {fileID: 21300000, guid: 632a783cf2688664daa8f6fe4d1cdca0, type: 3}
-    - {fileID: 21300000, guid: 632a783cf2688664daa8f6fe4d1cdca0, type: 3}
-    - {fileID: 21300000, guid: 632a783cf2688664daa8f6fe4d1cdca0, type: 3}
-    - {fileID: 21300000, guid: 632a783cf2688664daa8f6fe4d1cdca0, type: 3}
+    - {fileID: 21300000, guid: 7d32afeb20957aa40ae79bac2e74bf04, type: 3}
+    - {fileID: 21300000, guid: f83723316ca89824ab85780136ab541d, type: 3}
+    - {fileID: 21300000, guid: 4892968c2a911724a9c7dc014faa197d, type: 3}
+    - {fileID: 21300000, guid: 4892968c2a911724a9c7dc014faa197d, type: 3}
+    - {fileID: 21300000, guid: 4892968c2a911724a9c7dc014faa197d, type: 3}
   - imageList:
     - {fileID: 21300000, guid: c09c38027e4484d47a806eb59380b80b, type: 3}
     - {fileID: 21300000, guid: bf5caeee21d113344bf986dd149b381a, type: 3}
