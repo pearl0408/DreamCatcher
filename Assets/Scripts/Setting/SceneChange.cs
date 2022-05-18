@@ -11,6 +11,16 @@ public class SceneChange : MonoBehaviour
         SceneManager.LoadScene("Main");
     }
 
+    public void ChangeMakingScene()
+    {
+        //SceneManager.LoadScene("Store");
+    }
+   
+    public void ChangeGuideScene()
+    {
+        //SceneManager.LoadScene("Store");
+    }
+
     public void ChangeStoreScene()
     {
         SceneManager.LoadScene("Store");
