@@ -123,6 +123,6 @@ public class CSVBirdInfoLoad : MonoBehaviour
     // 꿈 도감으로 가기
     public void GoDreamCollection()
     {
-        //SceneManager.LoadScene("");
+        SceneManager.LoadScene("CollectionDream");
     }
 }
