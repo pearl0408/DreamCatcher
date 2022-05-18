@@ -12,13 +12,16 @@ public class SpecialFeed : MonoBehaviour
     [SerializeField] private int selectCount;    //선택한 먹이 수
     [SerializeField] private float decreaseTime;   //감소시키는 시간
 
+    [SerializeField] private TopBarContainer curPlayerData;   //상품 정보
+
     [Space]
     [Header("Feed Text")]
     [SerializeField] private Text countText;      //먹이 개수 텍스트
 
-    void Start()
+    void OnEnable()
     {
-        feedCount = GameManager.instance.specialFeedCount;  //특제 먹이 개수를 가져옴
+        curPlayerData = GameManager.instance.loadTopBarData;    //플레이어의 상단바 데이터 정보를 가져옴
+        feedCount = curPlayerData.dataList[2].dataNumber;  //특제 먹이 개수를 가져옴
         selectCount = 0;
         decreaseTime = 5;   //*특제먹이 감소 시간은 추후 수정할 예정
 
@@ -55,7 +58,8 @@ public class SpecialFeed : MonoBehaviour
             this.gameObject.GetComponent<FeedTimer>().UseSpecialFeed(decrease);     //특제 먹이 사용(남은 시간 감소)
 
             feedCount = feedCount - selectCount;    //특제 먹이 개수 갱신
-            GameManager.instance.specialFeedCount = feedCount;
+            curPlayerData.dataList[2].dataNumber = feedCount;
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<TopBarJSON>().DataSaveText(curPlayerData);   //변경사항 json으로 저장
 
             selectCount = 0;        //선택한 먹이 개수 갱신
             countText.text = selectCount + "개";

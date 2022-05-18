@@ -10,13 +10,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [Header("Game Data")]
-
-    //공용으로 사용할 게임 데이터
-    public int dreamMable;  //꿈 구슬 수
-    public int playerGold;     //플레이어 골드
-    public int specialFeedCount;    //특제 먹이 개수
-
     public GoodsContainer loadGoodsData;  //상품(보조도구) 레벨 데이터
+    public TopBarContainer loadTopBarData;  //상단바 데이터(꿈구슬, 골드, 특제먹이) 개수 데이터
 
     void Awake()
     {
@@ -42,10 +37,6 @@ public class GameManager : MonoBehaviour
         //초기화 함수
 
         loadGoodsData = this.gameObject.GetComponent<GoodsJSON>().GetGoodsData();   //상품 데이터 가져오기
-
-        //스페셜먹이, 돈, 꿈구슬 개수도 json으로 수정
-        dreamMable = 3;
-        playerGold = 10000;
-        specialFeedCount = 3;
+        loadTopBarData = this.gameObject.GetComponent<TopBarJSON>().GetTopBarData();    //상단바 데이터 가져오기
     }
 }

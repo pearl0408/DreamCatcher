@@ -1,0 +1,17 @@
+{
+    "dataCount": 3,
+    "dataList": [
+        {
+            "dataName": "DreamMarble",
+            "dataNumber": 0
+        },
+        {
+            "dataName": "Gold",
+            "dataNumber": 7000
+        },
+        {
+            "dataName": "SpecialFeed",
+            "dataNumber": 3
+        }
+    ]
+}

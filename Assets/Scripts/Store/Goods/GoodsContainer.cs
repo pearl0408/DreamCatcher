@@ -20,13 +20,13 @@ public class GoodsContainer
 {
     public GoodsContainer()
     {
-        resetGoodsData();
+        ResetGoodsData();
     }
 
     public int goodsCount;  //상품(보조도구) 종류 개수
     public GoodsData[] goodsList;  //상품(보조도구 정보 리스트)
 
-    public void resetGoodsData()
+    public void ResetGoodsData()
     {
         goodsCount = 4; //상품의 개수 *소프트코딩으로 수정이 가능할지 고민..
 
