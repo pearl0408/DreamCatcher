@@ -129,6 +129,6 @@ public class CSVDreamLoad : MonoBehaviour
     // 새 도감으로 가기
     public void GoBirdColl()
     {
-        //SceneManager.LoadScene("");
+        SceneManager.LoadScene("CollectionBook");
     }
 }
