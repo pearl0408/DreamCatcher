@@ -11,11 +11,11 @@
         },
         {
             "goodsName": "Box",
-            "goodsLevel": 1
+            "goodsLevel": 0
         },
         {
             "goodsName": "Thread",
-            "goodsLevel": 1
+            "goodsLevel": 2
         }
     ]
 }

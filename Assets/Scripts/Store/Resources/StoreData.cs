@@ -106,7 +106,7 @@ public class StoreData : MonoBehaviour
             //상품 구매
             SpendGold(currentCost[3]);  //보유 골드 감소
             AddGoodsLevel(3);   //상품 레벨 증가
-            GameObject.FindGameObjectWithTag("SceneManager").GetComponent<TopBarText>().UpdateText();   //상단바 업데이트
+            GameObject.FindGameObjectWithTag("TopBar").GetComponent<TopBarText>().UpdateText();   //상단바 업데이트
             UpdateStoreData(data_Store);    //상점 업데이트
         }
     }

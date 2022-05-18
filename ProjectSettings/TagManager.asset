@@ -8,6 +8,7 @@ TagManager:
   - Feed
   - GameManager
   - SceneManager
+  - TopBar
   layers:
   - Default
   - TransparentFX
