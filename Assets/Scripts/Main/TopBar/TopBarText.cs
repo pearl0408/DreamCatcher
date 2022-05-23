@@ -22,7 +22,7 @@ public class TopBarText : MonoBehaviour
     public void UpdateText()
     {
         //텍스트들을 업데이트 하는 함수
-
+        GameManager.instance.ResetGameManager();
         curPlayerData = GameManager.instance.loadTopBarData;    //플레이어의 상단바 데이터 정보를 가져옴
 
         DreamMarbleText.text = curPlayerData.dataList[0].dataNumber.ToString();

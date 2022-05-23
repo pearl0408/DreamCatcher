@@ -17,7 +17,7 @@ public class StoreData : MonoBehaviour
     private int[] currentCost = new int[4]; //현재 가격
 
 
-    private void OnEnable()
+    private void Start()
     {
         curGoodsData = GameManager.instance.loadGoodsData;   //플레이어의 상품 정보를 가져옴
         curPlayerData = GameManager.instance.loadTopBarData;    //플레이어의 상단바 데이터 정보를 가져옴

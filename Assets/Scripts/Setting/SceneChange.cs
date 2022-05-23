@@ -13,7 +13,7 @@ public class SceneChange : MonoBehaviour
 
     public void ChangeMakingScene()
     {
-        SceneManager.LoadScene("CollectionDream");
+        //SceneManager.LoadScene("");
     }
    
     public void ChangeGuideScene()

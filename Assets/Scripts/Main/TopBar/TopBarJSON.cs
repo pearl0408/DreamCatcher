@@ -11,7 +11,8 @@ public class TopBarJSON : MonoBehaviour
 
     private void Awake()
     {
-        TopBarJSON.path = Application.dataPath + "/Saves/";  //파일 경로 설정
+        //TopBarJSON.path = Application.dataPath + "/Saves/";  //파일 경로 설정(유니티 에디터 버전)
+        TopBarJSON.path = Application.persistentDataPath;   //pc 빌드 경로
     }
 
     public void LoadTopBarData()

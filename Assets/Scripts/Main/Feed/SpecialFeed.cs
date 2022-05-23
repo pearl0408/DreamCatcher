@@ -18,7 +18,7 @@ public class SpecialFeed : MonoBehaviour
     [Header("Feed Text")]
     [SerializeField] private Text countText;      //먹이 개수 텍스트
 
-    void OnEnable()
+    void Start()
     {
         curPlayerData = GameManager.instance.loadTopBarData;    //플레이어의 상단바 데이터 정보를 가져옴
         feedCount = curPlayerData.dataList[2].dataNumber;  //특제 먹이 개수를 가져옴

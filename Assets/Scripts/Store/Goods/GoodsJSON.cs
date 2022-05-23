@@ -11,7 +11,8 @@ public class GoodsJSON : MonoBehaviour
 
     private void Awake()
     {
-        GoodsJSON.path = Application.dataPath + "/Saves/";  //파일 경로 설정
+        //GoodsJSON.path = Application.dataPath + "/Saves/";  //파일 경로 설정(유니티 에디터 버전)
+        GoodsJSON.path = Application.persistentDataPath;   //pc 빌드 경로
     }
 
     public void LoadGoodsData()

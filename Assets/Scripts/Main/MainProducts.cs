@@ -10,9 +10,9 @@ public class MainProducts : MonoBehaviour
 
     private GoodsContainer curGoodsData;   //플레이어의 저장된 상품 레벨 정보
 
-    void OnEnable()     //씬이 활성화 될 때마다
+    private void Start()
     {
-        ResetMainProducts();    //상품 정보 업데이트
+        ResetMainProducts(); //상품 정보 업데이트
     }
 
     public void ResetMainProducts()
