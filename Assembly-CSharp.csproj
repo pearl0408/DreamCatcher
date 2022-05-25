@@ -48,7 +48,6 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Main\TopBar\TopBarJSON.cs" />
-     <Compile Include="Assets\Scripts\Store\Resources\CSVReader.cs" />
      <Compile Include="Assets\Scripts\Main\Cloud\Cloud.cs" />
      <Compile Include="Assets\Scripts\Main\Feed\BirdTouch.cs" />
      <Compile Include="Assets\Scripts\Main\TopBar\TopBarText.cs" />
@@ -59,14 +58,15 @@
      <Compile Include="Assets\Scripts\Main\Cloud\Poolable.cs" />
      <Compile Include="Assets\Scripts\Main\Feed\FeedInfo.cs" />
      <Compile Include="Assets\Scripts\Main\Feed\FeedManager.cs" />
-     <Compile Include="Assets\Scripts\Store\Resources\StoreData.cs" />
-     <Compile Include="Assets\Scripts\Store\Goods\GoodsJSON.cs" />
+     <Compile Include="Assets\Scripts\Store\StoreData.cs" />
+     <Compile Include="Assets\Scripts\Store\GoodsJSON.cs" />
      <Compile Include="Assets\Scripts\Script_c\CSVDreamLoad.cs" />
      <Compile Include="Assets\Scripts\Main\Cloud\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\Main\Feed\RackTrigger.cs" />
+     <Compile Include="Assets\Scripts\Main\Feed\BirdImage.cs" />
      <Compile Include="Assets\Scripts\Main\Feed\FeedPanel.cs" />
      <Compile Include="Assets\Scripts\Script_c\CollectionBookUIManager.cs" />
-     <Compile Include="Assets\Scripts\Store\Goods\GoodsContainer.cs" />
+     <Compile Include="Assets\Scripts\Store\GoodsContainer.cs" />
      <Compile Include="Assets\Scripts\Main\MainProducts.cs" />
      <Compile Include="Assets\Scripts\Main\TopBar\TopBarContainer.cs" />
      <Compile Include="Assets\Scripts\Store\CategorySelect.cs" />

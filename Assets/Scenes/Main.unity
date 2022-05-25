@@ -3579,6 +3579,7 @@ GameObject:
   - component: {fileID: 1265782653}
   - component: {fileID: 1265782655}
   - component: {fileID: 1265782657}
+  - component: {fileID: 1265782656}
   m_Layer: 0
   m_Name: FeedManager
   m_TagString: FeedManager
@@ -3667,6 +3668,18 @@ MonoBehaviour:
   - {fileID: 195431356}
   - {fileID: 1804488207}
   - {fileID: 949815263}
+--- !u!114 &1265782656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265782650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 300db52008d717d45a6c6232865086d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1265782657
 MonoBehaviour:
   m_ObjectHideFlags: 0
