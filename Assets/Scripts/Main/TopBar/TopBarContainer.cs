@@ -34,6 +34,6 @@ public class TopBarContainer
 
         dataList[0] = new TopBarData("DreamMarble", 0);
         dataList[1] = new TopBarData("Gold", 30000);
-        dataList[2] = new TopBarData("SpecialFeed", 5);
+        dataList[2] = new TopBarData("SpecialFeed", 100);
     }
 }

@@ -20,13 +20,9 @@ public class FeedTimer : MonoBehaviour
 
     private bool isSelected;     //먹이 선택 여부 변수
 
+    public GameObject bird;     //*새 이미지 정하는 곳에서 새 활성화하는 함수 만들어야할듯
 
-
-    //*임시로 나타나는 새(이후 다른 클래스에서 새 고유번호에 따라 이미지 변경되도록 수정)
-    //*여기서는 그 다른 클래스의 새 생성 함수만 호출할 것
-    public GameObject bird;
-
-    void Start()
+    void OnEnable()
     {
         this.isSelected = this.gameObject.GetComponent<FeedManager>().GetIsFeedSelected(); //먹이 선택 여부 가져옴
         if (isSelected) //선택된 먹이가 있다면
@@ -43,14 +39,34 @@ public class FeedTimer : MonoBehaviour
         {
             if (!timerText.gameObject.activeSelf)   //만약 타이머 텍스트가 비활성화 되어 있다면
             {
+                //SettingFeedTime();  //먹이 시간 설정
                 timerText.gameObject.SetActive(true); //텍스트 활성화
             }
 
             if (leftTime > 1)   //남은 시간이 0이 아니라면(더 기다려야 한다면)
             {
                 leftTime -= Time.deltaTime; //초마다 남은 시간 감소
-                timerText.text = Mathf.Floor(leftTime).ToString();    //타이머 텍스트 갱신(소수점 버리기)
+                //timerText.text = Mathf.Floor(leftTime).ToString();    //타이머 텍스트 갱신(소수점 버리기)
                 //*데이터 연동하며 시, 분, 초로 나오게 수정할 예정)
+
+                //시:분:초로 나오게
+                int hour = (int)leftTime / 3600; //시
+                float left = leftTime % 3600;  //시간을 나누고 남은 시간
+                int minute = (int)left / 60; //분  
+                left = left % 60;   //분을 나누고 남은 시간
+                int second = (int)left; //초
+
+                Mathf.Floor(second).ToString();  //초 소수점 버리기
+
+                if (minute < 10)
+                {
+                    timerText.text = hour + ":0" + minute + ":" + second;
+                }
+                else
+                {
+                    timerText.text = hour + ":" + minute + ":" + second;
+                }
+
             }
             else   //남은 시간이 0 이하라면(시간이 모두 지났다면)
             {
@@ -67,12 +83,30 @@ public class FeedTimer : MonoBehaviour
         }
     }
 
+    public void SettingFeedTime()
+    {
+        //새에 따라서 소요 시간을 설정하는 함수(도감에서 가져옴)
+
+        List<Dictionary<string, object>> data_birdInfo = CSVParser.ReadFromFile("BirdInfo");  //도감 데이터를 가져옴 
+        int selectedBirdNum = GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedManager>().GetSelectedBirdNum();    //새 번호를 불러옴
+
+        int birdStartTime = int.Parse(data_birdInfo[selectedBirdNum]["starttime"].ToString());  //도감에서 새의 시작 시간 데이터를 가져옴
+        Debug.Log("startTime: " + birdStartTime);
+        int birdEndTime = int.Parse(data_birdInfo[selectedBirdNum]["endtime"].ToString());  //도감에서 새의 끝 시간 데이터를 가져옴
+        Debug.Log("endTime: " + birdEndTime);
+
+        int randomTime = Random.Range(birdStartTime, birdEndTime + 1);    //랜덤 소요 시간을 정함
+        Debug.Log("rabdomTime: " + randomTime);
+
+        feedTime = leftTime = randomTime;   //먹이 시간을 설정
+    }
+
     public void SetFeedStartTime()
     {
         //타이머 시작 시간 설정
 
         this.startTime = System.DateTime.Now;    //현재 시간 가져옴
-        PlayerPrefs.SetString("startTime", startTime.ToString());   //시작 시간 저장 *이후 csv 파싱으로 해야하나?
+        PlayerPrefs.SetString("startTime", startTime.ToString());   //시작 시간 저장 *이후 JSON으로 해야하나?
         PlayerPrefs.Save();
     }
 

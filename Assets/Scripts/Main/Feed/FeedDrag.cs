@@ -51,7 +51,10 @@ public class FeedDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
             GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedRackMatch>().SelectFeed(feedNum);    //고유번호 먹이 활성화
 
             //새 종류와 먹이 시간 설정
-            int randomBird = GameObject.FindGameObjectWithTag("FeedManager").GetComponent<BirdImage>().SelectBirdType(feedNum);
+            int randomBird = GameObject.FindGameObjectWithTag("FeedManager").GetComponent<BirdImage>().SelectBirdType(feedNum); //확률에 따라 랜덤으로 뽑힌 새 번호
+            GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedManager>().SetSelectedBirdNum(randomBird);    //새 번호 저장
+            GameObject.FindGameObjectWithTag("FeedManager").GetComponent<BirdImage>().SelectBirdImage();    //새 이미지 변경(비활성화 상태)
+            GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedTimer>().SettingFeedTime();    //새 먹이 시간 설정
         }
 
         this.transform.position = defaultPosition;      //원위치로 돌아가기

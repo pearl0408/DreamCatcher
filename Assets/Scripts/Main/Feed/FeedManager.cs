@@ -10,6 +10,7 @@ public class FeedManager : MonoBehaviour
     [SerializeField] private int numberOfFeed = 4;      //총 먹이 개수 
     [SerializeField] private bool isSelected;   //먹이 선택 여부 변수
     [SerializeField] private int selectedFeedNum;       //선택된 먹이 번호
+    [SerializeField] private int selectedBirdNum;       //선택된 새 번호
 
     public void Start()
     {
@@ -54,5 +55,19 @@ public class FeedManager : MonoBehaviour
         //선택된 먹이 번호를 설정하는 함수
 
         selectedFeedNum = num;
+    }
+
+    public int GetSelectedBirdNum()
+    {
+        //선택된 새의 번호를 반환하는 함수
+
+        return selectedBirdNum;
+    }
+
+    public void SetSelectedBirdNum(int num)
+    {
+        //선택된 새의 번호를 설정하는 함수
+
+        selectedBirdNum = num;
     }
 }

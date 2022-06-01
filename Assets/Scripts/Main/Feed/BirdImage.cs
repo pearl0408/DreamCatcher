@@ -1,17 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BirdImage : MonoBehaviour
 {
-
     //새와 깃털 이미지를 수정하는 클래스
+    [Header("Bird Select")]
+
+    //[SerializeField] private int categoryCnt;    //먹이 카테고리 번호
+    [SerializeField] private int selectedBirdNum;    //확률에 따라 랜덤으로 정해진 새의 번호
+
+    [SerializeField] private GameObject viewBird;   //보여지는 새 오브젝트
+    [SerializeField] private Sprite[] birdImage; //새의 이미지 배열
+    [SerializeField] private Sprite[] birdFeatherImage;  //새 깃털의 이미지 배열
+
 
     void Start()
     {
-        //새를 활성화 했을 때 
-
-
+        selectedBirdNum = 0;
     }
 
     public int SelectBirdType(int feedNum)
@@ -36,9 +43,19 @@ public class BirdImage : MonoBehaviour
 
         int randomBird = Random.Range(0, 10);   //랜덤으로 새를 뽑기 위해 난수 생성(0~9 사이의 수 하나)
 
-        Debug.Log(randomBird);
-        Debug.Log(birdRandom[randomBird]);
-        return birdRandom[randomBird];  //선정된 랜덤 새
+        /*        Debug.Log(randomBird);      //랜덤 숫자
+                Debug.Log(birdRandom[randomBird]);  //뽑힌 새 번호*/
+
+        selectedBirdNum = birdRandom[randomBird] + categoryCnt;
+        return selectedBirdNum;  //선정된 랜덤 새
+    }
+
+    public void SelectBirdImage()
+    {
+        //새의 이미지를 정하는 함수
+
+        viewBird.gameObject.GetComponent<Image>().sprite = birdImage[selectedBirdNum];  //새의 이미지를 랜덤으로 정해진 새의 번호 이미지로 변경
+        viewBird.transform.GetChild(0).gameObject.GetComponent<Image>().sprite = birdFeatherImage[selectedBirdNum]; //새 깃털의 이미지를 랜덤으로 정해진 새의 번호 이미지로 변경
     }
 
     public int SettingCategoryCnt(int feedNum)

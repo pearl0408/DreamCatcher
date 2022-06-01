@@ -23,7 +23,7 @@ public class SpecialFeed : MonoBehaviour
         curPlayerData = GameManager.instance.loadTopBarData;    //플레이어의 상단바 데이터 정보를 가져옴
         feedCount = curPlayerData.dataList[2].dataNumber;  //특제 먹이 개수를 가져옴
         selectCount = 0;
-        decreaseTime = 5;   //*특제먹이 감소 시간은 추후 수정할 예정
+        decreaseTime = 300;   //*특제먹이 감소 시간은 추후 수정할 예정
 
         countText.text = selectCount + "개";
     }
