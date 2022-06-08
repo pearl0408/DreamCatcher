@@ -14,10 +14,9 @@ public class FeedManager : MonoBehaviour
 
     public void Start()
     {
-        //저장 데이터 읽어옴
-        //먹이 선택 여부 변수 읽어옴
 
-        isSelected = false;
+        //isSelected = false;
+        this.GetComponent<FeedTimer>().LoadFeedSaveData();  //먹이 저장 데이터 읽어옴
     }
 
 

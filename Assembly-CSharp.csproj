@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\Setting\GameManager.cs" />
      <Compile Include="Assets\Scripts\Main\Cloud\Poolable.cs" />
      <Compile Include="Assets\Scripts\Main\Feed\FeedInfo.cs" />
+     <Compile Include="Assets\Scripts\Main\Feed\TimerJSON.cs" />
      <Compile Include="Assets\Scripts\Main\Feed\FeedManager.cs" />
      <Compile Include="Assets\Scripts\Store\StoreData.cs" />
      <Compile Include="Assets\Scripts\Store\GoodsJSON.cs" />
@@ -65,6 +66,7 @@
      <Compile Include="Assets\Scripts\Main\Feed\RackTrigger.cs" />
      <Compile Include="Assets\Scripts\Main\Feed\BirdImage.cs" />
      <Compile Include="Assets\Scripts\Main\Feed\FeedPanel.cs" />
+     <Compile Include="Assets\Scripts\Main\Feed\TimerData.cs" />
      <Compile Include="Assets\Scripts\Script_c\CollectionBookUIManager.cs" />
      <Compile Include="Assets\Scripts\Store\GoodsContainer.cs" />
      <Compile Include="Assets\Scripts\Main\MainProducts.cs" />

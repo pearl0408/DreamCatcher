@@ -43,7 +43,6 @@ public class FeedDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
     public void OnEndDrag(PointerEventData eventData)
     {
         //드래그가 끝났을 때의 함수
-        //Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if (isTriggering)   //횟대와 충돌 중이라면
         {
@@ -55,6 +54,7 @@ public class FeedDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
             GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedManager>().SetSelectedBirdNum(randomBird);    //새 번호 저장
             GameObject.FindGameObjectWithTag("FeedManager").GetComponent<BirdImage>().SelectBirdImage();    //새 이미지 변경(비활성화 상태)
             GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedTimer>().SettingFeedTime();    //새 먹이 시간 설정
+            GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedTimer>().SetFeedStartTime();   //타이머 시작 시간 설정
         }
 
         this.transform.position = defaultPosition;      //원위치로 돌아가기

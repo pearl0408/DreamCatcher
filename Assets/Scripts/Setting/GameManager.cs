@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [Header("Game Data")]
     public GoodsContainer loadGoodsData;  //상품(보조도구) 레벨 데이터
     public TopBarContainer loadTopBarData;  //상단바 데이터(꿈구슬, 골드, 특제먹이) 개수 데이터
+    public TimerData timerData; //타이머 데이터(먹이 선택 여부, 먹이 놓은 시간)
 
     void Awake()
     {
@@ -38,5 +39,6 @@ public class GameManager : MonoBehaviour
 
         loadGoodsData = this.gameObject.GetComponent<GoodsJSON>().GetGoodsData();   //상품 데이터 가져오기
         loadTopBarData = this.gameObject.GetComponent<TopBarJSON>().GetTopBarData();    //상단바 데이터 가져오기
+        timerData = this.gameObject.GetComponent<TimerJSON>().GetTimerData();   //타이머 데이터 가져오기
     }
 }

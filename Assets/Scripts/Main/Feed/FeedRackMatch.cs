@@ -31,7 +31,7 @@ public class FeedRackMatch : MonoBehaviour
             SetActiveRackFeed(feedNum);     //횟대 먹이 활성화        
             this.gameObject.GetComponent<FeedManager>().SetIsFeedSelected(true);  //먹이 선택 여부 갱신
             this.gameObject.GetComponent<FeedManager>().SetSelectedFeedNum(feedNum);    //선택된 먹이 번호 설정
-            this.gameObject.GetComponent<FeedTimer>().SetFeedStartTime();   //타이머 시작 시간 설정
+            //this.gameObject.GetComponent<FeedTimer>().SetFeedStartTime();   //타이머 시작 시간 설정
 
             this.gameObject.GetComponent<FeedPanel>().ActiveFeedPanel(false);    //먹이 패널을 닫음
         }
