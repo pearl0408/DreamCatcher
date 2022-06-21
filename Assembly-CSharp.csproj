@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Setting\GameManager.cs" />
     <Compile Include="Assets\Scripts\Main\Cloud\Poolable.cs" />
     <Compile Include="Assets\Scripts\Main\Feed\FeedInfo.cs" />
+    <Compile Include="Assets\Scripts\Making\MakingUIManager.cs" />
     <Compile Include="Assets\Scripts\Main\Feed\FeedManager.cs" />
     <Compile Include="Assets\Scripts\Store\Resources\StoreData.cs" />
     <Compile Include="Assets\Scripts\Store\Goods\GoodsJSON.cs" />
@@ -87,7 +88,10 @@
     <Compile Include="Assets\Scripts\Script_c\CollectionDreamArrow.cs" />
     <Compile Include="Assets\Scripts\Main\Feed\FeedTimer.cs" />
     <Compile Include="Assets\Scripts\Main\Feed\FeedDrag.cs" />
-    <Compile Include="Assets\Scripts\Making\MakingUIManager.cs" />
+    <Compile Include="Assets\Scripts\Script_c\CreateWin\Line.cs" />
+    <Compile Include="Assets\Scripts\Script_c\CreateWin\LineCollider.cs" />
+    <Compile Include="Assets\Scripts\Script_c\CreateWin\DragPoint.cs" />
+    <Compile Include="Assets\Scripts\Script_c\CreateWin\HangPoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\JsonDotNet\link.xml" />

@@ -9,6 +9,7 @@ TagManager:
   - GameManager
   - SceneManager
   - TopBar
+  - DragPoint
   layers:
   - Default
   - TransparentFX
