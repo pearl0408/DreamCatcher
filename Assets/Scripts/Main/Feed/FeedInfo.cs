@@ -6,7 +6,7 @@ public class FeedInfo : MonoBehaviour
 {
     //먹이 정보 클래스
 
-    [Header("Feed Information")]
+    [Header("[Feed Information]")]
     [SerializeField] private int feedNumber;    //먹이 번호
 
 

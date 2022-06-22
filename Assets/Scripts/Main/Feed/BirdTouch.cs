@@ -4,16 +4,31 @@ using UnityEngine;
 
 public class BirdTouch : MonoBehaviour
 {
-    //»õ(Bird) ¿ÀºêÁ§Æ®¿¡ ÄÄÆ÷³ÍÆ®·Î ³ÖÀ» Å¬·¡½º
-    //»õ ÅÍÄ¡ ÀÌº¥Æ®(¹öÆ° ÀÌº¥Æ®)
-
+    //ìƒˆ(Bird) ì˜¤ë¸Œì íŠ¸ì— ì»´í¬ë„ŒíŠ¸ë¡œ ë„£ì„ í´ë˜ìŠ¤
+    //ìƒˆ í„°ì¹˜ ì´ë²¤íŠ¸(ë²„íŠ¼ ì´ë²¤íŠ¸)
 
     public void BirdTouchEvent()
     {
-        //»õ³ª ±êÅĞÀ» ÅÍÄ¡ÇÏ¸é »ç¶óÁö´Â ÇÔ¼ö
-        //*¾òÀº ±êÅĞ °³¼ö µ¥ÀÌÅÍ¿¡ Ãß°¡µÇµµ·Ï ¼öÁ¤ ÇÊ¿ä
+        //ìƒˆë‚˜ ê¹ƒí„¸ì„ í„°ì¹˜í•˜ë©´ ë„ê° ë°ì´í„°ì— ì¶”ê°€ë˜ê³  í™”ë©´ì—ì„œ ì‚¬ë¼ì§€ëŠ” í•¨ìˆ˜
 
-        this.gameObject.SetActive(false);       //»õ ¿ÀºêÁ§Æ® ºñÈ°¼ºÈ­
-        GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedManager>().SetIsFeedSelected(false);    //¸ÔÀÌ ¿ÀºêÁ§Æ® ºñÈ°¼ºÈ­
+        List<Dictionary<string, object>> data_birdInfo = CSVParser.ReadFromFile("BirdInfo");  //ë„ê° ë°ì´í„°ë¥¼ ê°€ì ¸ì˜´ 
+
+        int selectedBirdNumber = GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedManager>().GetSelectedBirdNum();  //ì„ íƒëœ ìƒˆ ë²ˆí˜¸ë¥¼ ê°€ì ¸ì˜´
+        Debug.Log("ìˆ˜ì •í•  ìƒˆ ë²ˆí˜¸: " + selectedBirdNumber);     //í™•ì¸ìš©
+        //Debug.Log("ì¦ê°€í•  ìƒˆ ì´ë¦„: " + (data_birdInfo[selectedBirdNumber]["name"].ToString()));     //í™•ì¸ìš©
+
+        int appearCnt = int.Parse(data_birdInfo[selectedBirdNumber]["appear"].ToString());   //ë“±ì¥ íšŸìˆ˜ ë¶ˆëŸ¬ì˜´
+        Debug.Log("ì¦ê°€ ì „ íšŸìˆ˜: " + appearCnt);     //í™•ì¸ìš©
+
+        appearCnt += 1;
+        data_birdInfo[selectedBirdNumber]["appear"] = appearCnt.ToString(); //ë„ê°ì— ì¦ê°€í•œ ë“±ì¥ íšŸìˆ˜ ë°˜ì˜
+
+        appearCnt = int.Parse(data_birdInfo[selectedBirdNumber]["appear"].ToString());   //í™•ì¸ìš©
+        Debug.Log("ì¦ê°€ í›„ íšŸìˆ˜: " + appearCnt);     //í™•ì¸ìš©
+
+        CSVParser.WriteFromFile("BirdInfo", data_birdInfo); //ë„ê° ì €ì¥
+
+        this.gameObject.SetActive(false);       //ìƒˆ ì˜¤ë¸Œì íŠ¸ ë¹„í™œì„±í™”
+        GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedManager>().SetIsFeedSelected(false);    //ë¨¹ì´ ì˜¤ë¸Œì íŠ¸ ë¹„í™œì„±í™”
     }
 }

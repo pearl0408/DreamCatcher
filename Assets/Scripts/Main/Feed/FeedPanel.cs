@@ -6,9 +6,9 @@ public class FeedPanel : MonoBehaviour
 {
     // 먹이 선택 창, 특제 먹이 사용 창을 여는 클래스
 
-    [Header("Feed Panel")]
-    [SerializeField] private GameObject Feed_Panel;     //먹이 선택 패널
-    [SerializeField] private GameObject SpecialFeed_Panel;     //특제 먹이 패널
+    [Header("[Feed Panel]")]
+    public GameObject Feed_Panel;     //먹이 선택 패널
+    public GameObject SpecialFeed_Panel;     //특제 먹이 패널
 
     public void OpenFeedPanel()
     {

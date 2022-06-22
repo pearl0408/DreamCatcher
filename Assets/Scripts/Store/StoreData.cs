@@ -7,14 +7,13 @@ public class StoreData : MonoBehaviour
 {
     //상점 CSV 파일의 데이터를 가져오는 클래스
 
-    [Header("Store Product")]
-    [SerializeField] private GameObject[] goodsContents;   //상품 오브젝트 배열(횃대, 화분, 상자, 실)
-    [SerializeField] private GoodsContainer curGoodsData;   //상품 정보
-    [SerializeField] private TopBarContainer curPlayerData;   //플레이어 데이터 정보
-    [SerializeField] private SpriteArray[] goodsImages; //상품 이미지 배열
+    [Header("[Store Product]")]
+    public GameObject[] goodsContents;   //상품 오브젝트 배열(횃대, 화분, 상자, 실)
+    public SpriteArray[] goodsImages; //상품 이미지 배열
+    [SerializeField] private int[] currentCost = new int[4]; //현재 가격
 
-
-    private int[] currentCost = new int[4]; //현재 가격
+    private GoodsContainer curGoodsData;   //상품 정보
+    private TopBarContainer curPlayerData;   //플레이어 데이터 정보
 
 
     private void Start()

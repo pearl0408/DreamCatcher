@@ -7,11 +7,10 @@ public class ObjectPool : MonoBehaviour
     //Object Pooling을 구현하는 클래스
     //객체 생성 -> 비활성화 후 스택에 푸쉬 -> 활성화 후 팝
 
-    [Header ("Object Setting")]
+    [Header ("[Object Setting]")]
     [SerializeField] private Poolable[] poolObj;     //생성할 오브젝트 배열(여러 오브젝트 랜덤 생성)
     [SerializeField] private int allocateCount = 5;  //생성할 오브젝트 개수
-
-    private int createNum = 0;      //랜덤 생성할 오브젝트 번호
+    [SerializeField] private int createNum = 0;      //랜덤 생성할 오브젝트 번호
     private int createNum_start, createNum_end; //랜덤 생성할 오브젝트 번호 범위
 
     private Stack<Poolable> poolStack = new Stack<Poolable>();
@@ -19,6 +18,7 @@ public class ObjectPool : MonoBehaviour
     void Start()
     {
         //랜덤 생성할 오브젝트 번호값 초기화(시작은 0, 끝은 배열의 요소 개수)
+
         createNum_start = 0;
         createNum_end = poolObj.Length;
 
@@ -27,6 +27,8 @@ public class ObjectPool : MonoBehaviour
 
     public void Allocate()
     {
+        //오브젝트 풀 스택에 오브젝트를 추가하는 함수
+
         for (int i = 0; i < allocateCount; i++)
         {
             createNum = RandomNumber(createNum_start, createNum_end); //생성할 오브젝트 번호 랜덤 생성
@@ -65,8 +67,6 @@ public class ObjectPool : MonoBehaviour
     public bool IsInactiveObject()
     {
         //비활성화된 오브젝트 여부를 반환하는 함수
-        //stack에서 바로 empty() 가능한지 시간되면 확인 해볼 것
-        //poolStack[i].gameObject.activeInHierarchy == false
 
         bool isInactive = false;     //비활성화된 오브젝트 여부
         if (poolStack.Count != 0)  //하이어라키 창에서 오브젝트가 비활성화 되어있다면

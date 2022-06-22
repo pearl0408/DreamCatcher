@@ -5,95 +5,89 @@ using UnityEngine.UI;
 
 public class BirdImage : MonoBehaviour
 {
-    //»õ¿Í ±êÅĞ ÀÌ¹ÌÁö¸¦ ¼öÁ¤ÇÏ´Â Å¬·¡½º
-    [Header("Bird Select")]
+    //ìƒˆì™€ ê¹ƒí„¸ ì´ë¯¸ì§€ë¥¼ ìˆ˜ì •í•˜ëŠ” í´ë˜ìŠ¤
+    [Header("[Bird Select]")]
+    [SerializeField] private int selectedBirdNum = 0;    //í™•ë¥ ì— ë”°ë¼ ëœë¤ìœ¼ë¡œ ì •í•´ì§„ ìƒˆì˜ ë²ˆí˜¸
+    [SerializeField] private bool specialBirdAppear = false;    //íŠ¹ë³„ ìƒˆ ë“±ì¥í•˜ì˜€ëŠ”ì§€ ì—¬ë¶€
 
-    //[SerializeField] private int categoryCnt;    //¸ÔÀÌ Ä«Å×°í¸® ¹øÈ£
-    [SerializeField] private int selectedBirdNum;    //È®·ü¿¡ µû¶ó ·£´ıÀ¸·Î Á¤ÇØÁø »õÀÇ ¹øÈ£
-    [SerializeField] private bool isSpecialBird;    //Æ¯º° »õ µîÀå Á¶°ÇÀ» ´Ş¼ºÇß´ÂÁö
-
-    [SerializeField] private GameObject viewBird;   //º¸¿©Áö´Â »õ ¿ÀºêÁ§Æ®
-    [SerializeField] private Sprite[] birdImage; //»õÀÇ ÀÌ¹ÌÁö ¹è¿­
-    [SerializeField] private Sprite[] birdFeatherImage;  //»õ ±êÅĞÀÇ ÀÌ¹ÌÁö ¹è¿­
-
-
-    void Start()
-    {
-        selectedBirdNum = 0;
-        isSpecialBird = true;
-    }
+    [Space]
+    [Header("[Bird Object]")]
+    public GameObject viewBird;   //ë³´ì—¬ì§€ëŠ” ìƒˆ ì˜¤ë¸Œì íŠ¸
+    public Sprite[] birdImage; //ìƒˆì˜ ì´ë¯¸ì§€ ë°°ì—´
+    public Sprite[] birdFeatherImage;  //ìƒˆ ê¹ƒí„¸ì˜ ì´ë¯¸ì§€ ë°°ì—´
 
     public int SelectBirdType(int feedNum)
     {
-        //»õ Á¾·ù¸¦ Á¤ÇÏ´Â ÇÔ¼ö
+        //ë†“ì¸ ë¨¹ì´ ì •ë³´ë¥¼ ë°›ì•„ì„œ ëœë¤ìœ¼ë¡œ ìƒˆ ì¢…ë¥˜ë¥¼ ì •í•˜ëŠ” í•¨ìˆ˜
 
-        int categoryCnt = SettingCategoryCnt(feedNum); //Ä«Å×°í¸®(»õ Á¾·ù, ¸ÔÀÌ) ½ÃÀÛ ¹øÈ£¸¦ ¼³Á¤ÇÔ
-        List<Dictionary<string, object>> data_birdInfo = CSVParser.ReadFromFile("BirdInfo");  //µµ°¨ µ¥ÀÌÅÍ¸¦ °¡Á®¿È 
+        int categoryCnt = SettingCategoryCnt(feedNum); //ì¹´í…Œê³ ë¦¬(ìƒˆ ì¢…ë¥˜, ë¨¹ì´) ì‹œì‘ ë²ˆí˜¸ë¥¼ ì„¤ì •í•¨
+        List<Dictionary<string, object>> data_birdInfo = CSVParser.ReadFromFile("BirdInfo");  //ë„ê° ë°ì´í„°ë¥¼ ê°€ì ¸ì˜´ 
 
-/*        //¸¸¾à Æ¯º° »õ ³ª¿À´Â Á¶°ÇÀ» ¸¸Á·Çß´Ù¸é Æ¯º° »õ·Î ÁöÁ¤ (**ÄÚµå ¼öÁ¤ ÇÊ¿ä. ³Ê¹« ¹ø°Å·Î¿ò)
-        //ÇØ´ç ¸ÔÀÌÀÇ »õ 3¸¶¸® ¸ğµÎ ±êÅĞ °³¼ö°¡ 1 ÀÌ»óÀÌ¶ó¸é
-        List<int> specialBirdCheck = new List<int>();   //Æ¯º° »õ Æ¯Á¤ Á¶°Ç ´Ş¼ºÀ» È®ÀÎÇÒ ¸®½ºÆ®
-        for (int i = 0; i < 3; i++)
+        //ë§Œì•½ íŠ¹ë³„ ìƒˆ ë‚˜ì˜¤ëŠ” ì¡°ê±´ì„ ë§Œì¡±í–ˆë‹¤ë©´ íŠ¹ë³„ ìƒˆ ë“±ì¥
+        if (!specialBirdAppear)
         {
-            int featherNumber = int.Parse(data_birdInfo[categoryCnt + i]["number"].ToString()); //±êÅĞ °³¼ö¸¦ °¡Á®¿È
-            specialBirdCheck.Add(featherNumber);    //±êÅĞ °³¼ö¸¦ ÀúÀåÇÔ
-        }
+            //í•´ë‹¹ ë¨¹ì´ì˜ íŠ¹ë³„ ìƒˆê°€ í•œ ë²ˆë„ ë“±ì¥í•˜ì§€ ì•Šì•˜ë‹¤ë©´
 
-        if (specialBirdCheck.Contains(0))
-        {
-            //ÇÏ³ª¶óµµ ±êÅĞ °³¼ö°¡ 0ÀÌ¶ó¸é Æ¯º° »õ X
-            isSpecialBird = false;
-
-            //Æ¯º° »õ ÇÑ ¹øÀÌ¶óµµ ³ª¿Ô´ÂÁö È®ÀÎ(µµ°¨ÀÇ Æ¯º°»õÀÇ appear È®ÀÎ)
-            
-            //¸¸¾à ÇÑ ¹øµµ ¾È ³ª¿Ô°í, ±êÅĞ °³¼öµµ 0ÀÌ ¾ø´Ù¸é Æ¯º° »õ·Î ÁöÁ¤
-        }*/
-        
-
-        //**
-        List<int> birdRandom = new List<int>(); //»õ µîÀå È®·üÀ» ÃßÃ·ÇÒ ¸®½ºÆ®
-        //int[] birdRandom = new int[10];
-
-        for (int i = 0; i < 3; i++)
-        {
-            int appearCnt = int.Parse(data_birdInfo[categoryCnt + i]["probability"].ToString());   //µµ°¨¿¡ ÀúÀåµÈ ÇØ´ç ¸ÔÀÌÀÇ i¹øÂ° »õÀÇ µîÀå È®·üÀ» °¡Á®¿È
-
-            //10´ÜÀ§
-          /*appearCnt /= 10;    //µîÀå È®·üÀ» ¹è¿­¿¡ ÀÔ·ÂÇÒ °³¼ö·Î º¯È¯
-            for (int j = 0; j < appearCnt; j++)
+            //í•´ë‹¹ ë¨¹ì´ì˜ ìƒˆ 3ë§ˆë¦¬ ëª¨ë‘ ê¹ƒí„¸ ê°œìˆ˜ê°€ 1 ì´ìƒì´ë¼ë©´
+            List<int> specialBirdCheck = new List<int>();   //íŠ¹ë³„ ìƒˆ íŠ¹ì • ì¡°ê±´ ë‹¬ì„±ì„ í™•ì¸í•  ë¦¬ìŠ¤íŠ¸
+            for (int i = 0; i < 3; i++)
             {
-                birdRandom.Add(i);  //¸®½ºÆ®¿¡ i¹ø »õ µîÀåÈ®·ü¸¸Å­ ÀÔ·Â
-            }*/
+                int appearNumber = int.Parse(data_birdInfo[categoryCnt + i]["appear"].ToString()); //ë“±ì¥ íšŸìˆ˜ë¥¼ ê°€ì ¸ì˜´
+                specialBirdCheck.Add(appearNumber);    //ë“±ì¥ íšŸìˆ˜ë¥¼ ì €ì¥í•¨
+            }
 
-            //100´ÜÀ§
-            for (int j = 0; j < appearCnt; j++)
+            if (!specialBirdCheck.Contains(0))
             {
-                birdRandom.Add(i);  //¸®½ºÆ®¿¡ i¹ø »õ µîÀåÈ®·ü¸¸Å­ ÀÔ·Â
+                //ë“±ì¥ íšŸìˆ˜ê°€ 0ì¸ ìƒˆê°€ ì—†ë‹¤ë©´
+
+                //í•´ë‹¹ ë¨¹ì´ì˜ íŠ¹ë³„ ìƒˆê°€ í•œ ë²ˆë„ ë“±ì¥í•˜ì§€ ì•Šì•˜ë‹¤ë©´
+                specialBirdAppear = true;   //íŠ¹ë³„ ìƒˆ ë“±ì¥
+                selectedBirdNum = categoryCnt + 3;  //íŠ¹ë³„ ìƒˆë¡œ ì„¤ì •
+
+                int appearCnt = 1;
+                data_birdInfo[selectedBirdNum]["appear"] = appearCnt.ToString(); //ë„ê°ì— ì¦ê°€í•œ ë“±ì¥ íšŸìˆ˜ ë°˜ì˜
+                CSVParser.WriteFromFile("BirdInfo", data_birdInfo); //ë„ê° ì €ì¥
+
+                return selectedBirdNum; //íŠ¹ë³„ ìƒˆ ë°˜í™˜
             }
         }
 
-        //int randomBird = Random.Range(0, 10);   //·£´ıÀ¸·Î »õ¸¦ »Ì±â À§ÇØ ³­¼ö »ı¼º(0~9 »çÀÌÀÇ ¼ö ÇÏ³ª)
-        int randomBird = Random.Range(0, 100);   //·£´ıÀ¸·Î »õ¸¦ »Ì±â À§ÇØ ³­¼ö »ı¼º(0~100 »çÀÌÀÇ ¼ö ÇÏ³ª)
+        //íŠ¹ë³„ ìƒˆê°€ ë‚˜ì˜¬ ì°¨ë¡€ê°€ ì•„ë‹ˆë¼ë©´(ì´ë¯¸ í•´ë‹¹ ë¨¹ì´ì˜ íŠ¹ë³„ ìƒˆê°€ ë“±ì¥í–ˆê±°ë‚˜, ë‹¤ë¥¸ ì„¸ ë§ˆë¦¬ì˜ ìƒˆê°€ ë‹¤ ë“±ì¥í•˜ì§€ ì•Šì•˜ë‹¤ë©´)
+        List<int> birdRandom = new List<int>(); //ìƒˆ ë“±ì¥ í™•ë¥ ì„ ì¶”ì²¨í•  ë¦¬ìŠ¤íŠ¸
+        for (int i = 0; i < 3; i++)
+        {
+            int appearCnt = int.Parse(data_birdInfo[categoryCnt + i]["probability"].ToString());   //ë„ê°ì— ì €ì¥ëœ í•´ë‹¹ ë¨¹ì´ì˜ ië²ˆì§¸ ìƒˆì˜ ë“±ì¥ í™•ë¥ ì„ ê°€ì ¸ì˜´
+            for (int j = 0; j < appearCnt; j++)
+            {
+                birdRandom.Add(i);  //ë¦¬ìŠ¤íŠ¸ì— ië²ˆ ìƒˆ ë“±ì¥í™•ë¥ ë§Œí¼ ì…ë ¥
+            }
+        }
 
-        /*        Debug.Log(randomBird);      //·£´ı ¼ıÀÚ
-                Debug.Log(birdRandom[randomBird]);  //»ÌÈù »õ ¹øÈ£*/
+        int randomBird = Random.Range(0, 100);   //ëœë¤ìœ¼ë¡œ ìƒˆë¥¼ ë½‘ê¸° ìœ„í•´ ë‚œìˆ˜ ìƒì„±(0~100 ì‚¬ì´ì˜ ìˆ˜ í•˜ë‚˜)
+        selectedBirdNum = birdRandom[randomBird] + categoryCnt;     //ì„ íƒëœ ìƒˆ ë²ˆí˜¸
 
-        selectedBirdNum = birdRandom[randomBird] + categoryCnt;
-        return selectedBirdNum;  //¼±Á¤µÈ ·£´ı »õ
+        return selectedBirdNum;  //ì„ ì •ëœ ëœë¤ ìƒˆ ë°˜í™˜
     }
 
     public void SelectBirdImage()
     {
-        //»õÀÇ ÀÌ¹ÌÁö¸¦ Á¤ÇÏ´Â ÇÔ¼ö
+        //ìƒˆì˜ ì´ë¯¸ì§€ë¥¼ ë°”ê¾¸ëŠ” í•¨ìˆ˜
 
-        viewBird.gameObject.GetComponent<Image>().sprite = birdImage[selectedBirdNum];  //»õÀÇ ÀÌ¹ÌÁö¸¦ ·£´ıÀ¸·Î Á¤ÇØÁø »õÀÇ ¹øÈ£ ÀÌ¹ÌÁö·Î º¯°æ
-        viewBird.transform.GetChild(0).gameObject.GetComponent<Image>().sprite = birdFeatherImage[selectedBirdNum]; //»õ ±êÅĞÀÇ ÀÌ¹ÌÁö¸¦ ·£´ıÀ¸·Î Á¤ÇØÁø »õÀÇ ¹øÈ£ ÀÌ¹ÌÁö·Î º¯°æ
+        viewBird.gameObject.GetComponent<Image>().sprite = birdImage[selectedBirdNum];  //ìƒˆì˜ ì´ë¯¸ì§€ë¥¼ ëœë¤ìœ¼ë¡œ ì •í•´ì§„ ìƒˆì˜ ë²ˆí˜¸ ì´ë¯¸ì§€ë¡œ ë³€ê²½
+        viewBird.transform.GetChild(0).gameObject.GetComponent<Image>().sprite = birdFeatherImage[selectedBirdNum]; //ìƒˆ ê¹ƒí„¸ì˜ ì´ë¯¸ì§€ë¥¼ ëœë¤ìœ¼ë¡œ ì •í•´ì§„ ìƒˆì˜ ë²ˆí˜¸ ì´ë¯¸ì§€ë¡œ ë³€ê²½
+    }
+
+    public void ActiveBirdObject()
+    {
+        //ìƒˆ ì˜¤ë¸Œì íŠ¸ë¥¼ í™œì„±í™”í•˜ëŠ” í•¨ìˆ˜
+
+        viewBird.gameObject.SetActive(true);
     }
 
     public int SettingCategoryCnt(int feedNum)
     {
-        //Ä«Å×°í¸® ±¸ºĞ ¹øÈ£¸¦ Á¤ÇÏ´Â ÇÔ¼ö
-        int cnt = 0;
+        //ì¹´í…Œê³ ë¦¬ êµ¬ë¶„ ë²ˆí˜¸ë¥¼ ì •í•˜ëŠ” í•¨ìˆ˜
+        int cnt;
 
         switch (feedNum)
         {

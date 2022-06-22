@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     //싱글톤 패턴을 사용하기 위한 전역 변수
     public static GameManager instance;
 
-    [Header("Game Data")]
+    [Header("[Game Data]")]
     public GoodsContainer loadGoodsData;  //상품(보조도구) 레벨 데이터
     public TopBarContainer loadTopBarData;  //상단바 데이터(꿈구슬, 골드, 특제먹이) 개수 데이터
     public TimerData timerData; //타이머 데이터(먹이 선택 여부, 먹이 놓은 시간)

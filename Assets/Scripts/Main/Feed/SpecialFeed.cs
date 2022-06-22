@@ -7,7 +7,7 @@ public class SpecialFeed : MonoBehaviour
 {
     //스페셜 먹이 개수를 관리하고 사용하는 클래스
 
-    [Header("Special Feed")]
+    [Header("[Special Feed]")]
     [SerializeField] private int feedCount;    //특제 먹이 개수
     [SerializeField] private int selectCount;    //선택한 먹이 수
     [SerializeField] private float decreaseTime;   //감소시키는 시간
@@ -15,7 +15,7 @@ public class SpecialFeed : MonoBehaviour
     [SerializeField] private TopBarContainer curPlayerData;   //상품 정보
 
     [Space]
-    [Header("Feed Text")]
+    [Header("[Feed Text]")]
     [SerializeField] private Text countText;      //먹이 개수 텍스트
 
     void Start()

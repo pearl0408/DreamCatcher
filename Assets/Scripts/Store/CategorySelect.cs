@@ -8,13 +8,13 @@ public class CategorySelect : MonoBehaviour
 {
     //카테고리 선택 부분을 담당하는 클래스
 
-    [Header("Store Select")]
+    [Header("[Current Store]")]
     [SerializeField] private int currentCategory; //현재 선택된 상점 화면(보이는 화면)
-    [SerializeField] private GameObject[] CategoryProducts;   //해당 카테고리 상품 화면
+    public GameObject[] CategoryProducts;   //해당 카테고리 상품 화면
 
     [Space]
-    [Header("Category Background")]
-    [SerializeField] private GameObject[] UnselectedBackGround;   //비활성화된 카테고리 배경
+    [Header("[Category Background]")]
+    public GameObject[] UnselectedBackGround;   //비활성화된 카테고리 배경
 
     void Start()
     {

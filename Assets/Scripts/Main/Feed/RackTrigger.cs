@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RackTrigger : MonoBehaviour
 {
-    //횟대 트리거 오브젝트에 컴포넌트로 넣을 클래스
+    //횃대 트리거 오브젝트에 컴포넌트로 넣을 클래스
 
     public void OnTriggerEnter2D(Collider2D collision)
     {

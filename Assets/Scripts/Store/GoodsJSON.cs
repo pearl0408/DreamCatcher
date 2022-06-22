@@ -6,20 +6,13 @@ using System.IO;
 public class GoodsJSON : MonoBehaviour
 {
     private static string fileName = "GoodsDataFile";       //파일 이름
-    private static string path;     //파일 경로
     GoodsContainer goodsContainer;  //상품 데이터 변수
-
-    private void Awake()
-    {
-        GoodsJSON.path = Application.dataPath + "/Saves/";  //파일 경로 설정(유니티 에디터 버전)
-        //GoodsJSON.path = Application.persistentDataPath;   //pc 빌드 경로
-    }
 
     public void LoadGoodsData()
     {
         //데이터를 로드하는 함수
 
-        string savePath = path + fileName + ".json";    //저장 파일 경로
+        string savePath = getPath(fileName);    //저장 파일 경로
 
         if (!File.Exists(savePath))  //파일이 존재하지 않는다면
         {
@@ -45,7 +38,7 @@ public class GoodsJSON : MonoBehaviour
 
         try
         {
-            string savePath = path + fileName + ".json";        //저장 파일 경로
+            string savePath = getPath(fileName);    //저장 파일 경로
             string saveJson = JsonUtility.ToJson(data, true);
 
             File.WriteAllText(savePath, saveJson);
@@ -70,7 +63,7 @@ public class GoodsJSON : MonoBehaviour
 
         try
         {
-            string savePath = path + fileName + ".json";        //저장 파일 경로
+            string savePath = getPath(fileName);    //저장 파일 경로
             string loadJson = File.ReadAllText(savePath);
 
             T t = JsonUtility.FromJson<T>(loadJson);
@@ -89,5 +82,18 @@ public class GoodsJSON : MonoBehaviour
             Debug.Log("The file could not be opened:" + e.Message);
         }
         return default;
+    }
+
+    private static string getPath(string fileName)
+    {
+#if UNITY_EDITOR
+        return Application.dataPath + "/Saves/" + fileName + ".json";
+#elif UNITY_ANDROID
+        return Application.persistentDataPath+"TalkData.csv";
+#elif UNITY_IPHONE
+        return Application.persistentDataPath+"/"+"TalkData.csv";
+#else
+        return Application.dataPath +"/"+"TalkData.csv";
+#endif
     }
 }
