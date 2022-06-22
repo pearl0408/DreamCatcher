@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour
 {
 
+    public void ChangeStartScene()
+    {
+        SceneManager.LoadScene("Start");
+    }
     public void ChangeMainScene()
     {
         SceneManager.LoadScene("Main");
