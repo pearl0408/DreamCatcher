@@ -17,7 +17,7 @@ public class SceneChange : MonoBehaviour
 
     public void ChangeMakingScene()
     {
-        //SceneManager.LoadScene("");
+        SceneManager.LoadScene("Making");
     }
    
     public void ChangeGuideScene()
