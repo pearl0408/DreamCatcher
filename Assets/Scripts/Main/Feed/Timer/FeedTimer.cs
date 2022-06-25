@@ -5,133 +5,133 @@ using UnityEngine.UI;
 
 public class FeedTimer : MonoBehaviour
 {
-    //¸ÔÀÌ ½Ã°£À» °è»êÇÏ°í º¸¿©ÁÖ´Â Å¬·¡½º
+    //ë¨¹ì´ ì‹œê°„ì„ ê³„ì‚°í•˜ê³  ë³´ì—¬ì£¼ëŠ” í´ë˜ìŠ¤
 
     [Header("[Feed Timer]")]
-    [SerializeField] private float defaultTime;    //¸ÔÀÌ ±âº» ½Ã°£(´ÜÀ§: ÃÊ)
-    [SerializeField] private float leftTime;   //¸ÔÀÌ ³²Àº ½Ã°£(´ÜÀ§: ÃÊ)
-    private System.DateTime startTime;   //¸ÔÀÌ ½ÃÀÛ ½Ã°£
-    private System.DateTime currentTime;   //ÇöÀç ½Ã°£
-    private bool isSelected;     //¸ÔÀÌ ¼±ÅÃ ¿©ºÎ º¯¼ö
+    [SerializeField] private float defaultTime;    //ë¨¹ì´ ê¸°ë³¸ ì‹œê°„(ë‹¨ìœ„: ì´ˆ)
+    [SerializeField] private float leftTime;   //ë¨¹ì´ ë‚¨ì€ ì‹œê°„(ë‹¨ìœ„: ì´ˆ)
+    private System.DateTime startTime;   //ë¨¹ì´ ì‹œì‘ ì‹œê°„
+    private System.DateTime currentTime;   //í˜„ì¬ ì‹œê°„
+    private bool isSelected;     //ë¨¹ì´ ì„ íƒ ì—¬ë¶€ ë³€ìˆ˜
 
     [Space]
     [Header("[Feed Text]")]
-    public Text timerText;      //Å¸ÀÌ¸Ó ÅØ½ºÆ®
+    public Text timerText;      //íƒ€ì´ë¨¸ í…ìŠ¤íŠ¸
 
     void Start()
     {
-        isSelected = this.gameObject.GetComponent<FeedManager>().GetIsFeedSelected(); //¸ÔÀÌ ¼±ÅÃ ¿©ºÎ °¡Á®¿È
-        if (isSelected) //¼±ÅÃµÈ ¸ÔÀÌ°¡ ÀÖ´Ù¸é
+        isSelected = this.gameObject.GetComponent<FeedManager>().GetIsFeedSelected(); //ë¨¹ì´ ì„ íƒ ì—¬ë¶€ ê°€ì ¸ì˜´
+        if (isSelected) //ì„ íƒëœ ë¨¹ì´ê°€ ìˆë‹¤ë©´
         {
-            leftTime = GetFeedLeftTime();  //¸ÔÀÌ ³²Àº ½Ã°£ °è»ê
+            leftTime = GetFeedLeftTime();  //ë¨¹ì´ ë‚¨ì€ ì‹œê°„ ê³„ì‚°
         }    
 
     }
 
     void Update()
     {
-        if (isSelected)     //¼±ÅÃµÈ ¸ÔÀÌ°¡ ÀÖ´Ù¸é
+        if (isSelected)     //ì„ íƒëœ ë¨¹ì´ê°€ ìˆë‹¤ë©´
         {
-            if (!timerText.gameObject.activeSelf)   //¸¸¾à Å¸ÀÌ¸Ó ÅØ½ºÆ®°¡ ºñÈ°¼ºÈ­ µÇ¾î ÀÖ´Ù¸é
+            if (!timerText.gameObject.activeSelf)   //ë§Œì•½ íƒ€ì´ë¨¸ í…ìŠ¤íŠ¸ê°€ ë¹„í™œì„±í™” ë˜ì–´ ìˆë‹¤ë©´
             {
-                timerText.gameObject.SetActive(true); //ÅØ½ºÆ® È°¼ºÈ­
+                timerText.gameObject.SetActive(true); //í…ìŠ¤íŠ¸ í™œì„±í™”
             }
 
-            if (leftTime > 1)   //³²Àº ½Ã°£ÀÌ 0ÀÌ ¾Æ´Ï¶ó¸é(´õ ±â´Ù·Á¾ß ÇÑ´Ù¸é)
+            if (leftTime > 1)   //ë‚¨ì€ ì‹œê°„ì´ 0ì´ ì•„ë‹ˆë¼ë©´(ë” ê¸°ë‹¤ë ¤ì•¼ í•œë‹¤ë©´)
             {
-                leftTime -= Time.deltaTime; //ÃÊ¸¶´Ù ³²Àº ½Ã°£ °¨¼Ò
+                leftTime -= Time.deltaTime; //ì´ˆë§ˆë‹¤ ë‚¨ì€ ì‹œê°„ ê°ì†Œ
 
-                //³²Àº ½Ã°£À¸·Î ½Ã, ºĞ, ÃÊ °è»ê
-                int hour = (int)leftTime / 3600; //½Ã
-                float left = leftTime % 3600;  //½Ã°£À» ³ª´©°í ³²Àº ½Ã°£
-                int minute = (int)left / 60; //ºĞ  
-                left = left % 60;   //ºĞÀ» ³ª´©°í ³²Àº ½Ã°£
-                int second = (int)left; //ÃÊ
+                //ë‚¨ì€ ì‹œê°„ìœ¼ë¡œ ì‹œ, ë¶„, ì´ˆ ê³„ì‚°
+                int hour = (int)leftTime / 3600; //ì‹œ
+                float left = leftTime % 3600;  //ì‹œê°„ì„ ë‚˜ëˆ„ê³  ë‚¨ì€ ì‹œê°„
+                int minute = (int)left / 60; //ë¶„  
+                left = left % 60;   //ë¶„ì„ ë‚˜ëˆ„ê³  ë‚¨ì€ ì‹œê°„
+                int second = (int)left; //ì´ˆ
 
-                Mathf.Floor(second).ToString();  //ÃÊ ¼Ò¼öÁ¡ ¹ö¸®±â
-                timerText.text = string.Format("{0:00}:{1:00}:{2:00}", hour, minute, second);   //ÅØ½ºÆ® ¾ç½Ä(½Ã:ºĞ:ÃÊ)·Î Ãâ·Â
+                Mathf.Floor(second).ToString();  //ì´ˆ ì†Œìˆ˜ì  ë²„ë¦¬ê¸°
+                timerText.text = string.Format("{0:00}:{1:00}:{2:00}", hour, minute, second);   //í…ìŠ¤íŠ¸ ì–‘ì‹(ì‹œ:ë¶„:ì´ˆ)ë¡œ ì¶œë ¥
             }
-            else   //³²Àº ½Ã°£ÀÌ 0 ÀÌÇÏ¶ó¸é(½Ã°£ÀÌ ¸ğµÎ Áö³µ´Ù¸é)
+            else   //ë‚¨ì€ ì‹œê°„ì´ 0 ì´í•˜ë¼ë©´(ì‹œê°„ì´ ëª¨ë‘ ì§€ë‚¬ë‹¤ë©´)
             {
-                //ÃÊ±âÈ­
-                leftTime = 0f;      //³²Àº ½Ã°£ 0ÃÊ·Î ÃÊ±âÈ­
-                isSelected = false;     //¸ÔÀÌ ¼±ÅÃµÇÁö ¾ÊÀ½À¸·Î ÃÊ±âÈ­
-                SaveTimerData();   //ÃÊ±âÈ­ ³»¿ë ÀúÀå
+                //ì´ˆê¸°í™”
+                leftTime = 0f;      //ë‚¨ì€ ì‹œê°„ 0ì´ˆë¡œ ì´ˆê¸°í™”
+                isSelected = false;     //ë¨¹ì´ ì„ íƒë˜ì§€ ì•ŠìŒìœ¼ë¡œ ì´ˆê¸°í™”
+                SaveTimerData();   //ì´ˆê¸°í™” ë‚´ìš© ì €ì¥
 
-                //È°¼ºÈ­/ºñÈ°¼ºÈ­ Á¤¸®
-                int feedNum = this.gameObject.GetComponent<FeedManager>().GetSelectedFeedNum();     //³õÀÎ ¸ÔÀÌÀÇ ¹øÈ£¸¦ °¡Á®¿È
-                this.gameObject.GetComponent<FeedRackMatch>().SetInactiveRackFeed(feedNum);    //³õÀÎ ¸ÔÀÌ ºñÈ°¼ºÈ­
-                timerText.gameObject.SetActive(false); //Å¸ÀÌ¸Ó ÅØ½ºÆ® ºñÈ°¼ºÈ­
-                this.gameObject.GetComponent<FeedPanel>().ActiveSpecialFeedPanel(false);  //Æ¯Á¦ ¸ÔÀÌ ¼±ÅÃÃ¢ÀÌ ÄÑÁ®ÀÖ´Ù¸é ºñÈ°¼ºÈ­
-                this.gameObject.GetComponent<BirdImage>().ActiveBirdObject();   //»õ ¿ÀºêÁ§Æ® È°¼ºÈ­
+                //í™œì„±í™”/ë¹„í™œì„±í™” ì •ë¦¬
+                int feedNum = this.gameObject.GetComponent<FeedManager>().GetSelectedFeedNum();     //ë†“ì¸ ë¨¹ì´ì˜ ë²ˆí˜¸ë¥¼ ê°€ì ¸ì˜´
+                this.gameObject.GetComponent<FeedRackMatch>().SetInactiveRackFeed(feedNum);    //ë†“ì¸ ë¨¹ì´ ë¹„í™œì„±í™”
+                timerText.gameObject.SetActive(false); //íƒ€ì´ë¨¸ í…ìŠ¤íŠ¸ ë¹„í™œì„±í™”
+                this.gameObject.GetComponent<FeedPanel>().ActiveSpecialFeedPanel(false);  //íŠ¹ì œ ë¨¹ì´ ì„ íƒì°½ì´ ì¼œì ¸ìˆë‹¤ë©´ ë¹„í™œì„±í™”
+                this.gameObject.GetComponent<BirdSelect>().ActiveBirdObject();   //ìƒˆ ì˜¤ë¸Œì íŠ¸ í™œì„±í™”
             }
         }
     }
    
     public void SetFeedDefaultTime()
     {
-        //»õ¿¡ µû¶ó¼­ ¼Ò¿ä ½Ã°£À» ¼³Á¤ÇÏ´Â ÇÔ¼ö(µµ°¨¿¡¼­ °¡Á®¿Â ½Ã°£À» ±âÁØÀ¸·Î ·£´ı ¼³Á¤)
+        //ìƒˆì— ë”°ë¼ì„œ ì†Œìš” ì‹œê°„ì„ ì„¤ì •í•˜ëŠ” í•¨ìˆ˜(ë„ê°ì—ì„œ ê°€ì ¸ì˜¨ ì‹œê°„ì„ ê¸°ì¤€ìœ¼ë¡œ ëœë¤ ì„¤ì •)
 
-        List<Dictionary<string, object>> data_birdInfo = CSVParser.ReadFromFile("BirdInfo");  //µµ°¨ µ¥ÀÌÅÍ¸¦ °¡Á®¿È 
-        int selectedBirdNum = GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedManager>().GetSelectedBirdNum();    //·£´ı ¼±ÅÃµÈ »õ ¹øÈ£¸¦ ºÒ·¯¿È
+        List<Dictionary<string, object>> data_birdInfo = CSVParser.ReadFromFile("BirdInfo");  //ë„ê° ë°ì´í„°ë¥¼ ê°€ì ¸ì˜´ 
+        int selectedBirdNum = GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedManager>().GetSelectedBirdNum();    //ëœë¤ ì„ íƒëœ ìƒˆ ë²ˆí˜¸ë¥¼ ë¶ˆëŸ¬ì˜´
 
-        int birdStartTime = int.Parse(data_birdInfo[selectedBirdNum]["starttime"].ToString());  //µµ°¨¿¡¼­ ÇØ´ç »õÀÇ ½ÃÀÛ ½Ã°£ µ¥ÀÌÅÍ¸¦ °¡Á®¿È
-        int birdEndTime = int.Parse(data_birdInfo[selectedBirdNum]["endtime"].ToString());  //µµ°¨¿¡¼­ ÇØ´ç »õÀÇ ³¡ ½Ã°£ µ¥ÀÌÅÍ¸¦ °¡Á®¿È
-        int randomTime = Random.Range(birdStartTime, birdEndTime + 1);    //·£´ıÀ¸·Î ¼Ò¿ä ½Ã°£À» Á¤ÇÔ
+        int birdStartTime = int.Parse(data_birdInfo[selectedBirdNum]["starttime"].ToString());  //ë„ê°ì—ì„œ í•´ë‹¹ ìƒˆì˜ ì‹œì‘ ì‹œê°„ ë°ì´í„°ë¥¼ ê°€ì ¸ì˜´
+        int birdEndTime = int.Parse(data_birdInfo[selectedBirdNum]["endtime"].ToString());  //ë„ê°ì—ì„œ í•´ë‹¹ ìƒˆì˜ ë ì‹œê°„ ë°ì´í„°ë¥¼ ê°€ì ¸ì˜´
+        int randomTime = Random.Range(birdStartTime, birdEndTime + 1);    //ëœë¤ìœ¼ë¡œ ì†Œìš” ì‹œê°„ì„ ì •í•¨
 
-        defaultTime = leftTime = randomTime;   //·£´ı ¼Ò¿ä ½Ã°£À» ¸ÔÀÌ ½Ã°£À¸·Î ¼³Á¤
+        defaultTime = leftTime = randomTime;   //ëœë¤ ì†Œìš” ì‹œê°„ì„ ë¨¹ì´ ì‹œê°„ìœ¼ë¡œ ì„¤ì •
     }
 
     public void SetFeedStartTime()
     {
-        //Å¸ÀÌ¸Ó ½ÃÀÛ ½Ã°£ ¼³Á¤
+        //íƒ€ì´ë¨¸ ì‹œì‘ ì‹œê°„ ì„¤ì •
 
-        startTime = System.DateTime.Now;    //Å¸ÀÌ¸Ó ½ÃÀÛ ½Ã°£À» ÇöÀç ½Ã°£À¸·Î ¼³Á¤
+        startTime = System.DateTime.Now;    //íƒ€ì´ë¨¸ ì‹œì‘ ì‹œê°„ì„ í˜„ì¬ ì‹œê°„ìœ¼ë¡œ ì„¤ì •
     }
 
     public void SetIsFeedSelected(bool TorF)
     {
-        //¸ÔÀÌ ¼±ÅÃ ¿©ºÎ¸¦ °»½ÅÇÏ´Â ÇÔ¼ö
+        //ë¨¹ì´ ì„ íƒ ì—¬ë¶€ë¥¼ ê°±ì‹ í•˜ëŠ” í•¨ìˆ˜
 
         isSelected = TorF;
     }
 
     private float GetFeedLeftTime()
     {
-        //¸ÔÀÌ ³²Àº ½Ã°£ °è»êÇÏ´Â ÇÔ¼ö
+        //ë¨¹ì´ ë‚¨ì€ ì‹œê°„ ê³„ì‚°í•˜ëŠ” í•¨ìˆ˜
 
-        currentTime = System.DateTime.Now;    //ÇöÀç ½Ã°£ ¼³Á¤
+        currentTime = System.DateTime.Now;    //í˜„ì¬ ì‹œê°„ ì„¤ì •
 
-        System.TimeSpan timeDif = currentTime - startTime; //½ÃÀÛ ½Ã°£°ú ÇöÀç ½Ã°£ÀÇ Â÷ ±¸ÇÔ(¸ÔÀÌ¸¦ ³õ°í ¾ó¸¶³ª Áö³µ´ÂÁö)
-        float difSeconds = (float)timeDif.TotalSeconds; //Áö³­ ½Ã°£À» ÃÊ·Î º¯È¯
-        float left = defaultTime - difSeconds;   //¸ÔÀÌ ³²Àº ½Ã°£ °è»ê
+        System.TimeSpan timeDif = currentTime - startTime; //ì‹œì‘ ì‹œê°„ê³¼ í˜„ì¬ ì‹œê°„ì˜ ì°¨ êµ¬í•¨(ë¨¹ì´ë¥¼ ë†“ê³  ì–¼ë§ˆë‚˜ ì§€ë‚¬ëŠ”ì§€)
+        float difSeconds = (float)timeDif.TotalSeconds; //ì§€ë‚œ ì‹œê°„ì„ ì´ˆë¡œ ë³€í™˜
+        float left = defaultTime - difSeconds;   //ë¨¹ì´ ë‚¨ì€ ì‹œê°„ ê³„ì‚°
 
-        return left;    //¸ÔÀÌ ³²Àº ½Ã°£ ¹İÈ¯
+        return left;    //ë¨¹ì´ ë‚¨ì€ ì‹œê°„ ë°˜í™˜
     }
 
     public void UseSpecialFeed(float decreaseTime)
     {
-        //Æ¯Á¦ ¸ÔÀÌ »ç¿ë ÇÔ¼ö
+        //íŠ¹ì œ ë¨¹ì´ ì‚¬ìš© í•¨ìˆ˜
 
         this.leftTime -= decreaseTime;
     }
 
     public void SaveTimerData()
     {
-        //ÇöÀç µ¥ÀÌÅÍ°ª(¸ÔÀÌ ¼±ÅÃ ¿©ºÎ, Å¸ÀÌ¸Ó ½ÃÀÛ ½Ã°£, ¸ÔÀÌ ±âº» ½Ã°£)À¸·Î Å¸ÀÌ¸Ó µ¥ÀÌÅÍ¸¦ ÀúÀåÇÏ´Â ÇÔ¼ö
+        //í˜„ì¬ ë°ì´í„°ê°’(ë¨¹ì´ ì„ íƒ ì—¬ë¶€, íƒ€ì´ë¨¸ ì‹œì‘ ì‹œê°„, ë¨¹ì´ ê¸°ë³¸ ì‹œê°„)ìœ¼ë¡œ íƒ€ì´ë¨¸ ë°ì´í„°ë¥¼ ì €ì¥í•˜ëŠ” í•¨ìˆ˜
 
-        TimerData saveTimer = new TimerData(isSelected, startTime.ToString(), defaultTime); //ÇöÀç µ¥ÀÌÅÍ·Î timerData °´Ã¼ »ı¼º
-        GameObject.FindWithTag("GameManager").GetComponent<TimerJSON>().DataSaveText<TimerData>(saveTimer);  //Å¸ÀÌ¸Ó µ¥ÀÌÅÍ ÀúÀå
+        TimerData saveTimer = new TimerData(isSelected, startTime.ToString(), defaultTime); //í˜„ì¬ ë°ì´í„°ë¡œ timerData ê°ì²´ ìƒì„±
+        GameObject.FindWithTag("GameManager").GetComponent<TimerJSON>().DataSaveText<TimerData>(saveTimer);  //íƒ€ì´ë¨¸ ë°ì´í„° ì €ì¥
     }
 
     public void LoadTimerData()
     {
-        //ÀúÀåµÈ µ¥ÀÌÅÍ È®ÀÎ
+        //ì €ì¥ëœ ë°ì´í„° í™•ì¸
 
-        TimerData saveTimer = GameObject.FindWithTag("GameManager").GetComponent<TimerJSON>().GetTimerData();   //¼¼ÀÌºê ÆÄÀÏ¿¡ ÀúÀåµÈ Å¸ÀÌ¸Ó µ¥ÀÌÅÍ¸¦ °¡Á®¿È
-        this.GetComponent<FeedManager>().SetIsFeedSelected(saveTimer.isExisted);    //¼¼ÀÌºêÆÄÀÏÀÇ ¼±ÅÃ ¿©ºÎ·Î °»½ÅÇÔ
-        this.startTime = System.Convert.ToDateTime(saveTimer.startTime);    //¼¼ÀÌºê ÆÄÀÏÀÇ ½ÃÀÛ ½Ã°£À¸·Î °»½ÅÇÔ
-        this.defaultTime = saveTimer.savedDefaultTime;  //¼¼ÀÌºê ÆÄÀÏÀÇ ¸ÔÀÌ ±âº» ½Ã°£À¸·Î °»½ÅÇÔ
+        TimerData saveTimer = GameObject.FindWithTag("GameManager").GetComponent<TimerJSON>().GetTimerData();   //ì„¸ì´ë¸Œ íŒŒì¼ì— ì €ì¥ëœ íƒ€ì´ë¨¸ ë°ì´í„°ë¥¼ ê°€ì ¸ì˜´
+        this.GetComponent<FeedManager>().SetIsFeedSelected(saveTimer.isExisted);    //ì„¸ì´ë¸ŒíŒŒì¼ì˜ ì„ íƒ ì—¬ë¶€ë¡œ ê°±ì‹ í•¨
+        this.startTime = System.Convert.ToDateTime(saveTimer.startTime);    //ì„¸ì´ë¸Œ íŒŒì¼ì˜ ì‹œì‘ ì‹œê°„ìœ¼ë¡œ ê°±ì‹ í•¨
+        this.defaultTime = saveTimer.savedDefaultTime;  //ì„¸ì´ë¸Œ íŒŒì¼ì˜ ë¨¹ì´ ê¸°ë³¸ ì‹œê°„ìœ¼ë¡œ ê°±ì‹ í•¨
     }
 
 }

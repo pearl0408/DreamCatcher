@@ -5,60 +5,60 @@ using UnityEngine.EventSystems;
 
 public class FeedDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
-    //µå·¡±×ÇÒ ¿ÀºêÁ§Æ®(¸ÔÀÌ)¿¡ ÄÄÆ÷³ÍÆ®·Î ³ÖÀ» Å¬·¡½º
+    //ë“œë˜ê·¸í•  ì˜¤ë¸Œì íŠ¸(ë¨¹ì´)ì— ì»´í¬ë„ŒíŠ¸ë¡œ ë„£ì„ í´ë˜ìŠ¤
 
     [Header("[Feed Drag]")]
-    [SerializeField] private bool isTriggering;    //È½´ë¿Í Ãæµ¹ ÁßÀÎÁö ¿©ºÎ
-    private static Vector2 defaultPosition;  //µå·ÓÇÏ¸é ´Ù½Ã º¸³¾ ¿øÀ§Ä¡ º¯¼ö
+    [SerializeField] private bool isTriggering;    //íšŸëŒ€ì™€ ì¶©ëŒ ì¤‘ì¸ì§€ ì—¬ë¶€
+    private static Vector2 defaultPosition;  //ë“œë¡­í•˜ë©´ ë‹¤ì‹œ ë³´ë‚¼ ì›ìœ„ì¹˜ ë³€ìˆ˜
 
     public void Start()
     {
-        isTriggering = false;   //Ãæµ¹Áß ¿©ºÎ ÃÊ±âÈ­
+        isTriggering = false;   //ì¶©ëŒì¤‘ ì—¬ë¶€ ì´ˆê¸°í™”
     }
 
     public void SetIsTriggering(bool TorF)
     {
-        //È½´ë Ãæµ¹Áß ¿©ºÎ º¯¼ö¸¦ ¼³Á¤ÇÏ´Â ÇÔ¼ö
+        //íšŸëŒ€ ì¶©ëŒì¤‘ ì—¬ë¶€ ë³€ìˆ˜ë¥¼ ì„¤ì •í•˜ëŠ” í•¨ìˆ˜
 
         this.isTriggering = TorF; 
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        //µå·¡±×¸¦ ½ÃÀÛÇÒ ¶§ÀÇ ÇÔ¼ö
+        //ë“œë˜ê·¸ë¥¼ ì‹œì‘í•  ë•Œì˜ í•¨ìˆ˜
 
-        defaultPosition = this.transform.position;  //Ã³À½ À§Ä¡ ÀúÀå
+        defaultPosition = this.transform.position;  //ì²˜ìŒ ìœ„ì¹˜ ì €ì¥
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        //µå·¡±× ÁßÀÏ ¶§ÀÇ ÇÔ¼ö
-        Vector2 currentPos = Input.mousePosition;   //¸¶¿ì½º Æ÷Áö¼Ç °ª °¡Á®¿È
-        this.transform.position = currentPos;       //¸¶¿ì½º Æ÷Áö¼ÇÀ» µû¶ó ¿ÀºêÁ§Æ® ÀÌµ¿
+        //ë“œë˜ê·¸ ì¤‘ì¼ ë•Œì˜ í•¨ìˆ˜
+        Vector2 currentPos = Input.mousePosition;   //ë§ˆìš°ìŠ¤ í¬ì§€ì…˜ ê°’ ê°€ì ¸ì˜´
+        this.transform.position = currentPos;       //ë§ˆìš°ìŠ¤ í¬ì§€ì…˜ì„ ë”°ë¼ ì˜¤ë¸Œì íŠ¸ ì´ë™
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        //µå·¡±×°¡ ³¡³µÀ» ¶§ÀÇ ÇÔ¼ö
+        //ë“œë˜ê·¸ê°€ ëë‚¬ì„ ë•Œì˜ í•¨ìˆ˜
 
-        if (isTriggering)   //È½´ë¿Í Ãæµ¹ ÁßÀÌ¶ó¸é
+        if (isTriggering)   //íšŸëŒ€ì™€ ì¶©ëŒ ì¤‘ì´ë¼ë©´
         {
-            //È¶´ë ¸ÔÀÌ È°¼ºÈ­
-            int feedNum = this.gameObject.GetComponent<FeedInfo>().GetFeedNumber();     //µå·¡±× ÁßÀÎ ¸ÔÀÌÀÇ ¹øÈ£¸¦ °¡Á®¿È
-            GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedRackMatch>().SelectFeed(feedNum);    //ÇØ´ç ¹øÈ£ÀÇ È¶´ë ¸ÔÀÌ È°¼ºÈ­
+            //íšƒëŒ€ ë¨¹ì´ í™œì„±í™”
+            int feedNum = this.gameObject.GetComponent<FeedInfo>().GetFeedNumber();     //ë“œë˜ê·¸ ì¤‘ì¸ ë¨¹ì´ì˜ ë²ˆí˜¸ë¥¼ ê°€ì ¸ì˜´
+            GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedRackMatch>().SelectFeed(feedNum);    //í•´ë‹¹ ë²ˆí˜¸ì˜ íšƒëŒ€ ë¨¹ì´ í™œì„±í™”
 
-            //»õ Á¾·ù ·£´ı ¼³Á¤
-            int randomBird = GameObject.FindGameObjectWithTag("FeedManager").GetComponent<BirdImage>().SelectBirdType(feedNum); //È®·ü¿¡ µû¶ó ·£´ıÀ¸·Î ÇØ´ç ¸ÔÀÌÀÇ »õ¸¦ Á¤ÇÔ
-            GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedManager>().SetFeedManager(true, feedNum, randomBird);    //FeedManager º¯¼ö ÇÑ ¹ø¿¡ ¼³Á¤(¸ÔÀÌ ¼±ÅÃ ¿©ºÎ, ¼±ÅÃµÈ ¸ÔÀÌ ¹øÈ£, ·£´ıÀ¸·Î Á¤ÇØÁø »õ ¹øÈ£)
-            GameObject.FindGameObjectWithTag("FeedManager").GetComponent<BirdImage>().SelectBirdImage();    //»õ ¿ÀºêÁ§Æ® ÀÌ¹ÌÁö º¯°æ(ºñÈ°¼ºÈ­ »óÅÂ)
+            //ìƒˆ ì¢…ë¥˜ ëœë¤ ì„¤ì •
+            int randomBird = GameObject.FindGameObjectWithTag("FeedManager").GetComponent<BirdSelect>().SelectBirdType(feedNum); //í™•ë¥ ì— ë”°ë¼ ëœë¤ìœ¼ë¡œ í•´ë‹¹ ë¨¹ì´ì˜ ìƒˆë¥¼ ì •í•¨
+            GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedManager>().SetFeedManager(true, feedNum, randomBird);    //FeedManager ë³€ìˆ˜ í•œ ë²ˆì— ì„¤ì •(ë¨¹ì´ ì„ íƒ ì—¬ë¶€, ì„ íƒëœ ë¨¹ì´ ë²ˆí˜¸, ëœë¤ìœ¼ë¡œ ì •í•´ì§„ ìƒˆ ë²ˆí˜¸)
+            GameObject.FindGameObjectWithTag("FeedManager").GetComponent<BirdSelect>().SelectBirdImage();    //ìƒˆ ì˜¤ë¸Œì íŠ¸ ì´ë¯¸ì§€ ë³€ê²½(ë¹„í™œì„±í™” ìƒíƒœ)
             
-            //¸ÔÀÌ ½Ã°£ ·£´ı ¼³Á¤ ¹× Å¸ÀÌ¸Ó ¼³Á¤
-            GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedTimer>().SetFeedDefaultTime();    //»õ ¸ÔÀÌ ½Ã°£ ¼³Á¤(·£´ı)
-            GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedTimer>().SetFeedStartTime();   //Å¸ÀÌ¸Ó ½ÃÀÛ ½Ã°£ ¼³Á¤
-            GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedTimer>().SetIsFeedSelected(true);  //Å¸ÀÌ¸Ó ½ÃÀÛ(¼±ÅÃµÈ ¸ÔÀÌ ÀÖÀ½À¸·Î ¼³Á¤)
-            GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedTimer>().SaveTimerData();   //Å¸ÀÌ¸Ó µ¥ÀÌÅÍ ÀúÀå(À§¿¡¼­ ¼³Á¤ÇÑ µ¥ÀÌÅÍ ÀúÀå)
+            //ë¨¹ì´ ì‹œê°„ ëœë¤ ì„¤ì • ë° íƒ€ì´ë¨¸ ì„¤ì •
+            GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedTimer>().SetFeedDefaultTime();    //ìƒˆ ë¨¹ì´ ì‹œê°„ ì„¤ì •(ëœë¤)
+            GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedTimer>().SetFeedStartTime();   //íƒ€ì´ë¨¸ ì‹œì‘ ì‹œê°„ ì„¤ì •
+            GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedTimer>().SetIsFeedSelected(true);  //íƒ€ì´ë¨¸ ì‹œì‘(ì„ íƒëœ ë¨¹ì´ ìˆìŒìœ¼ë¡œ ì„¤ì •)
+            GameObject.FindGameObjectWithTag("FeedManager").GetComponent<FeedTimer>().SaveTimerData();   //íƒ€ì´ë¨¸ ë°ì´í„° ì €ì¥(ìœ„ì—ì„œ ì„¤ì •í•œ ë°ì´í„° ì €ì¥)
         }
 
-        this.transform.position = defaultPosition;      //¿øÀ§Ä¡·Î µ¹¾Æ°¡±â
+        this.transform.position = defaultPosition;      //ì›ìœ„ì¹˜ë¡œ ëŒì•„ê°€ê¸°
     }
 }
