@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class CSVBirdInfoLoad : MonoBehaviour
 {
-    // ÆĞ³Î
+    // íŒ¨ë„
     public GameObject BirdInfoPanel;
 
-    // UI ¿ÀºêÁ§Æ®
+    // UI ì˜¤ë¸Œì íŠ¸
     public GameObject[] birdColImg = new GameObject[16];
     public Text[] birdColName = new Text[16];
 
@@ -17,7 +17,7 @@ public class CSVBirdInfoLoad : MonoBehaviour
     public Image foodImg, birdImg, featherImg;
     public Slider numberSlide;
 
-    // ÀÌ¹ÌÁö
+    // ì´ë¯¸ì§€
     public Sprite[] birdImgs = new Sprite[16];
     public Sprite[] foodImgs = new Sprite[4];
     public Sprite[] featherImgs = new Sprite[16];
@@ -28,27 +28,24 @@ public class CSVBirdInfoLoad : MonoBehaviour
     {
         BirdInfoPanel.SetActive(false);
         data = CSVParser.ReadFromFile("BirdInfo");
-        // [Å×½ºÆ®¿ë]ÀÌÀü¿¡´Â data ¸¸ ¼öÁ¤
-        data[0]["appear"] = "1";
-        data[1]["number"] = "7";
+        // [í…ŒìŠ¤íŠ¸ìš©]ì´ì „ì—ëŠ” data ë§Œ ìˆ˜ì •
         LoadBirdCollection();
     }
 
-    // »õ ÀüÃ¼ appear Á¤º¸ Ç¥½Ã
+    // ìƒˆ ì „ì²´ appear ì •ë³´ í‘œì‹œ
     public void LoadBirdCollection()
     {
         for(int i=0; i<16; i++)
         {
             birdColImg[i].GetComponent<Image>().sprite = birdImgs[i];
-
-            // »õ°¡ µîÀåÇÑ Àû ¾ø´Ù¸é
-            if(data[i]["appear"].ToString()=="0")
+            // ìƒˆê°€ ë“±ì¥í•œ ì  ì—†ë‹¤ë©´
+            if (data[i]["appear"].ToString()=="0")
             {
-                birdColImg[i].GetComponent<Image>().color = new Color(0f, 0f, 0f, 0.5f); // È¸»ö Ã³¸®
-                birdColImg[i].GetComponent<Button>().interactable = false; // ¹öÆ° ºñÈ°¼ºÈ­ Ã³¸®
-                birdColName[i].GetComponent<Text>().text = "???"; // ÀÌ¸§ ¹°À½Ç¥ Ã³¸®
+                birdColImg[i].GetComponent<Image>().color = new Color(0f, 0f, 0f, 0.5f); // íšŒìƒ‰ ì²˜ë¦¬
+                birdColImg[i].GetComponent<Button>().interactable = false; // ë²„íŠ¼ ë¹„í™œì„±í™” ì²˜ë¦¬
+                birdColName[i].GetComponent<Text>().text = "???"; // ì´ë¦„ ë¬¼ìŒí‘œ ì²˜ë¦¬
             }
-            else // »õ°¡ µîÀåÇÑ ÀûÀÌ ÀÖ´Ù¸é
+            else // ìƒˆê°€ ë“±ì¥í•œ ì ì´ ìˆë‹¤ë©´
             {
                 birdColName[i].GetComponent<Text>().text = data[i]["name"].ToString();
                 birdColImg[i].GetComponent<Button>().interactable = true;
@@ -56,26 +53,26 @@ public class CSVBirdInfoLoad : MonoBehaviour
         }
     }
 
-    // »õ °³º° Á¤º¸ ·Îµå : »õ¸¦ Å¬¸¯ÇßÀ» ½Ã »õÀÇ °³º° Á¤º¸Ã¢¿¡ µ¥ÀÌÅÍ¸¦ Ç¥½ÃÇÑ´Ù.
+    // ìƒˆ ê°œë³„ ì •ë³´ ë¡œë“œ : ìƒˆë¥¼ í´ë¦­í–ˆì„ ì‹œ ìƒˆì˜ ê°œë³„ ì •ë³´ì°½ì— ë°ì´í„°ë¥¼ í‘œì‹œí•œë‹¤.
     public void LoadBirdInfo(int index)
     {
-        // ÅØ½ºÆ® ¼³Á¤
-        numberTxt.text = "È¹µæ ¼ö "+data[index]["number"]+"¸¶¸®";
+        // í…ìŠ¤íŠ¸ ì„¤ì •
+        numberTxt.text = "íšë“ ìˆ˜ "+data[index]["number"]+"ë§ˆë¦¬";
         nameTxt.text = (string)data[index]["name"];
         expTxt.text = (string)data[index]["exp"];
         int startTime = int.Parse(data[index]["starttime"].ToString());
         int endTime = int.Parse(data[index]["endtime"].ToString());
-        // ÅØ½ºÆ® ¼³Á¤(µîÀå½Ã°£)
+        // í…ìŠ¤íŠ¸ ì„¤ì •(ë“±ì¥ì‹œê°„)
         if (startTime < 3600)
         {
             if (startTime == endTime)
             {
 
-                timeTxt.text = startTime / 60 + "ºĞ";
+                timeTxt.text = startTime / 60 + "ë¶„";
             }
             else
             {
-                timeTxt.text = startTime / 60 + "ºĞ~" + endTime / 60 + "ºĞ";
+                timeTxt.text = startTime / 60 + "ë¶„~" + endTime / 60 + "ë¶„";
             }
         }
         else
@@ -83,20 +80,20 @@ public class CSVBirdInfoLoad : MonoBehaviour
             if (startTime == endTime)
             {
 
-                timeTxt.text = startTime / 3600 + "½Ã°£";
+                timeTxt.text = startTime / 3600 + "ì‹œê°„";
             }
             else
             {
-                timeTxt.text = startTime / 3600 + "½Ã°£~" + endTime / 3600 + "½Ã°£";
+                timeTxt.text = startTime / 3600 + "ì‹œê°„~" + endTime / 3600 + "ì‹œê°„";
             }
         }
         
 
-        // ½½¶óÀÌ´õ ¼³Á¤
+        // ìŠ¬ë¼ì´ë” ì„¤ì •
         numberSlide.maxValue = (int)data[index]["maxnum"];
         numberSlide.value = int.Parse(data[index]["number"].ToString());
 
-        // ÀÌ¹ÌÁö ¼³Á¤
+        // ì´ë¯¸ì§€ ì„¤ì •
         foodImg.sprite = foodImgs[index/4];
         birdImg.sprite = birdImgs[index];
         featherImg.sprite = featherImgs[index];
@@ -107,20 +104,20 @@ public class CSVBirdInfoLoad : MonoBehaviour
         CSVParser.WriteFromFile("BirdInfo", data);
     }
 
-    // »õ °³º° Á¤º¸ ÆĞ³Î ¿­±â
+    // ìƒˆ ê°œë³„ ì •ë³´ íŒ¨ë„ ì—´ê¸°
     public void BirdInfo(int index)
     {
         BirdInfoPanel.SetActive(true);
         LoadBirdInfo(index);
     }
 
-    // »õ °³º° Á¤º¸ ÆĞ³Î ´İ±â
+    // ìƒˆ ê°œë³„ ì •ë³´ íŒ¨ë„ ë‹«ê¸°
     public void BirdInfoBack()
     {
         BirdInfoPanel.SetActive(false);
     }
 
-    // ²Ş µµ°¨À¸·Î °¡±â
+    // ê¿ˆ ë„ê°ìœ¼ë¡œ ê°€ê¸°
     public void GoDreamCollection()
     {
         SceneManager.LoadScene("CollectionDream");
