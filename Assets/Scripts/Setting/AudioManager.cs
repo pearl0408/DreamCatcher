@@ -5,43 +5,43 @@ using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-    //»ç¿îµå °ü·Ã ±â´ÉÀ» °ü¸®ÇÏ´Â Å¬·¡½º
+    //ì‚¬ìš´ë“œ ê´€ë ¨ ê¸°ëŠ¥ì„ ê´€ë¦¬í•˜ëŠ” í´ë˜ìŠ¤
 
-    //¹è°æÀ½¾Ç, È¿°úÀ½ Á¶Àı ½½¶óÀÌ´õ ¿ÀºêÁ§Æ®¸¦ °¡Á®¿Ã º¯¼ö
-    public Slider BGSlider; //¹è°æÀ½¾Ç ½½¶óÀÌ´õ
-    public Slider EFSlider; //È¿°úÀ½ ½½¶óÀÌ´õ
+    //ë°°ê²½ìŒì•…, íš¨ê³¼ìŒ ì¡°ì ˆ ìŠ¬ë¼ì´ë” ì˜¤ë¸Œì íŠ¸ë¥¼ ê°€ì ¸ì˜¬ ë³€ìˆ˜
+    public Slider BGSlider; //ë°°ê²½ìŒì•… ìŠ¬ë¼ì´ë”
+    public Slider EFSlider; //íš¨ê³¼ìŒ ìŠ¬ë¼ì´ë”
 
-    //¿Àµğ¿À Å©±â °ªÀ» ÀúÀåÇÒ º¯¼ö
+    //ì˜¤ë””ì˜¤ í¬ê¸° ê°’ì„ ì €ì¥í•  ë³€ìˆ˜
     private float BGVol;
     private float EFVol;
 
-    //Å¸ÀÌÆ² ¾À ¹è°æÀ½¾Ç ¿Àµğ¿À¸¦ °¡Á®¿Ã º¯¼ö
+    //íƒ€ì´í‹€ ì”¬ ë°°ê²½ìŒì•… ì˜¤ë””ì˜¤ë¥¼ ê°€ì ¸ì˜¬ ë³€ìˆ˜
     public AudioSource BGSound;
     public AudioSource EFSound;
 
-    //¿Àµğ¿À¸¦ ²ô°í ÄÓ Åä±Û
-    public Toggle BGToggle;    //¹è°æÀ½¾Ç Åä±Û
-    public Toggle EffectToggle;    //È¿°úÀ½ Åä±Û
+    //ì˜¤ë””ì˜¤ë¥¼ ë„ê³  ì¼¤ í† ê¸€
+    public Toggle BGToggle;    //ë°°ê²½ìŒì•… í† ê¸€
+    public Toggle EffectToggle;    //íš¨ê³¼ìŒ í† ê¸€
 
-    //Åä±Û °ªÀ» ÀúÀåÇÒ º¯¼ö
+    //í† ê¸€ ê°’ì„ ì €ì¥í•  ë³€ìˆ˜
     private int BGCheck;
     private int EffectCheck;
 
     void Start()
     {
-        //PlayerPrefs¿¡ ÀúÀåµÈ °ªÀ» °¡Á®¿È(°ªÀÌ ºñ¾ú´Ù¸é 1À» °¡Á®¿È)
+        //PlayerPrefsì— ì €ì¥ëœ ê°’ì„ ê°€ì ¸ì˜´(ê°’ì´ ë¹„ì—ˆë‹¤ë©´ 1ì„ ê°€ì ¸ì˜´)
         BGVol = PlayerPrefs.GetFloat("BGVol", 1f);
         EFVol = PlayerPrefs.GetFloat("EFVol", 1f);
         BGCheck = PlayerPrefs.GetInt("BGCheck", 0);
         EffectCheck = PlayerPrefs.GetInt("EffectCheck", 0);
 
-        //ÀúÀåµÈ °ªÀ» ½½¶óÀÌ´õ, Åä±Û¿¡ ¹İ¿µÇÔ
+        //ì €ì¥ëœ ê°’ì„ ìŠ¬ë¼ì´ë”, í† ê¸€ì— ë°˜ì˜í•¨
         BGSlider.value = BGVol;
         EFSlider.value = EFVol;
         BGToggle.isOn = BGCheck == 1 ? true : false;
         EffectToggle.isOn = EffectCheck == 1 ? true : false;
 
-        //½½¶óÀÌ´õ, Åä±ÛÀÇ °ªÀ» Å¸ÀÌÆ²¾À ¹è°æÀ½¾Ç ¿Àµğ¿À¿¡ ¹İ¿µÇÔ
+        //ìŠ¬ë¼ì´ë”, í† ê¸€ì˜ ê°’ì„ íƒ€ì´í‹€ì”¬ ë°°ê²½ìŒì•… ì˜¤ë””ì˜¤ì— ë°˜ì˜í•¨
         /*        BGSound.volume = BGSlider.value;
                 EFSound.volume = EFSlider.value;*/
 
@@ -69,41 +69,41 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
-/*        BGSoundSlider();    //¹è°æÀ½¾Ç ½½¶óÀÌ´õ°ª ÀúÀå
-        EFSoundSlider();    //È¿°úÀ½ ½½¶óÀÌ´õ°ª ÀúÀå*/
-/*        SetBGToggle();  //¹è°æÀ½¾Ç Åä±Û ÀúÀå
-        SetEffectToggle();  //È¿°úÀ½ Åä±Û ÀúÀå*/
+/*        BGSoundSlider();    //ë°°ê²½ìŒì•… ìŠ¬ë¼ì´ë”ê°’ ì €ì¥
+        EFSoundSlider();    //íš¨ê³¼ìŒ ìŠ¬ë¼ì´ë”ê°’ ì €ì¥*/
+/*        SetBGToggle();  //ë°°ê²½ìŒì•… í† ê¸€ ì €ì¥
+        SetEffectToggle();  //íš¨ê³¼ìŒ í† ê¸€ ì €ì¥*/
 
-        //½½¶óÀÌ´õÀÇ °ªÀ» ½Ç½Ã°£À¸·Î ½ÃÀÛÈ­¸é ¹è°æÀ½¾Ç ¿Àµğ¿À¿¡ ¹İ¿µÇÔ
+        //ìŠ¬ë¼ì´ë”ì˜ ê°’ì„ ì‹¤ì‹œê°„ìœ¼ë¡œ ì‹œì‘í™”ë©´ ë°°ê²½ìŒì•… ì˜¤ë””ì˜¤ì— ë°˜ì˜í•¨
 /*        BGSound.volume = BGSlider.value;
         EFSound.volume = EFSlider.value;*/
     }
 
-    //BackGround Sound Á¶Àı ÇÔ¼ö
+    //BackGround Sound ì¡°ì ˆ í•¨ìˆ˜
     public void BGSoundSlider()
     {
-        //°ªÀ» À¯ÁöÇÏ±â À§ÇØ floatÇü º¯¼ö¿¡ ³ÖÀº ÈÄ PlayerPrefs()¸¦ ÀÌ¿ëÇÏ¿© ÀúÀåÇÔ
+        //ê°’ì„ ìœ ì§€í•˜ê¸° ìœ„í•´ floatí˜• ë³€ìˆ˜ì— ë„£ì€ í›„ PlayerPrefs()ë¥¼ ì´ìš©í•˜ì—¬ ì €ì¥í•¨
         BGVol = BGSlider.value;
         BGSound.volume = BGSlider.value;
         PlayerPrefs.SetFloat("BGVol", BGVol);
     }
 
-    //Effect Sound Á¶Àı ÇÔ¼ö
+    //Effect Sound ì¡°ì ˆ í•¨ìˆ˜
     public void EFSoundSlider()
     {
-        //°ªÀ» À¯ÁöÇÏ±â À§ÇØ floatÇü º¯¼ö¿¡ ³ÖÀº ÈÄ PlayerPrefs()¸¦ ÀÌ¿ëÇÏ¿© ÀúÀåÇÔ
+        //ê°’ì„ ìœ ì§€í•˜ê¸° ìœ„í•´ floatí˜• ë³€ìˆ˜ì— ë„£ì€ í›„ PlayerPrefs()ë¥¼ ì´ìš©í•˜ì—¬ ì €ì¥í•¨
         EFVol = EFSlider.value;
         EFSound.volume = EFSlider.value;
         PlayerPrefs.SetFloat("EFVol", EFVol);
     }
 
-    //È¿°úÀ½À» ½ÇÇà½ÃÅ°´Â ÇÔ¼ö
+    //íš¨ê³¼ìŒì„ ì‹¤í–‰ì‹œí‚¤ëŠ” í•¨ìˆ˜
     public void PlayEffectMusic()
     {
         EFSound.Play();
     }
 
-    //¹è°æÀ½¾Ç À½¼Ò°Å ÇÔ¼ö
+    //ë°°ê²½ìŒì•… ìŒì†Œê±° í•¨ìˆ˜
     public void SetBGToggle()
     {
         BGCheck = BGToggle.isOn == true ? 1 : 0;
@@ -111,10 +111,10 @@ public class AudioManager : MonoBehaviour
         PlayerPrefs.SetInt("BGCheck", BGCheck);
     }
 
-    //È¿°úÀ½ À½¼Ò°Å ÇÔ¼ö
+    //íš¨ê³¼ìŒ ìŒì†Œê±° í•¨ìˆ˜
     public void SetEffectToggle()
     {
-        PlayEffectMusic();  //Àç»ı
+        PlayEffectMusic();  //ì¬ìƒ
 
         EffectCheck = EffectToggle.isOn == true ? 1 : 0;
         EFSound.mute = EffectCheck == 1 ? true : false;

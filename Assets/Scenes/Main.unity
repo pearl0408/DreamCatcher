@@ -1432,7 +1432,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 746676188}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: EFSoundSlider
         m_Mode: 1
@@ -2028,7 +2028,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 746676188}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: BGSoundSlider
         m_Mode: 1
@@ -2754,6 +2754,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2758370198887881648, guid: da92262ddd19d724fa4c93ee98fe8787, type: 3}
   m_PrefabInstance: {fileID: 2758370199332328390}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &746676188 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6204683050778740821, guid: e5fda08ead39f5a478cdaa17e2f0f601, type: 3}
+  m_PrefabInstance: {fileID: 5107403565194878041}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10ddf91deaebe73489d7b3ab4c898706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &779375503
 GameObject:
   m_ObjectHideFlags: 0
@@ -3476,7 +3487,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 746676188}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: SetBGToggle
         m_Mode: 1
@@ -5697,7 +5708,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 746676188}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: SetEffectToggle
         m_Mode: 1
@@ -7648,6 +7659,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5107403565194878044, guid: e5fda08ead39f5a478cdaa17e2f0f601, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 47bd0708fbd2c5e44955a5c869d804a0, type: 3}
     - target: {fileID: 6204683050778740821, guid: e5fda08ead39f5a478cdaa17e2f0f601, type: 3}
       propertyPath: BGSound
       value: 
