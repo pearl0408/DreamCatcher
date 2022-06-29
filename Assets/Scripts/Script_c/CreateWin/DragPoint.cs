@@ -5,14 +5,15 @@ using UnityEngine.EventSystems;
 
 public class DragPoint : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    // ÇÁ¸®ÆÕ
+    // í”„ë¦¬íŒ¹
     public GameObject LinePref;
 
-    // ¿ÀºêÁ§Æ®
+    // ì˜¤ë¸Œì íŠ¸
     GameObject Line;
+    public GameObject LinesGroup;
     //public GameObject Canvas;
 
-    // À§Ä¡
+    // ìœ„ì¹˜
     Vector3 StartPoint, EndPoint;
     private Vector3 mousePos;
 
@@ -29,16 +30,16 @@ public class DragPoint : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     }
 
-    // ¿ÀºêÁ§Æ® µå·¡±× ½ÃÀÛ
+    // ì˜¤ë¸Œì íŠ¸ ë“œë˜ê·¸ ì‹œì‘
     public void OnBeginDrag(PointerEventData eventData)
     {
         Line = Instantiate(LinePref);
-        Line.transform.parent = this.gameObject.transform.parent;
+        Line.transform.parent = LinesGroup.gameObject.transform;
         Line.GetComponent<LineRenderer>().sortingOrder = 1;
         Line.GetComponent<LineRenderer>().SetPosition(0, StartPoint);
     }
 
-    // ¿ÀºêÁ§Æ® µå·¡±× Áß
+    // ì˜¤ë¸Œì íŠ¸ ë“œë˜ê·¸ ì¤‘
     public void OnDrag(PointerEventData eventData)
     {
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -47,20 +48,20 @@ public class DragPoint : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         if (eventData.pointerCurrentRaycast.gameObject.CompareTag("DragPoint"))
         {
-            // ´êÀ¸¸é °Å±â¼­ ÇÑÁÙ ¿Ï¼º
+            // ë‹¿ìœ¼ë©´ ê±°ê¸°ì„œ í•œì¤„ ì™„ì„±
             EndPoint = eventData.pointerCurrentRaycast.gameObject.transform.position;
             Line.GetComponent<LineRenderer>().SetPosition(1, EndPoint);
 
-            // ¹Ù·Î »õ·Î¿î ÁÙ : ¹Ì¿Ï ±¸»óÁß
+            // ë°”ë¡œ ìƒˆë¡œìš´ ì¤„ : ë¯¸ì™„ êµ¬ìƒì¤‘
         }
     }
 
-    // ¿ÀºêÁ§Æ® µå·¡±× ³¡
+    // ì˜¤ë¸Œì íŠ¸ ë“œë˜ê·¸ ë
     public void OnEndDrag(PointerEventData eventData)
     {
         if (eventData.pointerCurrentRaycast.gameObject.CompareTag("DragPoint"))
         {
-            // ´êÀ¸¸é °Å±â¼­ ÇÑÁÙ ¿Ï¼º
+            // ë‹¿ìœ¼ë©´ ê±°ê¸°ì„œ í•œì¤„ ì™„ì„±
             //Debug.Log(eventData.pointerCurrentRaycast.gameObject);
             EndPoint = eventData.pointerCurrentRaycast.gameObject.transform.position;
             Line.GetComponent<LineRenderer>().SetPosition(1, EndPoint);

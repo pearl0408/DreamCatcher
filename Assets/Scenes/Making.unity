@@ -268,6 +268,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1429267984}
     m_Modifications:
+    - target: {fileID: 714237478228648778, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
+      propertyPath: Lines
+      value: 
+      objectReference: {fileID: 1550497418}
+    - target: {fileID: 714237478228648778, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
+      propertyPath: LinesGroup
+      value: 
+      objectReference: {fileID: 1550497418}
     - target: {fileID: 714237478228648788, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
       propertyPath: m_Name
       value: DragPoint (1)
@@ -1192,6 +1200,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1429267984}
     m_Modifications:
+    - target: {fileID: 714237478228648778, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
+      propertyPath: Lines
+      value: 
+      objectReference: {fileID: 1550497418}
+    - target: {fileID: 714237478228648778, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
+      propertyPath: LinesGroup
+      value: 
+      objectReference: {fileID: 1550497418}
     - target: {fileID: 714237478228648788, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
       propertyPath: m_Name
       value: DragPoint (2)
@@ -1364,6 +1380,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1429267984}
     m_Modifications:
+    - target: {fileID: 714237478228648778, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
+      propertyPath: Lines
+      value: 
+      objectReference: {fileID: 1550497418}
+    - target: {fileID: 714237478228648778, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
+      propertyPath: LinesGroup
+      value: 
+      objectReference: {fileID: 1550497418}
     - target: {fileID: 714237478228648788, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
       propertyPath: m_Name
       value: DragPoint (5)
@@ -1691,6 +1715,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1429267984}
     m_Modifications:
+    - target: {fileID: 714237478228648778, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
+      propertyPath: Lines
+      value: 
+      objectReference: {fileID: 1550497418}
+    - target: {fileID: 714237478228648778, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
+      propertyPath: LinesGroup
+      value: 
+      objectReference: {fileID: 1550497418}
     - target: {fileID: 714237478228648788, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
       propertyPath: m_Name
       value: DragPoint (3)
@@ -3180,6 +3212,8 @@ RectTransform:
   m_Children:
   - {fileID: 1868448180}
   - {fileID: 1447041864}
+  - {fileID: 1429267984}
+  - {fileID: 1550497419}
   m_Father: {fileID: 1486598507}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3392,7 +3426,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1429267983}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3404,12 +3438,12 @@ RectTransform:
   - {fileID: 633593124}
   - {fileID: 1627346897}
   - {fileID: 1171061857}
-  m_Father: {fileID: 1486598507}
-  m_RootOrder: 7
+  m_Father: {fileID: 1238130100}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 292}
+  m_AnchoredPosition: {x: 0, y: -212.65002}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1434669934
@@ -3569,6 +3603,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1429267984}
     m_Modifications:
+    - target: {fileID: 714237478228648778, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
+      propertyPath: Lines
+      value: 
+      objectReference: {fileID: 1550497418}
+    - target: {fileID: 714237478228648778, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
+      propertyPath: LinesGroup
+      value: 
+      objectReference: {fileID: 1550497418}
     - target: {fileID: 714237478228648788, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
       propertyPath: m_Name
       value: DragPoint (4)
@@ -3666,6 +3708,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1429267984}
     m_Modifications:
+    - target: {fileID: 714237478228648778, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
+      propertyPath: Lines
+      value: 
+      objectReference: {fileID: 1550497418}
+    - target: {fileID: 714237478228648778, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
+      propertyPath: LinesGroup
+      value: 
+      objectReference: {fileID: 1550497418}
     - target: {fileID: 714237478228648788, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
       propertyPath: m_Name
       value: DragPoint (6)
@@ -3854,7 +3904,6 @@ RectTransform:
   - {fileID: 1610724790}
   - {fileID: 1896581781}
   - {fileID: 985325412}
-  - {fileID: 1429267984}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3917,6 +3966,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1429267984}
     m_Modifications:
+    - target: {fileID: 714237478228648778, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
+      propertyPath: Lines
+      value: 
+      objectReference: {fileID: 1550497418}
+    - target: {fileID: 714237478228648778, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
+      propertyPath: LinesGroup
+      value: 
+      objectReference: {fileID: 1550497418}
     - target: {fileID: 714237478228648788, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
       propertyPath: m_Name
       value: DragPoint (7)
@@ -4097,6 +4154,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1510087265}
   m_CullTransparentMesh: 1
+--- !u!1 &1550497418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1550497419}
+  m_Layer: 5
+  m_Name: Lines
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1550497419
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550497418}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1238130100}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1604986162
 GameObject:
   m_ObjectHideFlags: 0
@@ -5354,6 +5446,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1429267984}
     m_Modifications:
+    - target: {fileID: 714237478228648778, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
+      propertyPath: Lines
+      value: 
+      objectReference: {fileID: 1550497418}
+    - target: {fileID: 714237478228648778, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
+      propertyPath: LinesGroup
+      value: 
+      objectReference: {fileID: 1550497418}
     - target: {fileID: 714237478228648788, guid: 5b93a7e4543dd59498acd3b07c480479, type: 3}
       propertyPath: m_Name
       value: DragPoint
