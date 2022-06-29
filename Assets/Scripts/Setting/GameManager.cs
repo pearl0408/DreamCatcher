@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // °ÔÀÓ µ¥ÀÌÅÍ¸¦ °ü¸®ÇÏ´Â ½Ì±ÛÅæ ÆĞÅÏ
+    // ê²Œì„ ë°ì´í„°ë¥¼ ê´€ë¦¬í•˜ëŠ” ì‹±ê¸€í†¤ íŒ¨í„´
 
-    //½Ì±ÛÅæ ÆĞÅÏÀ» »ç¿ëÇÏ±â À§ÇÑ Àü¿ª º¯¼ö
+    //ì‹±ê¸€í†¤ íŒ¨í„´ì„ ì‚¬ìš©í•˜ê¸° ìœ„í•œ ì „ì—­ ë³€ìˆ˜
     public static GameManager instance;
 
     [Header("[Game Data]")]
-    public GoodsContainer loadGoodsData;  //»óÇ°(º¸Á¶µµ±¸) ·¹º§ µ¥ÀÌÅÍ
-    public TopBarContainer loadTopBarData;  //»ó´Ü¹Ù µ¥ÀÌÅÍ(²Ş±¸½½, °ñµå, Æ¯Á¦¸ÔÀÌ) °³¼ö µ¥ÀÌÅÍ
-    public TimerData timerData; //Å¸ÀÌ¸Ó µ¥ÀÌÅÍ(¸ÔÀÌ ¼±ÅÃ ¿©ºÎ, ¸ÔÀÌ ³õÀº ½Ã°£)
+    public GoodsContainer loadGoodsData;  //ìƒí’ˆ(ë³´ì¡°ë„êµ¬) ë ˆë²¨ ë°ì´í„°
+    public TopBarContainer loadTopBarData;  //ìƒë‹¨ë°” ë°ì´í„°(ê¿ˆêµ¬ìŠ¬, ê³¨ë“œ, íŠ¹ì œë¨¹ì´) ê°œìˆ˜ ë°ì´í„°
+    public TimerData timerData; //íƒ€ì´ë¨¸ ë°ì´í„°(ë¨¹ì´ ì„ íƒ ì—¬ë¶€, ë¨¹ì´ ë†“ì€ ì‹œê°„)
 
     void Awake()
     {
-        // °ÔÀÓ ½ÃÀÛ°ú µ¿½Ã¿¡ ½Ì±ÛÅæ ±¸¼º
+        // ê²Œì„ ì‹œì‘ê³¼ ë™ì‹œì— ì‹±ê¸€í†¤ êµ¬ì„±
 
-        if (instance)     //½Ì±ÛÅæ º¯¼ö instance°¡ ÀÌ¹Ì ÀÖ´Ù¸é
+        if (instance)     //ì‹±ê¸€í†¤ ë³€ìˆ˜ instanceê°€ ì´ë¯¸ ìˆë‹¤ë©´
         {
-            DestroyImmediate(gameObject);   //»èÁ¦
+            DestroyImmediate(gameObject);   //ì‚­ì œ
             return;
         }
 
-        instance = this;    //À¯ÀÏÇÑ ÀÎ½ºÅÏ½º
-        DontDestroyOnLoad(gameObject);  //¾ÀÀÌ ¹Ù²î¾îµµ °è¼Ó À¯Áö½ÃÅ´
+        instance = this;    //ìœ ì¼í•œ ì¸ìŠ¤í„´ìŠ¤
+        DontDestroyOnLoad(gameObject);  //ì”¬ì´ ë°”ë€Œì–´ë„ ê³„ì† ìœ ì§€ì‹œí‚´
     }
 
     public static GameManager GetGameManager()
@@ -35,10 +35,10 @@ public class GameManager : MonoBehaviour
 
     public void ResetGameManager()
     {
-        //ÃÊ±âÈ­ ÇÔ¼ö
+        //ì´ˆê¸°í™” í•¨ìˆ˜
 
-        loadGoodsData = this.gameObject.GetComponent<GoodsJSON>().GetGoodsData();   //»óÇ° µ¥ÀÌÅÍ °¡Á®¿À±â
-        loadTopBarData = this.gameObject.GetComponent<TopBarJSON>().GetTopBarData();    //»ó´Ü¹Ù µ¥ÀÌÅÍ °¡Á®¿À±â
-        timerData = this.gameObject.GetComponent<TimerJSON>().GetTimerData();   //Å¸ÀÌ¸Ó µ¥ÀÌÅÍ °¡Á®¿À±â
+        loadGoodsData = this.gameObject.GetComponent<GoodsJSON>().GetGoodsData();   //ìƒí’ˆ ë°ì´í„° ê°€ì ¸ì˜¤ê¸°
+        loadTopBarData = this.gameObject.GetComponent<TopBarJSON>().GetTopBarData();    //ìƒë‹¨ë°” ë°ì´í„° ê°€ì ¸ì˜¤ê¸°
+        timerData = this.gameObject.GetComponent<TimerJSON>().GetTimerData();   //íƒ€ì´ë¨¸ ë°ì´í„° ê°€ì ¸ì˜¤ê¸°
     }
 }

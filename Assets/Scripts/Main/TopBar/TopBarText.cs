@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class TopBarText : MonoBehaviour
 {
-    //»ó´Ü¹Ù µ¥ÀÌÅÍ ÅØ½ºÆ®¸¦ º¸¿©ÁÖ´Â Å¬·¡½º
+    //ìƒë‹¨ë°” ë°ì´í„° í…ìŠ¤íŠ¸ë¥¼ ë³´ì—¬ì£¼ëŠ” í´ë˜ìŠ¤d
 
     [Header("[Topbar Text]")]
-    public Text DreamMarbleText;      //²Ş±¸½½ ÅØ½ºÆ®
-    public Text GoldText;      //°ñµå ÅØ½ºÆ®
-    public Text SpecialFeedText;      //¸ÔÀÌ °³¼ö ÅØ½ºÆ®
+    public Text DreamMarbleText;      //ê¿ˆêµ¬ìŠ¬ í…ìŠ¤íŠ¸
+    public Text GoldText;      //ê³¨ë“œ í…ìŠ¤íŠ¸
+    public Text SpecialFeedText;      //ë¨¹ì´ ê°œìˆ˜ í…ìŠ¤íŠ¸
 
-    private TopBarContainer curPlayerData;   //ÇÃ·¹ÀÌ¾î µ¥ÀÌÅÍ Á¤º¸
+    private TopBarContainer curPlayerData;   //í”Œë ˆì´ì–´ ë°ì´í„° ì •ë³´
 
     private void Start()
     {
@@ -21,32 +21,32 @@ public class TopBarText : MonoBehaviour
 
     public void UpdateText()
     {
-        //ÅØ½ºÆ®µéÀ» ¾÷µ¥ÀÌÆ® ÇÏ´Â ÇÔ¼ö
+        //í…ìŠ¤íŠ¸ë“¤ì„ ì—…ë°ì´íŠ¸ í•˜ëŠ” í•¨ìˆ˜
         GameManager.instance.ResetGameManager();
-        curPlayerData = GameManager.instance.loadTopBarData;    //ÇÃ·¹ÀÌ¾îÀÇ »ó´Ü¹Ù µ¥ÀÌÅÍ Á¤º¸¸¦ °¡Á®¿È
+        curPlayerData = GameManager.instance.loadTopBarData;    //í”Œë ˆì´ì–´ì˜ ìƒë‹¨ë°” ë°ì´í„° ì •ë³´ë¥¼ ê°€ì ¸ì˜´
 
         DreamMarbleText.text = curPlayerData.dataList[0].dataNumber.ToString();
-        GoldText.text = curPlayerData.dataList[1].dataNumber.ToString();    //Æ¯Á¦ ¸ÔÀÌ °³¼ö¸¦ °¡Á®¿È
-        SpecialFeedText.text = curPlayerData.dataList[2].dataNumber.ToString();    //Æ¯Á¦ ¸ÔÀÌ °³¼ö¸¦ °¡Á®¿È
+        GoldText.text = curPlayerData.dataList[1].dataNumber.ToString();    //íŠ¹ì œ ë¨¹ì´ ê°œìˆ˜ë¥¼ ê°€ì ¸ì˜´
+        SpecialFeedText.text = curPlayerData.dataList[2].dataNumber.ToString();    //íŠ¹ì œ ë¨¹ì´ ê°œìˆ˜ë¥¼ ê°€ì ¸ì˜´
     }
 
     public void SetDreamMarbleText(int marbleNum)
     {
-        //²Ş±¸½½ ÅØ½ºÆ®¸¦ ¼öÁ¤ÇÏ´Â ÇÔ¼ö
+        //ê¿ˆêµ¬ìŠ¬ í…ìŠ¤íŠ¸ë¥¼ ìˆ˜ì •í•˜ëŠ” í•¨ìˆ˜
 
         DreamMarbleText.text = marbleNum.ToString();
     }
 
     public void SetSpecialFeedText(int feedNum)
     {
-        //Æ¯Á¦ ¸ÔÀÌ °³¼ö ÅØ½ºÆ®¸¦ ¼öÁ¤ÇÏ´Â ÇÔ¼ö
+        //íŠ¹ì œ ë¨¹ì´ ê°œìˆ˜ í…ìŠ¤íŠ¸ë¥¼ ìˆ˜ì •í•˜ëŠ” í•¨ìˆ˜
 
         SpecialFeedText.text = feedNum.ToString();
     }
 
     public void SetGoldText(int GoldNum)
     {
-        //°ñµå ÅØ½ºÆ®¸¦ ¼öÁ¤ÇÏ´Â ÇÔ¼ö
+        //ê³¨ë“œ í…ìŠ¤íŠ¸ë¥¼ ìˆ˜ì •í•˜ëŠ” í•¨ìˆ˜
 
         GoldText.text = GoldNum.ToString();
     }
