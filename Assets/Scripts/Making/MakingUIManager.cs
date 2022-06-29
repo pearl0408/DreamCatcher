@@ -20,22 +20,24 @@ public class MakingUIManager : MonoBehaviour
         
     }
 
+    // ì‹¤ì°½ í™œì„±í™”
     public void StringWin()
     {
-        // StringWin È°¼ºÈ­, FeatherWin ºñÈ°¼ºÈ­
+        // StringWin í™œì„±í™”, FeatherWin ë¹„í™œì„±í™”
         StringWindow.SetActive(true);
         FeatherWindow.SetActive(false);
-        // StringBtn ¹àÀ½, FeatherBtn ¾îµÓ
+        // StringBtn ë°ìŒ, FeatherBtn ì–´ë‘¡
         StringBtn.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         FeatherBtn.GetComponent<Image>().color = new Color(0.5943396f, 0.5943396f, 0.5943396f, 1.0f);
     }
 
+    // ê¹ƒí„¸ì°½ í™œì„±í™”
     public void FeatherWin()
     {
-        // FeatherWin È°¼ºÈ­, StringWin ºñÈ°¼ºÈ­
+        // FeatherWin í™œì„±í™”, StringWin ë¹„í™œì„±í™”
         FeatherWindow.SetActive(true);
         StringWindow.SetActive(false);
-        // FeatherBtn ¹àÀ½, StringBtn ¾îµÓ
+        // FeatherBtn ë°ìŒ, StringBtn ì–´ë‘¡
         FeatherBtn.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         StringBtn.GetComponent<Image>().color = new Color(0.5943396f, 0.5943396f, 0.5943396f, 1.0f);
     }
