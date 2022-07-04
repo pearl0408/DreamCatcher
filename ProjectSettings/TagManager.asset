@@ -10,6 +10,7 @@ TagManager:
   - SceneManager
   - TopBar
   - DragPoint
+  - AudioManager
   layers:
   - Default
   - TransparentFX
