@@ -5,116 +5,106 @@ using UnityEngine.UI;
 
 public class StoreData : MonoBehaviour
 {
-    //»óÁ¡ CSV ÆÄÀÏÀÇ µ¥ÀÌÅÍ¸¦ °¡Á®¿À´Â Å¬·¡½º
+    //ìƒì  CSV íŒŒì¼ì˜ ë°ì´í„°ë¥¼ ê°€ì ¸ì˜¤ëŠ” í´ë˜ìŠ¤
 
     [Header("[Store Product]")]
-    public GameObject[] goodsContents;   //»óÇ° ¿ÀºêÁ§Æ® ¹è¿­(È¶´ë, È­ºĞ, »óÀÚ, ½Ç)
-    public SpriteArray[] goodsImages; //»óÇ° ÀÌ¹ÌÁö ¹è¿­
-    [SerializeField] private int[] currentCost = new int[4]; //ÇöÀç °¡°İ
+    public GameObject[] goodsContents;   //ìƒí’ˆ ì˜¤ë¸Œì íŠ¸ ë°°ì—´(íšƒëŒ€, í™”ë¶„, ìƒì, ì‹¤)
+    public SpriteArray[] goodsImages; //ìƒí’ˆ ì´ë¯¸ì§€ ë°°ì—´
+    [SerializeField] private int[] currentCost = new int[4]; //í˜„ì¬ ê°€ê²©
 
-    private GoodsContainer curGoodsData;   //»óÇ° Á¤º¸
-    private TopBarContainer curPlayerData;   //ÇÃ·¹ÀÌ¾î µ¥ÀÌÅÍ Á¤º¸
+    private GoodsContainer curGoodsData;   //ìƒí’ˆ ì •ë³´
+    private TopBarContainer curPlayerData;   //í”Œë ˆì´ì–´ ë°ì´í„° ì •ë³´
 
+    [Space]
+    public GameObject[] soldOut;  //íŒë§¤ ì™„ë£Œ ì´ë¯¸ì§€ ì˜¤ë¸Œì íŠ¸ ë°°ì—´
 
     private void Start()
     {
-        curGoodsData = GameManager.instance.loadGoodsData;   //ÇÃ·¹ÀÌ¾îÀÇ »óÇ° Á¤º¸¸¦ °¡Á®¿È
-        curPlayerData = GameManager.instance.loadTopBarData;    //ÇÃ·¹ÀÌ¾îÀÇ »ó´Ü¹Ù µ¥ÀÌÅÍ Á¤º¸¸¦ °¡Á®¿È
-
-        List<Dictionary<string, object>> data_Store = CSVParser.ReadFromFile("Store");  //»óÁ¡ µ¥ÀÌÅÍ¸¦ °¡Á®¿È  
-        UpdateStoreData(data_Store);
+        UpdateStoreData();
     }
 
-    public void UpdateStoreData(List<Dictionary<string, object>> data)
+    public void UpdateStoreData()
     {
-        //»óÁ¡ µ¥ÀÌÅÍ¸¦ °¡Á®¿À´Â ÇÔ¼ö
-        
-        int productCnt = 1; //»óÇ° Ä«Å×°í¸® ½ÃÀÛ ¹øÈ£
-        for (int i = 0; i < curGoodsData.goodsCount; i++, productCnt += 5)
+        GameManager.instance.ResetGameManager();    //ì €ì¥ ë°ì´í„° ê°±ì‹ 
+        curGoodsData = GameManager.instance.loadGoodsData;   //í”Œë ˆì´ì–´ì˜ ìƒí’ˆ ì •ë³´ë¥¼ ê°€ì ¸ì˜´
+        curPlayerData = GameManager.instance.loadTopBarData;    //í”Œë ˆì´ì–´ì˜ ìƒë‹¨ë°” ë°ì´í„° ì •ë³´ë¥¼ ê°€ì ¸ì˜´
+
+        //ìƒì  ë°ì´í„°ë¥¼ ê°€ì ¸ì˜¤ëŠ” í•¨ìˆ˜
+        List<Dictionary<string, object>> data_Store = CSVParser.ReadFromFile("Store");  //ìƒì  ë°ì´í„°ë¥¼ ê°€ì ¸ì˜´  
+
+        int productCnt = 1; //ìƒí’ˆ ì¹´í…Œê³ ë¦¬ ì‹œì‘ ë²ˆí˜¸
+        for (int i = 0; i < curGoodsData.goodsCount; i++, productCnt += 6)
         {
-            int goodsLevel = curGoodsData.goodsList[i].goodsLevel;  //»óÇ° ·¹º§
-            goodsContents[i].transform.GetChild(4).GetChild(1).gameObject.GetComponent<Text>().text = data[productCnt + goodsLevel]["Effect"].ToString();   //»óÇ° È¿°ú ºÒ·¯¿È
-            goodsContents[i].transform.GetChild(6).GetChild(2).gameObject.GetComponent<Text>().text = data[productCnt + goodsLevel]["Gold"].ToString();     //»óÇ° °¡°İ ºÒ·¯¿È
-            currentCost[i] = int.Parse(data[productCnt + goodsLevel]["Gold"].ToString());   //±¸¸Å¸¦ À§ÇØ »óÇ°º° °¡°İ¸¸ µû·Î ÀúÀå
-            goodsContents[i].transform.GetChild(1).gameObject.GetComponent<Image>().sprite = goodsImages[i].imageList[goodsLevel + 1]; //»óÇ° ÀÌ¹ÌÁö ºÒ·¯¿È
+            int goodsLevel = curGoodsData.goodsList[i].goodsLevel;  //ìƒí’ˆ ë ˆë²¨
+            goodsContents[i].transform.GetChild(4).GetChild(1).gameObject.GetComponent<Text>().text = data_Store[productCnt + goodsLevel]["Effect"].ToString();   //ìƒí’ˆ íš¨ê³¼ ë¶ˆëŸ¬ì˜´
+            goodsContents[i].transform.GetChild(6).GetChild(2).gameObject.GetComponent<Text>().text = data_Store[productCnt + goodsLevel]["Gold"].ToString();     //ìƒí’ˆ ê°€ê²© ë¶ˆëŸ¬ì˜´
+            goodsContents[i].transform.GetChild(5).gameObject.GetComponent<Slider>().value = float.Parse(data_Store[productCnt + goodsLevel]["Slider"].ToString());     //ìƒí’ˆ ìŠ¬ë¼ì´ë” ê°’ ë¶ˆëŸ¬ì˜´
+            currentCost[i] = int.Parse(data_Store[productCnt + goodsLevel]["Gold"].ToString());   //êµ¬ë§¤ë¥¼ ìœ„í•´ ìƒí’ˆë³„ ê°€ê²©ë§Œ ë”°ë¡œ ì €ì¥
+            goodsContents[i].transform.GetChild(1).gameObject.GetComponent<Image>().sprite = goodsImages[i].imageList[goodsLevel + 1]; //ìƒí’ˆ ì´ë¯¸ì§€ ë¶ˆëŸ¬ì˜´
         }
     }
-    
+
     public void AddGoodsLevel(int goodsIndex)
     {
-        curGoodsData.goodsList[goodsIndex].goodsLevel++;    //»óÇ° ·¹º§ Áõ°¡
-        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GoodsJSON>().DataSaveText(curGoodsData);   //º¯°æ»çÇ× jsonÀ¸·Î ÀúÀå
+        curGoodsData.goodsList[goodsIndex].goodsLevel++;    //ìƒí’ˆ ë ˆë²¨ ì¦ê°€
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GoodsJSON>().DataSaveText(curGoodsData);   //ë³€ê²½ì‚¬í•­ jsonìœ¼ë¡œ ì €ì¥
     }
 
     public void SpendGold(int cost)
     {
-        curPlayerData.dataList[1].dataNumber -= cost;   //º¸À¯ °ñµå °¨¼Ò (¼ÒÇÁÆ®ÄÚµùÀ¸·Î °¡´ÉÇÒÁö °í¹Î)
-        GameObject.FindGameObjectWithTag("GameManager").GetComponent<TopBarJSON>().DataSaveText(curPlayerData);   //º¯°æ»çÇ× jsonÀ¸·Î ÀúÀå
+        curPlayerData.dataList[1].dataNumber -= cost;   //ë³´ìœ  ê³¨ë“œ ê°ì†Œ
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<TopBarJSON>().DataSaveText(curPlayerData);   //ë³€ê²½ì‚¬í•­ jsonìœ¼ë¡œ ì €ì¥
     }
 
-    //*buy ÇÔ¼öµé virtual·Î °¡´ÉÇÑÁö È®ÀÎ ÈÄ ¼öÁ¤ÇÒ ¿¹Á¤
-    public void BuyRack()
+    public void BuyGoods(int goodsNumber)
     {
-        List<Dictionary<string, object>> data_Store = CSVParser.Read("Store");  //»óÁ¡ µ¥ÀÌÅÍ¸¦ °¡Á®¿È  
+        //ìƒí’ˆ êµ¬ë§¤ í•¨ìˆ˜
 
-        if (curPlayerData.dataList[1].dataNumber >= currentCost[0])      //ÇÃ·¹ÀÌ¾î °ñµå°¡ »óÇ° ±İ¾×º¸´Ù Å©´Ù¸é
+        if (curPlayerData.dataList[1].dataNumber >= currentCost[goodsNumber])      //í”Œë ˆì´ì–´ ê³¨ë“œê°€ êµ¬ë§¤í•˜ë ¤ëŠ” ìƒí’ˆ ê¸ˆì•¡ë³´ë‹¤ í¬ë‹¤ë©´
         {
-            //»óÇ° ±¸¸Å
-            SpendGold(currentCost[0]);  //º¸À¯ °ñµå °¨¼Ò
-            AddGoodsLevel(0);   //»óÇ° ·¹º§ Áõ°¡
-            GameObject.FindGameObjectWithTag("TopBar").GetComponent<TopBarText>().UpdateText();   //»ó´Ü¹Ù ¾÷µ¥ÀÌÆ®
-            UpdateStoreData(data_Store);    //»óÁ¡ ¾÷µ¥ÀÌÆ®
-        }
-    }
+            //ìƒí’ˆ êµ¬ë§¤
+            SpendGold(currentCost[goodsNumber]);  //ë³´ìœ  ê³¨ë“œ ê°ì†Œ
+            AddGoodsLevel(goodsNumber);   //ìƒí’ˆ ë ˆë²¨ ì¦ê°€
 
-    public void BuyVase()
-    {
-        List<Dictionary<string, object>> data_Store = CSVParser.Read("Store");  //»óÁ¡ µ¥ÀÌÅÍ¸¦ °¡Á®¿È  
+            //ë§Œì•½ í•´ë‹¹ ìƒí’ˆì˜ ë§ˆì§€ë§‰ ë ˆë²¨ì„ êµ¬ë§¤í–ˆë‹¤ë©´(*ì´ë¶€ë¶„ ì–´ë–»ê²Œ ì†Œí”„íŠ¸ì½”ë”©ìœ¼ë¡œ ë°”ê¿€ ìˆ˜ ìˆì„ì§€ ê³ ë¯¼..)
+            switch (goodsNumber)
+            {
+                case 0:
+                    if (curGoodsData.goodsList[goodsNumber].goodsLevel == 2)    //íšƒëŒ€ ë§ˆì§€ë§‰ ë ˆë²¨ì„ êµ¬ë§¤í–ˆë‹¤ë©´
+                    {
+                        soldOut[goodsNumber].SetActive(true);   //êµ¬ë§¤ ë§‰ê¸°
+                    }
+                    break;
+                case 1:
+                    if (curGoodsData.goodsList[goodsNumber].goodsLevel == 3)    //ê½ƒë³‘ ë§ˆì§€ë§‰ ë ˆë²¨ì„ êµ¬ë§¤í–ˆë‹¤ë©´
+                    {
+                        soldOut[goodsNumber].SetActive(true);   //êµ¬ë§¤ ë§‰ê¸°
+                    }
+                    break;
+                case 2:
+                    if (curGoodsData.goodsList[goodsNumber].goodsLevel == 3)    //ìƒì ë§ˆì§€ë§‰ ë ˆë²¨ì„ êµ¬ë§¤í–ˆë‹¤ë©´
+                    {
+                        soldOut[goodsNumber].SetActive(true);   //êµ¬ë§¤ ë§‰ê¸°
+                    }
+                    break;
+                case 3:
+                    if (curGoodsData.goodsList[goodsNumber].goodsLevel == 4)    //ì‹¤ ë§ˆì§€ë§‰ ë ˆë²¨ì„ êµ¬ë§¤í–ˆë‹¤ë©´
+                    {
+                        soldOut[goodsNumber].SetActive(true);   //êµ¬ë§¤ ë§‰ê¸°
+                    }
+                    break;
+            }
 
-        if (curPlayerData.dataList[1].dataNumber >= currentCost[1])      //ÇÃ·¹ÀÌ¾î °ñµå°¡ »óÇ° ±İ¾×º¸´Ù Å©´Ù¸é
-        {
-            //»óÇ° ±¸¸Å
-            SpendGold(currentCost[1]);  //º¸À¯ °ñµå °¨¼Ò
-            AddGoodsLevel(1);   //»óÇ° ·¹º§ Áõ°¡
-            GameObject.FindGameObjectWithTag("TopBar").GetComponent<TopBarText>().UpdateText();   //»ó´Ü¹Ù ¾÷µ¥ÀÌÆ®
-            UpdateStoreData(data_Store);    //»óÁ¡ ¾÷µ¥ÀÌÆ®
-        }
-    }
-
-    public void BuyBox()
-    {
-        List<Dictionary<string, object>> data_Store = CSVParser.Read("Store");  //»óÁ¡ µ¥ÀÌÅÍ¸¦ °¡Á®¿È  
-
-        if (curPlayerData.dataList[1].dataNumber >= currentCost[2])      //ÇÃ·¹ÀÌ¾î °ñµå°¡ »óÇ° ±İ¾×º¸´Ù Å©´Ù¸é
-        {
-            //»óÇ° ±¸¸Å
-            SpendGold(currentCost[2]);  //º¸À¯ °ñµå °¨¼Ò
-            AddGoodsLevel(2);   //»óÇ° ·¹º§ Áõ°¡
-            GameObject.FindGameObjectWithTag("TopBar").GetComponent<TopBarText>().UpdateText();   //»ó´Ü¹Ù ¾÷µ¥ÀÌÆ®
-            UpdateStoreData(data_Store);    //»óÁ¡ ¾÷µ¥ÀÌÆ®
-        }
-    }
-
-    public void BuyThread()
-    {
-        List<Dictionary<string, object>> data_Store = CSVParser.Read("Store");  //»óÁ¡ µ¥ÀÌÅÍ¸¦ °¡Á®¿È  
-
-
-        if (curPlayerData.dataList[1].dataNumber >= currentCost[3])      //ÇÃ·¹ÀÌ¾î °ñµå°¡ »óÇ° ±İ¾×º¸´Ù Å©´Ù¸é
-        {
-            //»óÇ° ±¸¸Å
-            SpendGold(currentCost[3]);  //º¸À¯ °ñµå °¨¼Ò
-            AddGoodsLevel(3);   //»óÇ° ·¹º§ Áõ°¡
-            GameObject.FindGameObjectWithTag("TopBar").GetComponent<TopBarText>().UpdateText();   //»ó´Ü¹Ù ¾÷µ¥ÀÌÆ®
-            UpdateStoreData(data_Store);    //»óÁ¡ ¾÷µ¥ÀÌÆ®
+            GameObject.FindGameObjectWithTag("TopBar").GetComponent<TopBarText>().UpdateText();   //ìƒë‹¨ë°” ì—…ë°ì´íŠ¸
+            UpdateStoreData();    //ìƒì  ì—…ë°ì´íŠ¸
         }
     }
 }
 
 [System.Serializable]
-public class SpriteArray //»óÇ° ÀÌ¹ÌÁö ¹è¿­ÀÇ Çà
+public class SpriteArray //ìƒí’ˆ ì´ë¯¸ì§€ ë°°ì—´ì˜ í–‰
 {
-    //ÇÏÀÌ¾î¶óÅ° È­¸é¿¡ ÀÌÂ÷¿ø ¹è¿­·Î º¸ÀÌ±â À§ÇØ ¸¸µç »óÇ° ÀÌ¹ÌÁö Å¬·¡½º
+    //í•˜ì´ì–´ë¼í‚¤ í™”ë©´ì— ì´ì°¨ì› ë°°ì—´ë¡œ ë³´ì´ê¸° ìœ„í•´ ë§Œë“  ìƒí’ˆ ì´ë¯¸ì§€ í´ë˜ìŠ¤
 
     public Sprite[] imageList;
 }

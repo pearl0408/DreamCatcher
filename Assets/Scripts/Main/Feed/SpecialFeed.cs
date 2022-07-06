@@ -5,67 +5,75 @@ using UnityEngine.UI;
 
 public class SpecialFeed : MonoBehaviour
 {
-    //½ºÆä¼È ¸ÔÀÌ °³¼ö¸¦ °ü¸®ÇÏ°í »ç¿ëÇÏ´Â Å¬·¡½º
+    //ìŠ¤í˜ì…œ ë¨¹ì´ ê°œìˆ˜ë¥¼ ê´€ë¦¬í•˜ê³  ì‚¬ìš©í•˜ëŠ” í´ë˜ìŠ¤
 
     [Header("[Special Feed]")]
-    [SerializeField] private int feedCount;    //Æ¯Á¦ ¸ÔÀÌ °³¼ö
-    [SerializeField] private int selectCount;    //¼±ÅÃÇÑ ¸ÔÀÌ ¼ö
-    [SerializeField] private float decreaseTime;   //°¨¼Ò½ÃÅ°´Â ½Ã°£
+    [SerializeField] private int feedCount;    //íŠ¹ì œ ë¨¹ì´ ê°œìˆ˜
+    [SerializeField] private int selectCount;    //ì„ íƒí•œ ë¨¹ì´ ìˆ˜
+    [SerializeField] private float decreaseTime;   //ê°ì†Œì‹œí‚¤ëŠ” ì‹œê°„
 
-    [SerializeField] private TopBarContainer curPlayerData;   //»óÇ° Á¤º¸
+    [SerializeField] private TopBarContainer curPlayerData;   //ìƒí’ˆ ì •ë³´
 
     [Space]
     [Header("[Feed Text]")]
-    [SerializeField] private Text countText;      //¸ÔÀÌ °³¼ö ÅØ½ºÆ®
+    [SerializeField] private Text countText;      //ë¨¹ì´ ê°œìˆ˜ í…ìŠ¤íŠ¸
 
     void Start()
     {
-        curPlayerData = GameManager.instance.loadTopBarData;    //ÇÃ·¹ÀÌ¾îÀÇ »ó´Ü¹Ù µ¥ÀÌÅÍ Á¤º¸¸¦ °¡Á®¿È
-        feedCount = curPlayerData.dataList[2].dataNumber;  //Æ¯Á¦ ¸ÔÀÌ °³¼ö¸¦ °¡Á®¿È
+        curPlayerData = GameManager.instance.loadTopBarData;    //í”Œë ˆì´ì–´ì˜ ìƒë‹¨ë°” ë°ì´í„° ì •ë³´ë¥¼ ê°€ì ¸ì˜´
+        feedCount = curPlayerData.dataList[2].dataNumber;  //íŠ¹ì œ ë¨¹ì´ ê°œìˆ˜ë¥¼ ê°€ì ¸ì˜´
         selectCount = 0;
-        decreaseTime = 300;   //*Æ¯Á¦¸ÔÀÌ °¨¼Ò ½Ã°£Àº ÃßÈÄ ¼öÁ¤ÇÒ ¿¹Á¤
+        decreaseTime = 300;   //*íŠ¹ì œë¨¹ì´ ê°ì†Œ ì‹œê°„ì€ ì¶”í›„ ìˆ˜ì •í•  ì˜ˆì •
 
-        countText.text = selectCount + "°³";
+        countText.text = selectCount + "ê°œ";
     }
 
     public void LeftButton()
     {
-        //Æ¯Á¦ ¸ÔÀÌ ¼±ÅÃ ÆĞ³Î¿¡¼­ ¼±ÅÃ °³¼ö °¨¼Ò ÇÔ¼ö
+        //íŠ¹ì œ ë¨¹ì´ ì„ íƒ íŒ¨ë„ì—ì„œ ì„ íƒ ê°œìˆ˜ ê°ì†Œ í•¨ìˆ˜
 
         if (selectCount > 1)
         {
             selectCount--;
-            countText.text = selectCount + "°³";
+            countText.text = selectCount + "ê°œ";
         }
     }
 
     public void RightButton()
     {
-        //Æ¯Á¦ ¸ÔÀÌ ¼±ÅÃ ÆĞ³Î¿¡¼­ ¼±ÅÃ °³¼ö Áõ°¡ ÇÔ¼ö
+        //íŠ¹ì œ ë¨¹ì´ ì„ íƒ íŒ¨ë„ì—ì„œ ì„ íƒ ê°œìˆ˜ ì¦ê°€ í•¨ìˆ˜
 
         if (selectCount < feedCount)
         {
             selectCount++;
-            countText.text = selectCount + "°³";
+            countText.text = selectCount + "ê°œ";
         }
     }
 
     public void selectSpecialFeed()
     {
+        //íŠ¹ì œë¨¹ì´ ì‚¬ìš© í•¨ìˆ˜
+
         if (feedCount >= selectCount)
         {
-            float decrease = (float)selectCount * decreaseTime;     //Æ¯Á¦ ¸ÔÀÌ »ç¿ëÀ¸·Î °¨¼ÒÇÏ´Â ½Ã°£ °è»ê
-            this.gameObject.GetComponent<FeedTimer>().UseSpecialFeed(decrease);     //Æ¯Á¦ ¸ÔÀÌ »ç¿ë(³²Àº ½Ã°£ °¨¼Ò)
+            //íŠ¹ì œ ë¨¹ì´ ì‚¬ìš© ê°œìˆ˜ ìˆ˜ì •
+            float leftTime = this.gameObject.GetComponent<FeedTimer>().GetLeftTime();    //ë¨¹ì´ ë‚¨ì€ ì‹œê°„
+            float maxCount = leftTime / decreaseTime + 1.0f; //ë‚¨ì€ ì‹œê°„ ë‚´ ìµœëŒ€ë¡œ ì‚¬ìš© ê°€ëŠ¥í•œ íŠ¹ì œ ë¨¹ì´ ìˆ˜
+            float useCount = Mathf.Min(selectCount, maxCount);     //íŠ¹ì œ ë¨¹ì´ ì‚¬ìš© ê°œìˆ˜ê°€ ì‹œê°„ ë‚´ ìµœëŒ€ ì‚¬ìš© ê°€ëŠ¥ ê°œìˆ˜ë¥¼ ë„˜ì§€ ì•Šë„ë¡ ì¡°ì •
 
-            feedCount = feedCount - selectCount;    //Æ¯Á¦ ¸ÔÀÌ °³¼ö °»½Å
+            //íŠ¹ì œ ë¨¹ì´ ì‚¬ìš©
+            float decrease = useCount * decreaseTime;     //íŠ¹ì œ ë¨¹ì´ ì‚¬ìš©ìœ¼ë¡œ ê°ì†Œí•˜ëŠ” ì‹œê°„ ê³„ì‚°
+            this.gameObject.GetComponent<FeedTimer>().UseSpecialFeed(decrease);     //íŠ¹ì œ ë¨¹ì´ ì‚¬ìš©(ë‚¨ì€ ì‹œê°„ ê°ì†Œ)
+
+            feedCount = feedCount - (int)useCount;    //íŠ¹ì œ ë¨¹ì´ ê°œìˆ˜ ê°±ì‹ 
             curPlayerData.dataList[2].dataNumber = feedCount;
-            GameObject.FindGameObjectWithTag("GameManager").GetComponent<TopBarJSON>().DataSaveText(curPlayerData);   //º¯°æ»çÇ× jsonÀ¸·Î ÀúÀå
-            GameObject.FindGameObjectWithTag("TopBar").GetComponent<TopBarText>().UpdateText();   //»ó´Ü¹Ù ¾÷µ¥ÀÌÆ®
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<TopBarJSON>().DataSaveText(curPlayerData);   //íŠ¹ì œë¨¹ì´ ìˆ˜ ë³€ê²½ì‚¬í•­ jsonìœ¼ë¡œ ì €ì¥
+            GameObject.FindGameObjectWithTag("TopBar").GetComponent<TopBarText>().UpdateText();   //ìƒë‹¨ë°” ì—…ë°ì´íŠ¸
 
-            selectCount = 0;        //¼±ÅÃÇÑ ¸ÔÀÌ °³¼ö °»½Å
-            countText.text = selectCount + "°³";
+            selectCount = 0;        //ì„ íƒí•œ ë¨¹ì´ ê°œìˆ˜ ê°±ì‹ 
+            countText.text = selectCount + "ê°œ";
 
-            GameObject.FindGameObjectWithTag("GameManager").GetComponent<TopBarText>().SetSpecialFeedText(feedCount);   //»ó´Ü¹Ù Æ¯Á¦ ¸ÔÀÌ °³¼ö °»½Å
+            GameObject.FindGameObjectWithTag("TopBar").GetComponent<TopBarText>().SetSpecialFeedText(feedCount);   //ìƒë‹¨ë°” íŠ¹ì œ ë¨¹ì´ ê°œìˆ˜ ê°±ì‹ 
         }
     }
 }

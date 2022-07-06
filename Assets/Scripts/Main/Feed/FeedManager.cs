@@ -4,21 +4,16 @@ using UnityEngine;
 
 public class FeedManager : MonoBehaviour
 {
-    // ¸ÔÀÌ¸¦ °ü¸®ÇÏ´Â Å¬·¡½º
+    // ë¨¹ì´ë¥¼ ê´€ë¦¬í•˜ëŠ” í´ë˜ìŠ¤
 
     [Header("[Feed Setting]")]
-    [SerializeField] private bool isSelected;   //¸ÔÀÌ ¼±ÅÃ ¿©ºÎ º¯¼ö
-    [SerializeField] private int selectedFeedNum;       //¼±ÅÃµÈ ¸ÔÀÌ ¹øÈ£
-    [SerializeField] private int selectedBirdNum;       //¼±ÅÃµÈ »õ ¹øÈ£
-
-    public void Start()
-    {
-        this.GetComponent<FeedTimer>().LoadTimerData();  //Å¸ÀÌ¸Ó(³õÀÎ ¸ÔÀÌ) ÀúÀå µ¥ÀÌÅÍ ÀĞ¾î¿È
-    }
+    [SerializeField] private bool isSelected;   //ë¨¹ì´ ì„ íƒ ì—¬ë¶€ ë³€ìˆ˜
+    [SerializeField] private int selectedFeedNum;       //ì„ íƒëœ ë¨¹ì´ ë²ˆí˜¸
+    [SerializeField] private int selectedBirdNum;       //ì„ íƒëœ ìƒˆ ë²ˆí˜¸
 
     public void SetFeedManager(bool _isSelected, int _selectedFeedNum, int _selectedBirdNum)
     {
-        //FeedManager µ¥ÀÌÅÍ¸¦ ÇÑ ¹ø¿¡ º¯°æÇÏ´Â ÇÔ¼ö
+        //FeedManager ë°ì´í„°ë¥¼ í•œ ë²ˆì— ë³€ê²½í•˜ëŠ” í•¨ìˆ˜
 
         isSelected = _isSelected;
         selectedFeedNum = _selectedFeedNum;
@@ -27,43 +22,43 @@ public class FeedManager : MonoBehaviour
 
     public bool GetIsFeedSelected()
     {
-        //¸ÔÀÌ ¼±ÅÃ ¿©ºÎ¸¦ ¹İÈ¯ÇÏ´Â ÇÔ¼ö
+        //ë¨¹ì´ ì„ íƒ ì—¬ë¶€ë¥¼ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜
 
         return isSelected;
     }
 
     public void SetIsFeedSelected(bool TorF)
     {
-        //¸ÔÀÌ ¼±ÅÃ ¿©ºÎ¸¦ °»½ÅÇÏ´Â ÇÔ¼ö
+        //ë¨¹ì´ ì„ íƒ ì—¬ë¶€ë¥¼ ê°±ì‹ í•˜ëŠ” í•¨ìˆ˜
 
         isSelected = TorF;
-        //this.gameObject.GetComponent<FeedTimer>().SetIsFeedSelected(TorF);      //Å¸ÀÌ¸Ó Å¬·¡½ºÀÇ ¸ÔÀÌ ¼±ÅÃ ¿©ºÎµµ °»½Å
+        //this.gameObject.GetComponent<FeedTimer>().SetIsFeedSelected(TorF);      //íƒ€ì´ë¨¸ í´ë˜ìŠ¤ì˜ ë¨¹ì´ ì„ íƒ ì—¬ë¶€ë„ ê°±ì‹ 
     }
 
     public int GetSelectedFeedNum()
     {
-        //¼±ÅÃµÈ ¸ÔÀÌ ¹øÈ£¸¦ ¹İÈ¯ÇÏ´Â ÇÔ¼ö
+        //ì„ íƒëœ ë¨¹ì´ ë²ˆí˜¸ë¥¼ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜
 
         return selectedFeedNum;
     }
 
     public void SetSelectedFeedNum(int num)
     {
-        //¼±ÅÃµÈ ¸ÔÀÌ ¹øÈ£¸¦ ¼³Á¤ÇÏ´Â ÇÔ¼ö
+        //ì„ íƒëœ ë¨¹ì´ ë²ˆí˜¸ë¥¼ ì„¤ì •í•˜ëŠ” í•¨ìˆ˜
 
         selectedFeedNum = num;
     }
 
     public int GetSelectedBirdNum()
     {
-        //¼±ÅÃµÈ »õÀÇ ¹øÈ£¸¦ ¹İÈ¯ÇÏ´Â ÇÔ¼ö
+        //ì„ íƒëœ ìƒˆì˜ ë²ˆí˜¸ë¥¼ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜
 
         return selectedBirdNum;
     }
 
     public void SetSelectedBirdNum(int num)
     {
-        //¼±ÅÃµÈ »õÀÇ ¹øÈ£¸¦ ¼³Á¤ÇÏ´Â ÇÔ¼ö
+        //ì„ íƒëœ ìƒˆì˜ ë²ˆí˜¸ë¥¼ ì„¤ì •í•˜ëŠ” í•¨ìˆ˜
 
         selectedBirdNum = num;
     }

@@ -10,6 +10,7 @@ public class FeedTimer : MonoBehaviour
     [Header("[Feed Timer]")]
     [SerializeField] private float defaultTime;    //먹이 기본 시간(단위: 초)
     [SerializeField] private float leftTime;   //먹이 남은 시간(단위: 초)
+    [SerializeField] private float decreaseTime;    //특제 먹이 사용으로 감소된 시간(단위: 초)
     private System.DateTime startTime;   //먹이 시작 시간
     private System.DateTime currentTime;   //현재 시간
     private bool isSelected;     //먹이 선택 여부 변수
@@ -20,7 +21,8 @@ public class FeedTimer : MonoBehaviour
 
     void Start()
     {
-        isSelected = this.gameObject.GetComponent<FeedManager>().GetIsFeedSelected(); //먹이 선택 여부 가져옴
+        LoadTimerData();    //저장된 데이터를 읽어옴
+
         if (isSelected) //선택된 먹이가 있다면
         {
             leftTime = GetFeedLeftTime();  //먹이 남은 시간 계산
@@ -105,22 +107,26 @@ public class FeedTimer : MonoBehaviour
         System.TimeSpan timeDif = currentTime - startTime; //시작 시간과 현재 시간의 차 구함(먹이를 놓고 얼마나 지났는지)
         float difSeconds = (float)timeDif.TotalSeconds; //지난 시간을 초로 변환
         float left = defaultTime - difSeconds;   //먹이 남은 시간 계산
+        left -= decreaseTime;   //특제 먹이 사용으로 감소된 시간 차감
 
         return left;    //먹이 남은 시간 반환
     }
 
-    public void UseSpecialFeed(float decreaseTime)
+    public void UseSpecialFeed(float _decreaseTime)
     {
         //특제 먹이 사용 함수
 
-        this.leftTime -= decreaseTime;
+        this.decreaseTime += _decreaseTime; //감소 시간 증가(누적 감소 시간)    
+        this.leftTime -= _decreaseTime; //현재 남은 시간에 이번 감소 시간 차감
+
+        SaveTimerData();    //데이터값 저장
     }
 
     public void SaveTimerData()
     {
         //현재 데이터값(먹이 선택 여부, 타이머 시작 시간, 먹이 기본 시간)으로 타이머 데이터를 저장하는 함수
 
-        TimerData saveTimer = new TimerData(isSelected, startTime.ToString(), defaultTime); //현재 데이터로 timerData 객체 생성
+        TimerData saveTimer = new TimerData(isSelected, startTime.ToString(), defaultTime, decreaseTime); //현재 데이터로 timerData 객체 생성
         GameObject.FindWithTag("GameManager").GetComponent<TimerJSON>().DataSaveText<TimerData>(saveTimer);  //타이머 데이터 저장
     }
 
@@ -130,8 +136,16 @@ public class FeedTimer : MonoBehaviour
 
         TimerData saveTimer = GameObject.FindWithTag("GameManager").GetComponent<TimerJSON>().GetTimerData();   //세이브 파일에 저장된 타이머 데이터를 가져옴
         this.GetComponent<FeedManager>().SetIsFeedSelected(saveTimer.isExisted);    //세이브파일의 선택 여부로 갱신함
+        this.isSelected = saveTimer.isExisted;
         this.startTime = System.Convert.ToDateTime(saveTimer.startTime);    //세이브 파일의 시작 시간으로 갱신함
         this.defaultTime = saveTimer.savedDefaultTime;  //세이브 파일의 먹이 기본 시간으로 갱신함
+        this.decreaseTime = saveTimer.decreaseTime; //세이브 파일의 감소 시간으로 갱신함
     }
 
+    public float GetLeftTime()
+    {
+        //먹이 남은 시간을 반환하는 함수
+
+        return this.leftTime;
+    }
 }

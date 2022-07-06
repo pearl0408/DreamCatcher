@@ -5,30 +5,30 @@ using System.IO;
 
 public class TimerJSON : MonoBehaviour
 {
-    //¸ÔÀÌ ³õÀº ½Ã°£À» ÀúÀåÇÏ´Â ½ºÅ©¸³Æ®
+    //ë¨¹ì´ ë†“ì€ ì‹œê°„ì„ ì €ì¥í•˜ëŠ” ìŠ¤í¬ë¦½íŠ¸
 
-    private static string fileName = "FeedTimerFile";       //ÆÄÀÏ ÀÌ¸§
-    TimerData timerData;    //Å¸ÀÌ¸Ó µ¥ÀÌÅÍ º¯¼ö
+    private static string fileName = "FeedTimerFile";       //íŒŒì¼ ì´ë¦„
+    TimerData timerData;    //íƒ€ì´ë¨¸ ë°ì´í„° ë³€ìˆ˜
 
     public void LoadTimerData()
     {
-        //µ¥ÀÌÅÍ¸¦ ·ÎµåÇÏ´Â ÇÔ¼ö
+        //ë°ì´í„°ë¥¼ ë¡œë“œí•˜ëŠ” í•¨ìˆ˜
 
-        string savePath = getPath(fileName);    //ÀúÀå ÆÄÀÏ °æ·Î
+        string savePath = getPath(fileName);    //ì €ì¥ íŒŒì¼ ê²½ë¡œ
 
-        if (!File.Exists(savePath))  //ÆÄÀÏÀÌ Á¸ÀçÇÏÁö ¾Ê´Â´Ù¸é
+        if (!File.Exists(savePath))  //íŒŒì¼ì´ ì¡´ì¬í•˜ì§€ ì•ŠëŠ”ë‹¤ë©´
         {
-            this.timerData = new TimerData(false, System.DateTime.Now.ToString(), 0f);  //°´Ã¼ »ı¼º
+            this.timerData = new TimerData(false, System.DateTime.Now.ToString(), 0f, 0f);  //ê°ì²´ ìƒì„±
         }
-        else    //ÆÄÀÏÀÌ Á¸ÀçÇÑ´Ù¸é
+        else    //íŒŒì¼ì´ ì¡´ì¬í•œë‹¤ë©´
         {
-            this.timerData = DataLoadText<TimerData>(); //ÆÄÀÏ ·Îµå
+            this.timerData = DataLoadText<TimerData>(); //íŒŒì¼ ë¡œë“œ
         }
     }
 
     public TimerData GetTimerData()
     {
-        //µ¥ÀÌÅÍ¸¦ ¹İÈ¯ÇÏ´Â ÇÔ¼ö
+        //ë°ì´í„°ë¥¼ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜
 
         LoadTimerData();
         return timerData;
@@ -36,11 +36,11 @@ public class TimerJSON : MonoBehaviour
 
     public void DataSaveText<T>(T data)
     {
-        //µ¥ÀÌÅÍ¸¦ JsonÀ¸·Î ÀúÀåÇÏ´Â ÇÔ¼ö
+        //ë°ì´í„°ë¥¼ Jsonìœ¼ë¡œ ì €ì¥í•˜ëŠ” í•¨ìˆ˜
 
         try
         {
-            string savePath = getPath(fileName);    //ÀúÀå ÆÄÀÏ °æ·Î
+            string savePath = getPath(fileName);    //ì €ì¥ íŒŒì¼ ê²½ë¡œ
             string saveJson = JsonUtility.ToJson(data, true);
 
             File.WriteAllText(savePath, saveJson);
@@ -61,11 +61,11 @@ public class TimerJSON : MonoBehaviour
 
     public T DataLoadText<T>()
     {
-        //Json µ¥ÀÌÅÍ¸¦ ºÒ·¯¿À´Â ÇÔ¼ö
+        //Json ë°ì´í„°ë¥¼ ë¶ˆëŸ¬ì˜¤ëŠ” í•¨ìˆ˜
 
         try
         {
-            string savePath = getPath(fileName);    //ÀúÀå ÆÄÀÏ °æ·Î
+            string savePath = getPath(fileName);    //ì €ì¥ íŒŒì¼ ê²½ë¡œ
             string loadJson = File.ReadAllText(savePath);
 
             T t = JsonUtility.FromJson<T>(loadJson);
@@ -91,11 +91,11 @@ public class TimerJSON : MonoBehaviour
 #if UNITY_EDITOR
         return Application.dataPath + "/Saves/" + fileName + ".json";
 #elif UNITY_ANDROID
-        return Application.persistentDataPath+"TalkData.csv";
+        return Application.persistentDataPath+"TimerData.csv";
 #elif UNITY_IPHONE
-        return Application.persistentDataPath+"/"+"TalkData.csv";
+        return Application.persistentDataPath+"/"+"TimerData.csv";
 #else
-        return Application.dataPath +"/"+"TalkData.csv";
+        return Application.dataPath +"/"+"TimerData.csv";
 #endif
     }
 }
