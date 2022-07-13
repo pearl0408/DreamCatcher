@@ -46,6 +46,13 @@ public class SpecialFeed : MonoBehaviour
         if (selectCount < feedCount)
         {
             selectCount++;
+
+            //특제 먹이 사용 개수 수정
+            float leftTime = this.gameObject.GetComponent<FeedTimer>().GetLeftTime();    //먹이 남은 시간
+            float maxCount = leftTime / decreaseTime + 1.0f; //남은 시간 내 최대로 사용 가능한 특제 먹이 수
+            selectCount = selectCount > maxCount ? (int)maxCount : selectCount; //특제 먹이 사용 개수가 시간 내 최대 사용 가능 개수를 넘지 않도록 조정
+
+
             countText.text = selectCount + "개";
         }
     }
@@ -56,16 +63,11 @@ public class SpecialFeed : MonoBehaviour
 
         if (feedCount >= selectCount)
         {
-            //특제 먹이 사용 개수 수정
-            float leftTime = this.gameObject.GetComponent<FeedTimer>().GetLeftTime();    //먹이 남은 시간
-            float maxCount = leftTime / decreaseTime + 1.0f; //남은 시간 내 최대로 사용 가능한 특제 먹이 수
-            float useCount = Mathf.Min(selectCount, maxCount);     //특제 먹이 사용 개수가 시간 내 최대 사용 가능 개수를 넘지 않도록 조정
-
             //특제 먹이 사용
-            float decrease = useCount * decreaseTime;     //특제 먹이 사용으로 감소하는 시간 계산
+            float decrease = selectCount * decreaseTime;     //특제 먹이 사용으로 감소하는 시간 계산
             this.gameObject.GetComponent<FeedTimer>().UseSpecialFeed(decrease);     //특제 먹이 사용(남은 시간 감소)
 
-            feedCount = feedCount - (int)useCount;    //특제 먹이 개수 갱신
+            feedCount = feedCount - selectCount;    //특제 먹이 개수 갱신
             curPlayerData.dataList[2].dataNumber = feedCount;
             GameObject.FindGameObjectWithTag("GameManager").GetComponent<TopBarJSON>().DataSaveText(curPlayerData);   //특제먹이 수 변경사항 json으로 저장
             GameObject.FindGameObjectWithTag("TopBar").GetComponent<TopBarText>().UpdateText();   //상단바 업데이트

@@ -42,6 +42,24 @@ public class StoreData : MonoBehaviour
             currentCost[i] = int.Parse(data_Store[productCnt + goodsLevel]["Gold"].ToString());   //구매를 위해 상품별 가격만 따로 저장
             goodsContents[i].transform.GetChild(1).gameObject.GetComponent<Image>().sprite = goodsImages[i].imageList[goodsLevel + 1]; //상품 이미지 불러옴
         }
+
+        //만약 상품 레벨이 최고 레벨이라면 해당 상품 sold out 표시(**소프트코딩으로 바꿀 수 있을지 고민..)
+        if (curGoodsData.goodsList[0].goodsLevel == 2)    //횃대 마지막 레벨을 구매했다면
+        {
+            soldOut[0].SetActive(true);   //구매 막기
+        }
+        if (curGoodsData.goodsList[1].goodsLevel == 3)    //꽃병 마지막 레벨을 구매했다면
+        {
+            soldOut[1].SetActive(true);   //구매 막기
+        }
+        if (curGoodsData.goodsList[2].goodsLevel == 3)    //상자 마지막 레벨을 구매했다면
+        {
+            soldOut[2].SetActive(true);   //구매 막기
+        }
+        if (curGoodsData.goodsList[3].goodsLevel == 4)    //실 마지막 레벨을 구매했다면
+        {
+            soldOut[3].SetActive(true);   //구매 막기
+        }
     }
 
     public void AddGoodsLevel(int goodsIndex)
