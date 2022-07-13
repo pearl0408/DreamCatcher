@@ -17,6 +17,12 @@ public class DragPoint : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     Vector3 StartPoint, EndPoint;
     private Vector3 mousePos;
 
+    // 색
+    private Color stringColor;
+    private Color[] stringColors = { new Color(1f, 1f, 1f, 1f), new Color(1f, 0.9254903f, 0.4784314f, 1f),
+        new Color(0.3333333f, 0.3490196f, 0.4745098f, 1f), new Color(0.6078432f, 0.2235294f, 0.2352941f, 1f),
+        new Color(0.3411765f, 0.3411765f, 0.3411765f, 1f) };
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,12 +36,23 @@ public class DragPoint : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     }
 
+    public void StringColorSet(int colorNum)
+    {
+        stringColor = stringColors[colorNum];
+    }
+
     // 오브젝트 드래그 시작
     public void OnBeginDrag(PointerEventData eventData)
     {
+        // 라인 생성
         Line = Instantiate(LinePref);
+        // 색 변경
+        Line.GetComponent<LineRenderer>().startColor = stringColor;
+        Line.GetComponent<LineRenderer>().endColor = stringColor;
+        // 자식부모 설정
         Line.transform.parent = LinesGroup.gameObject.transform;
         Line.GetComponent<LineRenderer>().sortingOrder = 1;
+        // 시작점 설정
         Line.GetComponent<LineRenderer>().SetPosition(0, StartPoint);
     }
 
