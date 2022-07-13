@@ -5,13 +5,15 @@ using System;
 
 public class TimerData
 {
-    public TimerData(bool _isExisted, string _startTime, float _savedDefaultTime)
+    public TimerData(bool _isExisted, string _startTime, float _savedDefaultTime, float _decreaseTime)
     {
         isExisted = _isExisted;
         startTime = _startTime;
         savedDefaultTime = _savedDefaultTime;
+        decreaseTime = _decreaseTime;   
     }
-    public bool isExisted;      //³õÀÎ ¸ÔÀÌ°¡ ÀÖ´ÂÁö
-    public string startTime;    //¸ÔÀÌ ³õÀº ½Ã°£
-    public float savedDefaultTime;    //·£´ıÀ¸·Î Á¤ÇØÁø ¸ÔÀÌ ½Ã°£
+    public bool isExisted;      //ë†“ì¸ ë¨¹ì´ê°€ ìˆëŠ”ì§€
+    public string startTime;    //ë¨¹ì´ ë†“ì€ ì‹œê°„
+    public float savedDefaultTime;    //ëœë¤ìœ¼ë¡œ ì •í•´ì§„ ë¨¹ì´ ì‹œê°„
+    public float decreaseTime;  //íŠ¹ì œ ë¨¹ì´ ì‚¬ìš©ìœ¼ë¡œ ê°ì†Œëœ ì‹œê°„
 }

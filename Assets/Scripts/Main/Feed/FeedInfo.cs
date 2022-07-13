@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class FeedInfo : MonoBehaviour
 {
-    //¸ÔÀÌ Á¤º¸ Å¬·¡½º
+    //ë¨¹ì´ ì •ë³´ í´ë˜ìŠ¤
 
     [Header("[Feed Information]")]
-    [SerializeField] private int feedNumber;    //¸ÔÀÌ ¹øÈ£
+    [SerializeField] private int feedNumber;    //ë¨¹ì´ ë²ˆí˜¸
 
 
     public void SetFeedNumber(int num)

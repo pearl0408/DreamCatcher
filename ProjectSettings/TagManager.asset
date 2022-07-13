@@ -11,6 +11,7 @@ TagManager:
   - TopBar
   - DragPoint
   - AudioManager
+  - StoreManager
   layers:
   - Default
   - TransparentFX

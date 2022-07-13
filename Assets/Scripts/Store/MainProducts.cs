@@ -6,27 +6,27 @@ using UnityEngine.UI;
 public class MainProducts : MonoBehaviour
 {
     [Header("[Good Objects]")]
-    public Image[] goodsContents;   //»óÇ° ¿ÀºêÁ§Æ® ¹è¿­(ÀÌ¹ÌÁö º¯°æÀ» À§ÇØ ÀÌ¹ÌÁö¸¸)
-    public SpriteArray[] goodsImages; //»óÇ° ÀÌ¹ÌÁö ¹è¿­
+    public Image[] goodsContents;   //ìƒí’ˆ ì˜¤ë¸Œì íŠ¸ ë°°ì—´(ì´ë¯¸ì§€ ë³€ê²½ì„ ìœ„í•´ ì´ë¯¸ì§€ë§Œ)
+    public SpriteArray[] goodsImages; //ìƒí’ˆ ì´ë¯¸ì§€ ë°°ì—´
 
-    private GoodsContainer curGoodsData;   //ÇÃ·¹ÀÌ¾îÀÇ ÀúÀåµÈ »óÇ° ·¹º§ Á¤º¸
+    private GoodsContainer curGoodsData;   //í”Œë ˆì´ì–´ì˜ ì €ì¥ëœ ìƒí’ˆ ë ˆë²¨ ì •ë³´
 
     private void Start()
     {
-        ResetMainProducts(); //»óÇ° Á¤º¸ ¾÷µ¥ÀÌÆ®
+        ResetMainProducts(); //ìƒí’ˆ ì •ë³´ ì—…ë°ì´íŠ¸
     }
 
     public void ResetMainProducts()
     {
-        //»óÇ°À» ÀÌ¹ÌÁö¸¦ ºÒ·¯¿À´Â ÇÔ¼ö
+        //ìƒí’ˆì„ ì´ë¯¸ì§€ë¥¼ ë¶ˆëŸ¬ì˜¤ëŠ” í•¨ìˆ˜
 
-        GameManager.instance.ResetGameManager();    //ÀúÀå µ¥ÀÌÅÍ °»½Å
-        curGoodsData = GameManager.instance.loadGoodsData;  //ÀúÀå µ¥ÀÌÅÍ °¡Á®¿À±â
+        GameManager.instance.ResetGameManager();    //ì €ì¥ ë°ì´í„° ê°±ì‹ 
+        curGoodsData = GameManager.instance.loadGoodsData;  //ì €ì¥ ë°ì´í„° ê°€ì ¸ì˜¤ê¸°
 
         for (int i = 0; i < curGoodsData.goodsCount; i++)
         {
-            int goodsLevel = curGoodsData.goodsList[i].goodsLevel;  //»óÇ° ·¹º§
-            goodsContents[i].gameObject.GetComponent<Image>().sprite = goodsImages[i].imageList[goodsLevel]; //»óÇ° ÀÌ¹ÌÁö ºÒ·¯¿È
+            int goodsLevel = curGoodsData.goodsList[i].goodsLevel;  //ìƒí’ˆ ë ˆë²¨
+            goodsContents[i].gameObject.GetComponent<Image>().sprite = goodsImages[i].imageList[goodsLevel]; //ìƒí’ˆ ì´ë¯¸ì§€ ë¶ˆëŸ¬ì˜´
         }
     }
 }

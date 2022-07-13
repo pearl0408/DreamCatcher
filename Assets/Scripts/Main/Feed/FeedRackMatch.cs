@@ -5,44 +5,44 @@ using UnityEngine;
 
 public class FeedRackMatch : MonoBehaviour
 {
-    //¸ÔÀÌ µå·¡±× ÀÌº¥Æ®¿Í È½´ë ¸ÔÀÌ¸¦ ¿¬°áÇÏ´Â Å¬·¡½º
+    //ë¨¹ì´ ë“œë˜ê·¸ ì´ë²¤íŠ¸ì™€ íšŸëŒ€ ë¨¹ì´ë¥¼ ì—°ê²°í•˜ëŠ” í´ë˜ìŠ¤
 
     [Header("[Feed Objects]")]
-    public GameObject[] FeedObj;     //µå·¡±× ÀÌº¥Æ® Ãß°¡ÇÒ ¸ÔÀÌ ¿ÀºêÁ§Æ® ¹è¿­
-    public GameObject[] RackFeedObj;     //È½´ëÀÇ ¸ÔÀÌ ¿ÀºêÁ§Æ® ¹è¿­
+    public GameObject[] FeedObj;     //ë“œë˜ê·¸ ì´ë²¤íŠ¸ ì¶”ê°€í•  ë¨¹ì´ ì˜¤ë¸Œì íŠ¸ ë°°ì—´
+    public GameObject[] RackFeedObj;     //íšŸëŒ€ì˜ ë¨¹ì´ ì˜¤ë¸Œì íŠ¸ ë°°ì—´
 
 
     private void Start()
     {
-        int numberOfFeed = 4;   //¸ÔÀÌ ÃÑ °³¼ö
+        int numberOfFeed = 4;   //ë¨¹ì´ ì´ ê°œìˆ˜
         for (int i = 0; i < numberOfFeed; i++)
         {
-            FeedObj[i].gameObject.GetComponent<FeedInfo>().SetFeedNumber(i);    //¸ÔÀÌ ¿ÀºêÁ§Æ®¿¡ °íÀ¯ ¹øÈ£ ÁöÁ¤
+            FeedObj[i].gameObject.GetComponent<FeedInfo>().SetFeedNumber(i);    //ë¨¹ì´ ì˜¤ë¸Œì íŠ¸ì— ê³ ìœ  ë²ˆí˜¸ ì§€ì •
         }
     }
 
     public void SelectFeed(int feedNum)
     {
-        //¸ÔÀÌ¸¦ ¼±ÅÃÇÏ´Â ÇÔ¼ö
+        //ë¨¹ì´ë¥¼ ì„ íƒí•˜ëŠ” í•¨ìˆ˜
 
-        bool isSelected = this.gameObject.GetComponent<FeedManager>().GetIsFeedSelected(); //¸ÔÀÌ ¼±ÅÃ ¿©ºÎ °¡Á®¿È
-        if (!isSelected)    //¸¸¾à ¼±ÅÃµÈ ¸ÔÀÌ°¡ ¾ø´Ù¸é
+        bool isSelected = this.gameObject.GetComponent<FeedManager>().GetIsFeedSelected(); //ë¨¹ì´ ì„ íƒ ì—¬ë¶€ ê°€ì ¸ì˜´
+        if (!isSelected)    //ë§Œì•½ ì„ íƒëœ ë¨¹ì´ê°€ ì—†ë‹¤ë©´
         {
-            SetActiveRackFeed(feedNum);     //È½´ë ¸ÔÀÌ È°¼ºÈ­        
-            this.gameObject.GetComponent<FeedPanel>().ActiveFeedPanel(false);    //¸ÔÀÌ ÆĞ³ÎÀ» ´İÀ½
+            SetActiveRackFeed(feedNum);     //íšŸëŒ€ ë¨¹ì´ í™œì„±í™”        
+            this.gameObject.GetComponent<FeedPanel>().ActiveFeedPanel(false);    //ë¨¹ì´ íŒ¨ë„ì„ ë‹«ìŒ
         }
     }
 
     private void SetActiveRackFeed(int num)
     {
-        //È½´ëÀÇ ¸ÔÀÌ¸¦ È°¼ºÈ­ÇÏ´Â ÇÔ¼ö
+        //íšŸëŒ€ì˜ ë¨¹ì´ë¥¼ í™œì„±í™”í•˜ëŠ” í•¨ìˆ˜
 
         RackFeedObj[num].SetActive(true);
     }
 
     public void SetInactiveRackFeed(int num)
     {
-        //È½´ëÀÇ ¸ÔÀÌ¸¦ ºñÈ°¼ºÈ­ ÇÏ´Â ÇÔ¼ö
+        //íšŸëŒ€ì˜ ë¨¹ì´ë¥¼ ë¹„í™œì„±í™” í•˜ëŠ” í•¨ìˆ˜
 
         RackFeedObj[num].SetActive(false);
     }

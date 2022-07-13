@@ -4,37 +4,37 @@ using UnityEngine;
 
 public class FeedPanel : MonoBehaviour
 {
-    // ¸ÔÀÌ ¼±ÅÃ Ã¢, Æ¯Á¦ ¸ÔÀÌ »ç¿ë Ã¢À» ¿©´Â Å¬·¡½º
+    // ë¨¹ì´ ì„ íƒ ì°½, íŠ¹ì œ ë¨¹ì´ ì‚¬ìš© ì°½ì„ ì—¬ëŠ” í´ë˜ìŠ¤
 
     [Header("[Feed Panel]")]
-    public GameObject Feed_Panel;     //¸ÔÀÌ ¼±ÅÃ ÆĞ³Î
-    public GameObject SpecialFeed_Panel;     //Æ¯Á¦ ¸ÔÀÌ ÆĞ³Î
+    public GameObject Feed_Panel;     //ë¨¹ì´ ì„ íƒ íŒ¨ë„
+    public GameObject SpecialFeed_Panel;     //íŠ¹ì œ ë¨¹ì´ íŒ¨ë„
 
     public void OpenFeedPanel()
     {
-        //Á¶°Ç¿¡ µû¶ó ¸ÔÀÌ ¼±ÅÃ ÆĞ³Î ¶Ç´Â Æ¯Á¦ ¸ÔÀÌ ÆĞ³ÎÀ» ¿©´Â ÇÔ¼ö
+        //ì¡°ê±´ì— ë”°ë¼ ë¨¹ì´ ì„ íƒ íŒ¨ë„ ë˜ëŠ” íŠ¹ì œ ë¨¹ì´ íŒ¨ë„ì„ ì—¬ëŠ” í•¨ìˆ˜
 
-        bool isSelected = this.gameObject.GetComponent<FeedManager>().GetIsFeedSelected(); //¸ÔÀÌ ¼±ÅÃ ¿©ºÎ °¡Á®¿È
-        if (isSelected)     //ÀÌ¹Ì ¼±ÅÃÇÑ ¸ÔÀÌ°¡ ÀÖ´Ù¸é
+        bool isSelected = this.gameObject.GetComponent<FeedManager>().GetIsFeedSelected(); //ë¨¹ì´ ì„ íƒ ì—¬ë¶€ ê°€ì ¸ì˜´
+        if (isSelected)     //ì´ë¯¸ ì„ íƒí•œ ë¨¹ì´ê°€ ìˆë‹¤ë©´
         {
-            ActiveSpecialFeedPanel(true);   //Æ¯Á¦ ¸ÔÀÌ ÆĞ³Î ¿­±â
+            ActiveSpecialFeedPanel(true);   //íŠ¹ì œ ë¨¹ì´ íŒ¨ë„ ì—´ê¸°
         }
         else
         {
-            ActiveFeedPanel(true);  //¸ÔÀÌ ¼±ÅÃ ÆĞ³Î ¿­±â
+            ActiveFeedPanel(true);  //ë¨¹ì´ ì„ íƒ íŒ¨ë„ ì—´ê¸°
         }
     }
 
     public void ActiveFeedPanel(bool TorF)
     {
-        //¸ÔÀÌ ¼±ÅÃ ÆĞ³ÎÀ» ¿­°í ´İ´Â ÇÔ¼ö
+        //ë¨¹ì´ ì„ íƒ íŒ¨ë„ì„ ì—´ê³  ë‹«ëŠ” í•¨ìˆ˜
 
         Feed_Panel.gameObject.SetActive(TorF);
     }
 
     public void ActiveSpecialFeedPanel(bool TorF)
     {
-        //Æ¯Á¦ ¸ÔÀÌ ÆĞ³ÎÀ» ¿­°í ´İ´Â ÇÔ¼ö
+        //íŠ¹ì œ ë¨¹ì´ íŒ¨ë„ì„ ì—´ê³  ë‹«ëŠ” í•¨ìˆ˜
 
         SpecialFeed_Panel.gameObject.SetActive(TorF);
     }

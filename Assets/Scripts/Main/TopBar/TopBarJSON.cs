@@ -5,28 +5,28 @@ using System.IO;
 
 public class TopBarJSON : MonoBehaviour
 {
-    private static string fileName = "TopBarDataFile";       //ÆÄÀÏ ÀÌ¸§
-    TopBarContainer dataContainer;  //»óÇ° µ¥ÀÌÅÍ º¯¼ö
+    private static string fileName = "TopBarDataFile";       //íŒŒì¼ ì´ë¦„
+    TopBarContainer dataContainer;  //ìƒí’ˆ ë°ì´í„° ë³€ìˆ˜
 
     public void LoadTopBarData()
     {
-        //µ¥ÀÌÅÍ¸¦ ·ÎµåÇÏ´Â ÇÔ¼ö
+        //ë°ì´í„°ë¥¼ ë¡œë“œí•˜ëŠ” í•¨ìˆ˜
 
-        string savePath = getPath(fileName);    //ÀúÀå ÆÄÀÏ °æ·Î
+        string savePath = getPath(fileName);    //ì €ì¥ íŒŒì¼ ê²½ë¡œ
 
-        if (!File.Exists(savePath))  //ÆÄÀÏÀÌ Á¸ÀçÇÏÁö ¾Ê´Â´Ù¸é
+        if (!File.Exists(savePath))  //íŒŒì¼ì´ ì¡´ì¬í•˜ì§€ ì•ŠëŠ”ë‹¤ë©´
         {
-            this.dataContainer = new TopBarContainer();  //°´Ã¼ »ı¼º
+            this.dataContainer = new TopBarContainer();  //ê°ì²´ ìƒì„±
         }
-        else    //ÆÄÀÏÀÌ Á¸ÀçÇÑ´Ù¸é
+        else    //íŒŒì¼ì´ ì¡´ì¬í•œë‹¤ë©´
         {
-            this.dataContainer = DataLoadText<TopBarContainer>(); //ÆÄÀÏ ·Îµå
+            this.dataContainer = DataLoadText<TopBarContainer>(); //íŒŒì¼ ë¡œë“œ
         }
     }
 
     public TopBarContainer GetTopBarData()
     {
-        //µ¥ÀÌÅÍ¸¦ ¹İÈ¯ÇÏ´Â ÇÔ¼ö
+        //ë°ì´í„°ë¥¼ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜
 
         LoadTopBarData();
         return dataContainer;
@@ -34,11 +34,11 @@ public class TopBarJSON : MonoBehaviour
 
     public void DataSaveText<T>(T data)
     {
-        //µ¥ÀÌÅÍ¸¦ JsonÀ¸·Î ÀúÀåÇÏ´Â ÇÔ¼ö
+        //ë°ì´í„°ë¥¼ Jsonìœ¼ë¡œ ì €ì¥í•˜ëŠ” í•¨ìˆ˜
 
         try
         {
-            string savePath = getPath(fileName);    //ÀúÀå ÆÄÀÏ °æ·Î
+            string savePath = getPath(fileName);    //ì €ì¥ íŒŒì¼ ê²½ë¡œ
             string saveJson = JsonUtility.ToJson(data, true);
 
             File.WriteAllText(savePath, saveJson);
@@ -59,11 +59,11 @@ public class TopBarJSON : MonoBehaviour
 
     public T DataLoadText<T>()
     {
-        //Json µ¥ÀÌÅÍ¸¦ ºÒ·¯¿À´Â ÇÔ¼ö
+        //Json ë°ì´í„°ë¥¼ ë¶ˆëŸ¬ì˜¤ëŠ” í•¨ìˆ˜
 
         try
         {
-            string savePath = getPath(fileName);    //ÀúÀå ÆÄÀÏ °æ·Î
+            string savePath = getPath(fileName);    //ì €ì¥ íŒŒì¼ ê²½ë¡œ
             string loadJson = File.ReadAllText(savePath);
 
             T t = JsonUtility.FromJson<T>(loadJson);
@@ -89,11 +89,11 @@ public class TopBarJSON : MonoBehaviour
 #if UNITY_EDITOR
         return Application.dataPath + "/Saves/" + fileName + ".json";
 #elif UNITY_ANDROID
-        return Application.persistentDataPath+"TalkData.csv";
+        return Application.persistentDataPath+"TopBarData.csv";
 #elif UNITY_IPHONE
-        return Application.persistentDataPath+"/"+"TalkData.csv";
+        return Application.persistentDataPath+"/"+"TopBarData.csv";
 #else
-        return Application.dataPath +"/"+"TalkData.csv";
+        return Application.dataPath +"/"+"TopBarData.csv";
 #endif
     }
 }
