@@ -6,28 +6,28 @@ using UnityEngine;
 
 public class CSVDreamLoad : MonoBehaviour
 {
-    // ÆĞ³Î
+    // íŒ¨ë„
     public GameObject DreamInfoPanel;
 
-    // µ¥ÀÌÅÍ
+    // ë°ì´í„°
     List<Dictionary<string, object>> data;
 
-    // UI ¿ÀºêÁ§Æ®
-    public GameObject[] dreamColImg = new GameObject[16];
-    public Text[] dreamColName = new Text[16];
+    // UI ì˜¤ë¸Œì íŠ¸
+    public GameObject[] dreamColImg = new GameObject[24];
+    public Text[] dreamColName = new Text[24];
 
     public Text nameTxt;
     public Image dreamCatcherImg, lineImg, featherImg1, featherImg2, featherImg3;
 
-    // ÀÌ¹ÌÁö
-    public Sprite[] dreamImgs = new Sprite[16]; // ²Ş ¾ÆÀÌÄÜ ÀÌ¹ÌÁö
-    public Sprite[] dreamCatcherImgs = new Sprite[16]; // µå¸²Ä³ÃÄ ÀÌ¹ÌÁö
-    public Sprite[] lineImgs = new Sprite[5]; // ½Ç ÀÌ¹ÌÁö
-    public Sprite[] featherImgs = new Sprite[12]; // ±êÅĞ ÀÌ¹ÌÁö
+    // ì´ë¯¸ì§€
+    public Sprite[] dreamImgs = new Sprite[24]; // ê¿ˆ ì•„ì´ì½˜ ì´ë¯¸ì§€
+    public Sprite[] dreamCatcherImgs = new Sprite[24]; // ë“œë¦¼ìºì³ ì´ë¯¸ì§€
+    public Sprite[] lineImgs = new Sprite[5]; // ì‹¤ ì´ë¯¸ì§€
+    public Sprite[] featherImgs = new Sprite[12]; // ê¹ƒí„¸ ì´ë¯¸ì§€
 
-    // ±âÅ¸
-    private string[] featherNames= { "¸äºñµÑ±â", "¿°ÁÖºñµÑ±â", "°øÀÛºñµÑ±â", "µü»õ", "µ¿°íºñ", 
-        "À¯¸®µü»õ", "Ã»µü´Ù±¸¸®", "±î¸·µü´Ù±¸¸®", "¿À»öµü´Ù±¸¸®", "¿Ã»©¹Ì", "¸Å", "Èò¸Ó¸®¼ö¸®"};
+    // ê¸°íƒ€
+    private string[] featherNames= { "ë©§ë¹„ë‘˜ê¸°", "ì—¼ì£¼ë¹„ë‘˜ê¸°", "ê³µì‘ë¹„ë‘˜ê¸°", "ë”±ìƒˆ", "ë™ê³ ë¹„", 
+        "ìœ ë¦¬ë”±ìƒˆ", "ì²­ë”±ë‹¤êµ¬ë¦¬", "ê¹Œë§‰ë”±ë‹¤êµ¬ë¦¬", "ì˜¤ìƒ‰ë”±ë‹¤êµ¬ë¦¬", "ì˜¬ë¹¼ë¯¸", "ë§¤", "í°ë¨¸ë¦¬ìˆ˜ë¦¬"};
 
     // Start is called before the first frame update
     private void Start()
@@ -38,21 +38,21 @@ public class CSVDreamLoad : MonoBehaviour
     }
     public void LoadDreamCollection()
     {
-        for (int i = 0; i < 16; i++)
+        for (int i = 0; i < 24; i++)
         {
             dreamColImg[i].GetComponent<Image>().sprite = dreamImgs[i];
-            dreamColName[i].GetComponent<Text>().text = data[i]["name"].ToString(); // ÀÌ¸§ ¹°À½Ç¥ Ã³¸®
+            dreamColName[i].GetComponent<Text>().text = data[i]["name"].ToString(); // ì´ë¦„ ë¬¼ìŒí‘œ ì²˜ë¦¬
         }
     }
 
     public void LoadDreamInfo(int index)
     {
-        // ÅØ½ºÆ® ¼³Á¤(ÀÌ¸§)
-        nameTxt.text= data[index]["name"].ToString(); // ÀÌ¸§
+        // í…ìŠ¤íŠ¸ ì„¤ì •(ì´ë¦„)
+        nameTxt.text= data[index]["name"].ToString(); // ì´ë¦„
 
-        // ÀÌ¹ÌÁö ¼³Á¤(µå¸²Ä³ÃÄ, ½Ç, ±êÅĞ)
-        dreamCatcherImg.sprite = dreamCatcherImgs[index]; // µå¸²Ä³ÃÄ
-        // ½Ç
+        // ì´ë¯¸ì§€ ì„¤ì •(ë“œë¦¼ìºì³, ì‹¤, ê¹ƒí„¸)
+        dreamCatcherImg.sprite = dreamCatcherImgs[index]; // ë“œë¦¼ìºì³
+        // ì‹¤
         if (data[index]["line"].ToString() == "w")
         {
             lineImg.sprite = lineImgs[0];
@@ -73,7 +73,7 @@ public class CSVDreamLoad : MonoBehaviour
         {
             lineImg.sprite = lineImgs[4];
         }
-        // ±êÅĞ
+        // ê¹ƒí„¸
         for (int i = 0; i < 12; i++)
         {
             if (data[index]["feather1"].ToString() == featherNames[i])
@@ -98,7 +98,7 @@ public class CSVDreamLoad : MonoBehaviour
                 featherImg3.sprite = featherImgs[i];
                 break;
             }
-            else if (data[index]["feather3"].ToString() == "¾øÀ½")
+            else if (data[index]["feather3"].ToString() == "ì—†ìŒ")
             {
                 featherImg3.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
                 break;
@@ -113,20 +113,20 @@ public class CSVDreamLoad : MonoBehaviour
         
     }
 
-    // ²Ş °³º° Á¤º¸ ÆĞ³Î ¿­±â
+    // ê¿ˆ ê°œë³„ ì •ë³´ íŒ¨ë„ ì—´ê¸°
     public void DreamInfo(int index)
     {
         DreamInfoPanel.SetActive(true);
         LoadDreamInfo(index);
     }
 
-    // ²Ş °³º° Á¤º¸ ÆĞ³Î ´İ±â
+    // ê¿ˆ ê°œë³„ ì •ë³´ íŒ¨ë„ ë‹«ê¸°
     public void DreamInfoBack()
     {
         DreamInfoPanel.SetActive(false);
     }
 
-    // »õ µµ°¨À¸·Î °¡±â
+    // ìƒˆ ë„ê°ìœ¼ë¡œ ê°€ê¸°
     public void GoBirdColl()
     {
         SceneManager.LoadScene("CollectionBook");
